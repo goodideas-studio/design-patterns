@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     // Boss 剪刀石頭布亂數 (1 ~ 3 =  1.剪刀 2. 石頭 3.布 )
     var bossNumber = Int(arc4random_uniform(3) + 1)
-    
+    // oihih
     // 進場自動選擇角色 Woody 用來變換角色
     var playerCharacter = "Woody"
     
