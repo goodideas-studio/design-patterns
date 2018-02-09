@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		69D604BB60330300EA3BE5D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D601BF517E7CF95E124287 /* ViewController.swift */; };
 		69D6052E6A742CC7084E54EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69D6079DC635CB44C28F0E00 /* LaunchScreen.storyboard */; };
+		69D6057D93335B36E375B2C2 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D60A9ABA6F4634DA61309C /* Character.swift */; };
+		69D605E4CEA3B7CE14EAC1A3 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D6074BA82CA9FC71348E7F /* Action.swift */; };
+		69D60ADEF12CB01BAEDB6F1D /* GameRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D60370D06435B9CF8C268D /* GameRule.swift */; };
 		69D60B563EE5FEDC15510649 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69D60493B84AC94F160B93FA /* Assets.xcassets */; };
 		69D60E28E85D672F79614D97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69D60FD6CFB38EF0640E78EA /* Main.storyboard */; };
 		69D60EBF432054FBA475C0E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D601F365CB84CC8E4D45FD /* AppDelegate.swift */; };
@@ -18,8 +21,11 @@
 		69D600B6F625ED270F34EAD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69D601BF517E7CF95E124287 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		69D601F365CB84CC8E4D45FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		69D60370D06435B9CF8C268D /* GameRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRule.swift; sourceTree = "<group>"; };
 		69D60493B84AC94F160B93FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		69D6074BA82CA9FC71348E7F /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		69D607909B6AF5BC54C1C251 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		69D60A9ABA6F4634DA61309C /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		69D60E528EA1A82DEDF6705C /* paper-scissors-stone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "paper-scissors-stone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D60F9C0509E4129EDC6CF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,6 +50,9 @@
 				69D601F365CB84CC8E4D45FD /* AppDelegate.swift */,
 				69D60FD6CFB38EF0640E78EA /* Main.storyboard */,
 				69D601BF517E7CF95E124287 /* ViewController.swift */,
+				69D60370D06435B9CF8C268D /* GameRule.swift */,
+				69D60A9ABA6F4634DA61309C /* Character.swift */,
+				69D6074BA82CA9FC71348E7F /* Action.swift */,
 			);
 			path = "paper-scissors-stone";
 			sourceTree = "<group>";
@@ -134,6 +143,9 @@
 			files = (
 				69D60EBF432054FBA475C0E1 /* AppDelegate.swift in Sources */,
 				69D604BB60330300EA3BE5D5 /* ViewController.swift in Sources */,
+				69D60ADEF12CB01BAEDB6F1D /* GameRule.swift in Sources */,
+				69D6057D93335B36E375B2C2 /* Character.swift in Sources */,
+				69D605E4CEA3B7CE14EAC1A3 /* Action.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
