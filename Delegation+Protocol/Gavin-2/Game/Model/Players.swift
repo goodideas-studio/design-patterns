@@ -22,16 +22,21 @@ class Character {
     self.headShot = UIImage(named: name)!
   }
 
-  weak var delegate: UpdateCharacterInfo?
+  weak var infoDelegate: UpdateCharacterInfo?
+  weak var actionDelegate: ActionDelegate?
 
-  func showPlayer(action: Int) {
-    delegate?.updatePlayerInfo(hpVal: hpVal, atkVal: atkVal, name: name)
-    delegate?.updatePlayerImg(action: action, image: headShot)
+  func showPlayer() {
+    infoDelegate?.updatePlayerInfo(hpVal: hpVal, atkVal: atkVal, name: name)
+    infoDelegate?.updatePlayerImg(image: headShot)
   }
   
-  func showBoss(action: Int) {
-    delegate?.updateBossInfo(hpVal: hpVal, atkVal: atkVal, name: name)
-    delegate?.updateBossImg(action: action, image: headShot)
+  func showBoss() {
+    infoDelegate?.updateBossInfo(hpVal: hpVal, atkVal: atkVal, name: name)
+    infoDelegate?.updateBossImg(image: headShot)
+  }
+  
+  func action(action: Action) {
+    actionDelegate?.actionDidSelect(action: action)
   }
 }
 

@@ -11,35 +11,40 @@ import UIKit
 class ViewController: UIViewController {
 
   var titan = Titan()
-  var apollo = Apollo()
-  var mars = Mars()
-  var neptunus = Neptunus()
-  var jupiter = Jupiter()
+//  var apollo = Apollo()
+//  var mars = Mars()
+//  var neptunus = Neptunus()
+//  var jupiter = Jupiter()
   
-  lazy var playerLists: [Character] = [apollo, mars, neptunus, jupiter]
-  
-  var defaultAction: Int = 0
+  lazy var actions: [Action] = [Paper(), Scissors(), Stone()]
+  lazy var playerLists: [Character] = [Apollo(), Mars(), Neptunus(), Jupiter()]
+  var currentPlayer: Character!
 
-  // Character
-  @IBOutlet weak var characterHpLabel: UILabel!
-  @IBOutlet weak var characterAttackLabel: UILabel!
-  @IBOutlet weak var characterNameLabel: UILabel!
-  @IBOutlet weak var characterImgView: UIImageView!
+  // Actor
+  @IBOutlet weak var actorHpLabel: UILabel!
+  @IBOutlet weak var actorAttackLabel: UILabel!
+  @IBOutlet weak var actorNameLabel: UILabel!
+  @IBOutlet weak var actorImgView: UIImageView!
+  @IBOutlet weak var actorActImgView: UIImageView!
   
   // Boss
   @IBOutlet weak var bossHpLabel: UILabel!
   @IBOutlet weak var bossAttackLabel: UILabel!
   @IBOutlet weak var bossNameLabel: UILabel!
   @IBOutlet weak var bossImgView: UIImageView!
+  @IBOutlet weak var bossActImgView: UIImageView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
-    titan.delegate = self
+    titan.infoDelegate = self
     for player in playerLists {
-      player.delegate = self
+      player.infoDelegate = self
+      player.actionDelegate = self
     }
+    
+    getCurrentPlayer()
     showCharacter()
   }
 
@@ -49,7 +54,13 @@ class ViewController: UIViewController {
   }
 
   @IBAction func switchCharacter(_ sender: Any) {
+    getCurrentPlayer()
     showPlayers()
+  }
+  
+  func getCurrentPlayer() {
+    let playerNum = Int(arc4random_uniform(UInt32(playerLists.count)))
+    currentPlayer = playerLists[playerNum]
   }
   
   func showCharacter() {
@@ -58,39 +69,39 @@ class ViewController: UIViewController {
   }
   
   func showPlayers() {
-    let playerNum = Int(arc4random_uniform(UInt32(playerLists.count)))
-    playerLists[playerNum].showPlayer(action: defaultAction)
+    currentPlayer.showPlayer()
+    actorActImgView.image = nil
   }
   
   func showBoss() {
-    titan.showBoss(action: defaultAction)
+    titan.showBoss()
   }
 
   @IBAction func attackBtn(_ sender: Any) {
-    
+    currentPlayer.action(action: actions[0])
   }
   
   @IBAction func defenceBtn(_ sender: Any) {
-    
+    currentPlayer.action(action: actions[1])
   }
   
   @IBAction func counterAttack() {
-    
+    currentPlayer.action(action: actions[2])
   }
 }
 
 extension ViewController: UpdateCharacterInfo {
-  func updatePlayerImg(action: Int, image: UIImage) {
-    characterImgView.image = image
+  func updatePlayerImg(image: UIImage) {
+    actorImgView.image = image
   }
   
   func updatePlayerInfo(hpVal: Int, atkVal: Int, name: String) {
-    characterHpLabel.text = String(hpVal)
-    characterAttackLabel.text = String(atkVal)
-    characterNameLabel.text = String(name)
+    actorHpLabel.text = String(hpVal)
+    actorAttackLabel.text = String(atkVal)
+    actorNameLabel.text = String(name)
   }
   
-  func updateBossImg(action: Int, image: UIImage) {
+  func updateBossImg(image: UIImage) {
     bossImgView.image = image
   }
   
@@ -99,5 +110,19 @@ extension ViewController: UpdateCharacterInfo {
     bossAttackLabel.text = String(atkVal)
     bossNameLabel.text = String(name)
   }
+}
+
+extension ViewController: ActionDelegate {
+  func actionDidSelect(action: Action) {
+    actorActImgView.image = UIImage(named: action.name)
+
+    let bossAction = actions[Int(arc4random_uniform(3))]
+    bossActImgView.image = UIImage(named: bossAction.name)
+
+    
+    
+  }
+  
+  
 }
 
