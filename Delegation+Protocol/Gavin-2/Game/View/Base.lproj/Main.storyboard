@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Switch"/>
                                 <connections>
-                                    <action selector="switchCharacter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VJK-Ce-3Dk"/>
+                                    <action selector="switchCharacter" destination="BYZ-38-t0r" eventType="touchUpInside" id="GgR-7o-ptc"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJ0-PS-vkc" userLabel="actorHp">
@@ -151,6 +151,7 @@
                         <outlet property="bossHpLabel" destination="jKK-f2-oLv" id="ZLh-6u-5lG"/>
                         <outlet property="bossImgView" destination="GdU-xT-KnA" id="Qry-JC-I5G"/>
                         <outlet property="bossNameLabel" destination="jge-KI-SQk" id="teB-gJ-0PX"/>
+                        <outlet property="switchCharacterBtn" destination="alk-pM-eBW" id="jIa-7p-jEf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

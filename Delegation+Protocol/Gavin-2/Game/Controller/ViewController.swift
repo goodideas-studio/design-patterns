@@ -11,14 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
   var titan = Titan()
-//  var apollo = Apollo()
-//  var mars = Mars()
-//  var neptunus = Neptunus()
-//  var jupiter = Jupiter()
-  
-  lazy var actions: [Action] = [Paper(), Scissors(), Stone()]
+  lazy var actions: [Action] = [Attack(), Defence(), CounterAttack()]
   lazy var playerLists: [Character] = [Apollo(), Mars(), Neptunus(), Jupiter()]
-  var currentPlayer: Character!
+  var currentCharacter: Character!
 
   // Actor
   @IBOutlet weak var actorHpLabel: UILabel!
@@ -34,6 +29,8 @@ class ViewController: UIViewController {
   @IBOutlet weak var bossImgView: UIImageView!
   @IBOutlet weak var bossActImgView: UIImageView!
   
+  @IBOutlet weak var switchCharacterBtn: UIButton!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -44,8 +41,8 @@ class ViewController: UIViewController {
       player.actionDelegate = self
     }
     
-    getCurrentPlayer()
-    showCharacter()
+    randomPlayer()
+    showCharacters()
   }
 
   override func didReceiveMemoryWarning() {
@@ -53,40 +50,52 @@ class ViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 
-  @IBAction func switchCharacter(_ sender: Any) {
-    getCurrentPlayer()
+  @IBAction func switchCharacter() {
+    randomPlayer()
     showPlayers()
   }
   
-  func getCurrentPlayer() {
+  func randomPlayer() {
     let playerNum = Int(arc4random_uniform(UInt32(playerLists.count)))
-    currentPlayer = playerLists[playerNum]
+    currentCharacter = playerLists[playerNum]
   }
   
-  func showCharacter() {
+  func showCharacters() {
     showPlayers()
     showBoss()
   }
   
   func showPlayers() {
-    currentPlayer.showPlayer()
+    currentCharacter.showPlayer()
     actorActImgView.image = nil
   }
   
   func showBoss() {
     titan.showBoss()
   }
+  
+  func gameReset() {
+    titan.resetCharacter()
+    bossActImgView.image = nil
+    currentCharacter.resetCharacter()
+    
+    showPlayers()
+    showBoss()
+  }
 
   @IBAction func attackBtn(_ sender: Any) {
-    currentPlayer.action(action: actions[0])
+    switchCharacterBtn.isEnabled = false
+    currentCharacter.action(action: actions[0])
   }
   
   @IBAction func defenceBtn(_ sender: Any) {
-    currentPlayer.action(action: actions[1])
+    switchCharacterBtn.isEnabled = false
+    currentCharacter.action(action: actions[1])
   }
   
   @IBAction func counterAttack() {
-    currentPlayer.action(action: actions[2])
+    switchCharacterBtn.isEnabled = false
+    currentCharacter.action(action: actions[2])
   }
 }
 
@@ -113,16 +122,31 @@ extension ViewController: UpdateCharacterInfo {
 }
 
 extension ViewController: ActionDelegate {
-  func actionDidSelect(action: Action) {
-    actorActImgView.image = UIImage(named: action.name)
+  func actionDidSelect(actorAction: Action) {
+    actorActImgView.image = UIImage(named: actorAction.name)
 
     let bossAction = actions[Int(arc4random_uniform(3))]
     bossActImgView.image = UIImage(named: bossAction.name)
-
     
+    switch GameCondition.execute(actorAction: actorAction, bossAction: bossAction) {
+    case .Tie:
+      print("Tie")
+    case .Win:
+      titan.hpVal = max(titan.hpVal - currentCharacter.atkVal, 0)
+      bossHpLabel.text = String(titan.hpVal)
+    case .Lose:
+      currentCharacter.hpVal = max(currentCharacter.hpVal - titan.atkVal, 0)
+      actorHpLabel.text = String(currentCharacter.hpVal)
+    }
     
+    if currentCharacter.hpVal == 0 || titan.hpVal == 0 {
+      let alert = UIAlertController(title: "Game Over!", message: "Restart Game.", preferredStyle: UIAlertControllerStyle.alert)
+      alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { _ in
+        self.switchCharacterBtn.isEnabled = true
+        self.gameReset()
+      }))
+      present(alert, animated: true)
+    }
   }
-  
-  
-}
 
+}
