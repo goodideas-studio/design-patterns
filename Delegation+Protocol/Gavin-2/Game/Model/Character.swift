@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class Character {
-  let hpVal: Int
+  var hpVal: Int
   let atkVal: Int
   let name: String
   let headShot: UIImage
@@ -36,19 +36,36 @@ class Character {
   }
   
   func action(action: Action) {
-    actionDelegate?.actionDidSelect(action: action)
+    actionDelegate?.actionDidSelect(actorAction: action)
+  }
+  
+  func resetCharacter() {
+    self.hpVal = 100
   }
 }
 
 class Titan: Character {
   init() {
     super.init(hpVal: 2500, atkVal: 250, name: "Titan")
+//    self.resetCharacter()
+  }
+  
+//  func resetCharacter() {
+//    self.hpVal = 2500
+//  }
+  
+  override func resetCharacter() {
+    self.hpVal = 2500
   }
 }
 
 class Apollo: Character {
   init() {
-    super.init(hpVal: 1500, atkVal: 100, name: "Apollo")
+    super.init(hpVal: 1500, atkVal: 150, name: "Apollo")
+  }
+  
+  override func resetCharacter() {
+    self.hpVal = 1500
   }
 }
 
@@ -56,16 +73,28 @@ class Mars: Character {
   init() {
     super.init(hpVal: 1500, atkVal: 180, name: "Mars")
   }
+  
+  override func resetCharacter() {
+    self.hpVal = 1500
+  }
 }
 
 class Neptunus: Character {
   init() {
-    super.init(hpVal: 1600, atkVal: 110, name: "Neptunus")
+    super.init(hpVal: 1900, atkVal: 200, name: "Neptunus")
+  }
+  
+  override func resetCharacter() {
+    self.hpVal = 1900
   }
 }
 
 class Jupiter: Character {
   init() {
-    super.init(hpVal: 2000, atkVal: 200, name: "Jupiter")
+    super.init(hpVal: 2000, atkVal: 210, name: "Jupiter")
+  }
+  
+  override func resetCharacter() {
+    self.hpVal = 2000
   }
 }
