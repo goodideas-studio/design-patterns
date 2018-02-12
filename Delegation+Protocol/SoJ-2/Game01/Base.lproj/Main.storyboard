@@ -14,21 +14,23 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Game01" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="mainView" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="p5q-5x-Mzx">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="p5q-5x-Mzx">
                                 <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="warrior" translatesAutoresizingMaskIntoConstraints="NO" id="DP3-ZB-eHG">
+                                <rect key="frame" x="20" y="142" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view alpha="0.14999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yjF-a5-qdm">
-                                <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DeadGod" translatesAutoresizingMaskIntoConstraints="NO" id="jNd-t0-c7i">
+                                <rect key="frame" x="277" y="50" width="357" height="169"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fg9-u4-UY0" customClass="ButtonStyle" customModule="Game01" customModuleProvider="target">
-                                <rect key="frame" x="20" y="344" width="46" height="30"/>
+                                <rect key="frame" x="20" y="348" width="46" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="GQm-Eg-RtB"/>
@@ -42,21 +44,21 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2T-L5-VNA" customClass="ButtonStyle" customModule="Game01" customModuleProvider="target">
-                                <rect key="frame" x="101" y="344" width="46" height="30"/>
+                                <rect key="frame" x="101" y="348" width="92" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="jQC-mh-vsz"/>
-                                    <constraint firstAttribute="width" constant="46" id="s2P-K2-v5b"/>
+                                    <constraint firstAttribute="width" constant="92" id="s2P-K2-v5b"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="防禦"/>
+                                <state key="normal" title="魔法攻擊"/>
                                 <connections>
-                                    <action selector="defense:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XM3-ka-jf7"/>
+                                    <action selector="magicAttack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j3m-gS-BRI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hr-st-4tE" customClass="ButtonStyle" customModule="Game01" customModuleProvider="target">
-                                <rect key="frame" x="182" y="344" width="46" height="30"/>
+                                <rect key="frame" x="228" y="348" width="46" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="Juk-OP-1cm"/>
@@ -64,42 +66,16 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="反擊"/>
+                                <state key="normal" title="治療"/>
                                 <connections>
-                                    <action selector="squelch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7DA-Te-KAi"/>
+                                    <action selector="heal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LbC-Kd-29N"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="一般" translatesAutoresizingMaskIntoConstraints="NO" id="DP3-ZB-eHG">
-                                <rect key="frame" x="20" y="142" width="291" height="206"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="206" id="EgP-tR-Idf"/>
-                                    <constraint firstAttribute="width" constant="291" id="pjx-3I-qq3"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boss1" translatesAutoresizingMaskIntoConstraints="NO" id="jNd-t0-c7i">
-                                <rect key="frame" x="277" y="29" width="357" height="169"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="169" id="08a-wr-mjo"/>
-                                    <constraint firstAttribute="width" constant="357" id="5Zj-Fk-Hji"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="player hp:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKN-Wk-OeI" customClass="HpLabel" customModule="Game01" customModuleProvider="target">
-                                <rect key="frame" x="20" y="121" width="291" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="monster hp:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Dy-OQ-KQ5" customClass="HpLabel" customModule="Game01" customModuleProvider="target">
-                                <rect key="frame" x="277" y="8" width="357" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JnC-T6-wWp">
                                 <rect key="frame" x="277" y="217" width="370" height="130"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VYn-A1-SAG">
-                                        <rect key="frame" x="0.0" y="0.0" width="370" height="130"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VYn-A1-SAG">
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="130"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -111,14 +87,16 @@
                                     <constraint firstItem="VYn-A1-SAG" firstAttribute="top" secondItem="JnC-T6-wWp" secondAttribute="top" id="Wl8-MW-bkY"/>
                                     <constraint firstItem="VYn-A1-SAG" firstAttribute="leading" secondItem="JnC-T6-wWp" secondAttribute="leading" id="Ywl-KJ-N8J"/>
                                     <constraint firstAttribute="width" constant="370" id="slj-wT-b1e"/>
-                                    <constraint firstAttribute="trailing" secondItem="VYn-A1-SAG" secondAttribute="trailing" id="w71-yb-Tt4"/>
+                                    <constraint firstAttribute="trailing" secondItem="VYn-A1-SAG" secondAttribute="trailing" constant="100" id="w71-yb-Tt4"/>
                                     <constraint firstAttribute="height" constant="130" id="zzn-Zz-YQw"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuu-zR-eic" customClass="ButtonStyle" customModule="Game01" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuu-zR-eic" customClass="ButtonStyle" customModule="Game01" customModuleProvider="target">
                                 <rect key="frame" x="667" y="356" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Lms-GX-jUc"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="換角"/>
@@ -126,27 +104,76 @@
                                     <action selector="switchCharacter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eCb-Fj-DdK"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="player hp:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NKN-Wk-OeI" customClass="HpLabel" customModule="Game01" customModuleProvider="target">
+                                <rect key="frame" x="20" y="80" width="200" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="player mp:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQD-1z-q3j" customClass="HpLabel" customModule="Game01" customModuleProvider="target">
+                                <rect key="frame" x="20" y="100" width="200" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aUk-bI-LfO">
+                                <rect key="frame" x="327" y="50" width="240" height="169"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vng-TM-eTg">
+                                <rect key="frame" x="20" y="142" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="monster hp:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Dy-OQ-KQ5" customClass="HpLabel" customModule="Game01" customModuleProvider="target">
+                                <rect key="frame" x="434" y="0.0" width="200" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="monster mp:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKI-2I-5CJ" customClass="HpLabel" customModule="Game01" customModuleProvider="target">
+                                <rect key="frame" x="434" y="20" width="200" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1e-hR-L0L" customClass="ButtonStyle" customModule="Game01" customModuleProvider="target">
+                                <rect key="frame" x="609" y="356" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FMX-ML-Yax"/>
+                                    <constraint firstAttribute="width" constant="46" id="whO-nv-Kw7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="重來"/>
+                                <connections>
+                                    <action selector="reStartGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nyt-VY-mEt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6hr-st-4tE" firstAttribute="centerY" secondItem="Fg9-u4-UY0" secondAttribute="centerY" id="0Dc-38-Llm"/>
-                            <constraint firstItem="Fg9-u4-UY0" firstAttribute="leading" secondItem="DP3-ZB-eHG" secondAttribute="leading" id="2EL-PM-mdF"/>
-                            <constraint firstItem="jNd-t0-c7i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="29" id="4yZ-lm-ygH"/>
-                            <constraint firstItem="jNd-t0-c7i" firstAttribute="top" secondItem="6Dy-OQ-KQ5" secondAttribute="bottom" id="ByQ-6Y-XdG"/>
-                            <constraint firstItem="JnC-T6-wWp" firstAttribute="top" secondItem="jNd-t0-c7i" secondAttribute="bottom" constant="19" id="ECs-H9-iJJ"/>
-                            <constraint firstItem="Fg9-u4-UY0" firstAttribute="top" secondItem="DP3-ZB-eHG" secondAttribute="bottom" constant="-4" id="GZH-bv-Z7x"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nuu-zR-eic" secondAttribute="bottom" constant="28" id="CS9-tt-W2y"/>
+                            <constraint firstItem="nuu-zR-eic" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="356" id="E7H-g4-6Si"/>
                             <constraint firstItem="Y2T-L5-VNA" firstAttribute="leading" secondItem="Fg9-u4-UY0" secondAttribute="trailing" constant="35" id="PvG-Ei-F8L"/>
-                            <constraint firstItem="6Dy-OQ-KQ5" firstAttribute="width" secondItem="jNd-t0-c7i" secondAttribute="width" id="Q4Z-yB-S89"/>
                             <constraint firstItem="Y2T-L5-VNA" firstAttribute="centerY" secondItem="Fg9-u4-UY0" secondAttribute="centerY" id="Qo0-ld-EkX"/>
-                            <constraint firstItem="DP3-ZB-eHG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="RD6-aS-lea"/>
-                            <constraint firstItem="JnC-T6-wWp" firstAttribute="leading" secondItem="jNd-t0-c7i" secondAttribute="leading" id="f6L-rI-dkg"/>
-                            <constraint firstItem="NKN-Wk-OeI" firstAttribute="leading" secondItem="DP3-ZB-eHG" secondAttribute="leading" id="k9o-y7-BJk"/>
-                            <constraint firstItem="DP3-ZB-eHG" firstAttribute="top" secondItem="NKN-Wk-OeI" secondAttribute="bottom" id="lsl-WX-6Vf"/>
-                            <constraint firstItem="NKN-Wk-OeI" firstAttribute="width" secondItem="DP3-ZB-eHG" secondAttribute="width" id="mgk-ZL-RL6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jNd-t0-c7i" secondAttribute="trailing" constant="102" id="pwM-5Y-SyC"/>
-                            <constraint firstItem="DP3-ZB-eHG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="142" id="rqp-de-sbA"/>
+                            <constraint firstItem="p5q-5x-Mzx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QqN-PC-ZV0"/>
+                            <constraint firstItem="p5q-5x-Mzx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="UAv-n7-kqa"/>
+                            <constraint firstItem="Fg9-u4-UY0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WFX-on-Qra"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nuu-zR-eic" secondAttribute="trailing" constant="23" id="WYw-Wx-JOm"/>
+                            <constraint firstItem="p5q-5x-Mzx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aMF-Mg-fmM"/>
+                            <constraint firstItem="JnC-T6-wWp" firstAttribute="leading" secondItem="p5q-5x-Mzx" secondAttribute="trailing" constant="-459" id="ajC-Ad-0bb"/>
+                            <constraint firstItem="i1e-hR-L0L" firstAttribute="top" secondItem="p5q-5x-Mzx" secondAttribute="bottom" constant="-58" id="cZp-Dr-SrK"/>
+                            <constraint firstItem="Fg9-u4-UY0" firstAttribute="top" secondItem="p5q-5x-Mzx" secondAttribute="bottom" constant="-66" id="eaL-tM-hau"/>
+                            <constraint firstItem="nuu-zR-eic" firstAttribute="leading" secondItem="i1e-hR-L0L" secondAttribute="trailing" constant="12" id="pyJ-ke-G3a"/>
+                            <constraint firstItem="VYn-A1-SAG" firstAttribute="top" secondItem="p5q-5x-Mzx" secondAttribute="bottom" constant="-197" id="qhT-Om-I2h"/>
+                            <constraint firstItem="p5q-5x-Mzx" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="s10-iN-2CD"/>
                             <constraint firstItem="6hr-st-4tE" firstAttribute="leading" secondItem="Y2T-L5-VNA" secondAttribute="trailing" constant="35" id="tEd-Af-wgp"/>
-                            <constraint firstItem="6Dy-OQ-KQ5" firstAttribute="leading" secondItem="jNd-t0-c7i" secondAttribute="leading" id="uaw-0E-2vj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -154,8 +181,12 @@
                         <outlet property="gameLabel" destination="VYn-A1-SAG" id="df3-FV-RJ0"/>
                         <outlet property="monsterHPLabel" destination="6Dy-OQ-KQ5" id="nuP-q5-VNR"/>
                         <outlet property="monsterImageView" destination="jNd-t0-c7i" id="3NC-0T-rv9"/>
+                        <outlet property="monsterMPLabel" destination="BKI-2I-5CJ" id="hhZ-AQ-VGy"/>
+                        <outlet property="playerAttackAnimateImageView" destination="aUk-bI-LfO" id="Wbl-QA-FAB"/>
                         <outlet property="playerHPLabel" destination="NKN-Wk-OeI" id="TKU-sN-a8u"/>
                         <outlet property="playerImageView" destination="DP3-ZB-eHG" id="yu5-p8-6dt"/>
+                        <outlet property="playerMPLabel" destination="DQD-1z-q3j" id="gQ0-y0-kKL"/>
+                        <outlet property="ｍonsterAttackAnimateImageView" destination="Vng-TM-eTg" id="rQB-RS-bd8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -164,8 +195,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DeadGod" width="545" height="259"/>
         <image name="background2" width="544" height="416"/>
-        <image name="boss1" width="545" height="259"/>
-        <image name="一般" width="174" height="206"/>
+        <image name="warrior" width="197" height="195"/>
     </resources>
 </document>
