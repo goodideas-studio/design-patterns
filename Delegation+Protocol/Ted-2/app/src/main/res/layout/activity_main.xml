@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/forest"
     android:orientation="vertical"
     tools:context="com.example.likunlin.game.MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -21,13 +26,15 @@
                 android:id="@+id/name_worr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="勇者方" />
+                android:text="勇者方"
+                android:textColor="@android:color/background_light" />
 
             <TextView
                 android:id="@+id/worr_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="小人物騎士" />
+                android:text="小人物騎士"
+                android:textColor="@android:color/background_light" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -39,14 +46,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="HP:" />
+                    android:text="HP:"
+                    android:textColor="@android:color/background_light" />
 
                 <TextView
                     android:id="@+id/worr_hp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="100" />
+                    android:text="100"
+                    android:textColor="@android:color/background_light" />
             </LinearLayout>
 
             <LinearLayout
@@ -59,14 +68,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="ATK:" />
+                    android:text="ATK:"
+                    android:textColor="@android:color/background_light" />
 
                 <TextView
                     android:id="@+id/worr_att"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="100" />
+                    android:text="100"
+                    android:textColor="@android:color/background_light" />
             </LinearLayout>
 
         </LinearLayout>
@@ -76,7 +87,8 @@
             android:layout_width="230dp"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="時間" />
+            android:text="時間"
+            android:textColor="@android:color/background_light" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -89,14 +101,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
-                android:text="魔王方" />
+                android:text="魔王方"
+                android:textColor="@android:color/background_light" />
 
             <TextView
                 android:id="@+id/boss_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="right"
-                android:text="大魔王" />
+                android:text="大魔王"
+                android:textColor="@android:color/background_light" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -109,7 +123,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="HP:" />
+                    android:text="HP:"
+                    android:textColor="@android:color/background_light" />
 
                 <TextView
                     android:id="@+id/boss_hp"
@@ -117,7 +132,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="2000" />
+                    android:text="2000"
+                    android:textColor="@android:color/background_light" />
             </LinearLayout>
 
             <LinearLayout
@@ -131,7 +147,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="ATK" />
+                    android:text="ATK"
+                    android:textColor="@android:color/background_light" />
 
                 <TextView
                     android:id="@+id/boss_att"
@@ -139,45 +156,57 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="2000" />
+                    android:text="2000"
+                    android:textColor="@android:color/background_light" />
             </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tv_vs"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="280dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:text="VS"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/worr_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/militawarrior" />
+    <ImageView
+        android:id="@+id/worr_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/militawarrior" />
 
-        <TextView
-            android:id="@+id/tv_vs"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:text="VS" />
-
-        <ImageView
-            android:id="@+id/boss_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/boss_1" />
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/boss_img"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="100dp"
+        android:layout_marginStart="200dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toTopOf="@+id/worr_img"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/boss_1" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/bt_atk"
@@ -205,7 +234,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="SWITCH" />
+            android:text="交換" />
 
         <Button
             android:id="@+id/bt_reset"
@@ -214,4 +243,4 @@
             android:layout_weight="1"
             android:text="重置" />
     </LinearLayout>
-</android.support.v7.widget.LinearLayoutCompat>
+</android.support.constraint.ConstraintLayout>
