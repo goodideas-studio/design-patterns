@@ -5,7 +5,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    let tabBarController = UITabBarController()
+    tabBarController.viewControllers = [
+      ViewController(),
+      AttackViewController(),
+      DefenceViewController(),
+      MagicViewController()
+    ]
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window?.rootViewController = tabBarController
+    window?.makeKeyAndVisible()
+
     return true
   }
 
