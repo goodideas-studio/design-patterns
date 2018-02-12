@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:../paper_scissors_stone/Compare.swift">
+   </FileRef>
+   <FileRef
+      location = "group:../character.swift">
+   </FileRef>
+   <FileRef
+      location = "group:joker .png">
+   </FileRef>
+   <FileRef
+      location = "self:paper_scissors_stone.xcodeproj">
+   </FileRef>
+</Workspace>
