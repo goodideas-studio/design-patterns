@@ -18,6 +18,7 @@
 		E0556EAC2031D8CE0017649B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0556EAB2031D8CE0017649B /* Character.swift */; };
 		E0556EAE2031E4C00017649B /* GameRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0556EAD2031E4C00017649B /* GameRule.swift */; };
 		E0556EB02031EB610017649B /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0556EAF2031EB610017649B /* File.swift */; };
+		E0E7DBBB203433E600150DAB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E0E7DBBA203433E600150DAB /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +35,7 @@
 		E0556EAB2031D8CE0017649B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		E0556EAD2031E4C00017649B /* GameRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRule.swift; sourceTree = "<group>"; };
 		E0556EAF2031EB610017649B /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
-		E0E7DBB9203432AB00150DAB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E0E7DBBA203433E600150DAB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,11 +68,11 @@
 		E0556E8F203172B00017649B /* Notification-1 */ = {
 			isa = PBXGroup;
 			children = (
+				E0E7DBBA203433E600150DAB /* README.md */,
 				E0556EAA2031D8AF0017649B /* model */,
 				E0556E90203172B00017649B /* AppDelegate.swift */,
 				E0556EAD2031E4C00017649B /* GameRule.swift */,
 				E0556E92203172B00017649B /* ViewController.swift */,
-				E0E7DBB9203432AB00150DAB /* README.md */,
 				E0556EA22031745C0017649B /* GameBoard1ViewController.swift */,
 				E0556EA62031CE6B0017649B /* GameBoard2ViewController.swift */,
 				E0556EA82031CE7E0017649B /* GameBoard3ViewController.swift */,
@@ -153,6 +154,7 @@
 			files = (
 				E0556EA52031763B0017649B /* win.png in Resources */,
 				E0556E9B203172B00017649B /* LaunchScreen.storyboard in Resources */,
+				E0E7DBBB203433E600150DAB /* README.md in Resources */,
 				E0556E98203172B00017649B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
