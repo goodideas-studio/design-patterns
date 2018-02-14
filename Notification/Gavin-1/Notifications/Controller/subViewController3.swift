@@ -30,6 +30,8 @@ class subViewController3: UIViewController {
   
   let infoView = InfoView()
   weak var delegate: HomeViewDelegate?
+  var isGameStart: Bool = false
+  var timer = Timer()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -40,13 +42,22 @@ class subViewController3: UIViewController {
   }
   
   @IBAction func startGameNotify() {
-    infoView.hpVal1? -= 1
-    infoView.hpValLabel1.text = String(infoView.hpVal1)
-    
-    updateSubView3Info()
+    if !isGameStart {
+      isGameStart = true
+      timer = Timer.scheduledTimer(withTimeInterval: 4, repeats: true, block: { (timer) in
+        self.infoView.hpVal1? -= 1
+        if self.infoView.hpVal1 == 0 {
+          self.isGameStart = false
+        }
+        self.infoView.hpValLabel1.text = String(self.infoView.hpVal1)
+        self.updateSubView3Info()
+      })
+    }
   }
   
   @IBAction func resetGameNotify() {
+    isGameStart = false
+    timer.invalidate()
     infoView.resetHp()
     infoView.hpValLabel1.text = String(infoView.hpVal1)
     

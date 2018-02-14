@@ -51,7 +51,7 @@ class ViewController: UIViewController {
                                           y: infoView3.frame.maxY + 10,
                                           width: 120,
                                           height: 40))
-    resetBtn.setTitle("resetBtn", for: .normal)
+    resetBtn.setTitle("Reset", for: .normal)
     resetBtn.backgroundColor = UIColor.blue
     resetBtn.addTarget(self, action: #selector(self.resetBtn), for: .touchUpInside)
     self.view.addSubview(resetBtn)
