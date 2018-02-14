@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_home"
+        android:checkable="true"
+        android:enabled="true"
+        android:icon="@drawable/home"
+        android:title="Home"
+        android:visible="true" />
+    <item
+        android:id="@+id/item_sword"
+        android:icon="@drawable/sword"
+        android:title="劍"
+        android:visible="true" />
+    <item
+        android:id="@+id/item_sheild"
+        android:icon="@drawable/shield"
+        android:title="盾" />
+    <item
+        android:id="@+id/item_magic"
+        android:icon="@drawable/fireball"
+        android:title="魔法" />
+</menu>
