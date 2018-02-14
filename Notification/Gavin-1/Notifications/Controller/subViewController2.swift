@@ -42,15 +42,17 @@ class subViewController2: UIViewController {
     infoView.hpVal1? -= 1
     infoView.hpValLabel1.text = String(infoView.hpVal1)
     
-    updateSubView2()
+    updateSubView2Info()
   }
   
   @IBAction func resetGameNotify() {
     infoView.resetHp()
     infoView.hpValLabel1.text = String(infoView.hpVal1)
+    
+    updateSubView2Info()
   }
   
-  func updateSubView2() {
-    delegate?.updateView2Info(subView2Hp: infoView.hpVal1)
+  func updateSubView2Info() {
+    delegate?.updateHomeViewInfo(subViewNum: 2, hpVal1: infoView.hpVal1)
   }
 }

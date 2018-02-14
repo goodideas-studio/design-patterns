@@ -9,7 +9,5 @@
 import Foundation
 
 protocol HomeViewDelegate: class {
-  func updateView1Info(subView1Hp: Int)
-  func updateView2Info(subView2Hp: Int)
-  func updateView3Info(subView3Hp: Int)
+  func updateHomeViewInfo(subViewNum: Int, hpVal1: Int)
 }

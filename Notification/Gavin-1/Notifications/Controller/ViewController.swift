@@ -55,7 +55,6 @@ class ViewController: UIViewController {
     resetBtn.backgroundColor = UIColor.blue
     resetBtn.addTarget(self, action: #selector(self.resetBtn), for: .touchUpInside)
     self.view.addSubview(resetBtn)
-  
   }
 
   override func didReceiveMemoryWarning() {
@@ -73,16 +72,17 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: HomeViewDelegate {
-  func updateView1Info(subView1Hp: Int) {
-    infoView1.hpValLabel1.text = String(subView1Hp)
-  }
-  
-  func updateView2Info(subView2Hp: Int) {
-    infoView2.hpValLabel1.text = String(subView2Hp)
-  }
-  
-  func updateView3Info(subView3Hp: Int) {
-    infoView3.hpValLabel1.text = String(subView3Hp)
+  func updateHomeViewInfo(subViewNum: Int, hpVal1: Int) {
+    switch subViewNum {
+    case 1:
+      infoView1.hpValLabel1.text = String(hpVal1)
+    case 2:
+      infoView2.hpValLabel1.text = String(hpVal1)
+    case 3:
+      infoView3.hpValLabel1.text = String(hpVal1)
+    default:
+      break
+    }
   }
 }
 
