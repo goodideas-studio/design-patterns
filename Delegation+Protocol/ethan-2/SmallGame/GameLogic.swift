@@ -14,7 +14,6 @@ protocol showDataDelegate{
     func showPlayerHPLabel(value:Int)
     func showBossHPLabel(value:Int)
     func showAtkLabel(playerChoice:String)
-    
 }
 
 class GameLogic{
