@@ -10,4 +10,4 @@
 
 最後就是「遊戲邏輯」的部分，為了之後能夠輕易地擴充遊戲邏輯，預計使用 [Strategy Pattern](https://en.wikipedia.org/wiki/Strategy_pattern)，讓遊戲能夠任意更換遊戲邏輯，爽爽開發。因此我先建立一個 GameRule protocol，其用法很簡單，就是傳入兩個 Action，得到一個 ActionResult（兩個行為的結果，也就是遊戲邏輯），目前只有剪刀石頭布的遊戲邏輯，所以我建立一個 PSS 的實體，如果之後有「玩家必勝」的遊戲邏輯，就可以建立一個 PlayerAlwaysWin 的實體，並實做 GameRule protocol 即可。
 
-![這裡本該是張圖，但壞掉了](architecture.png)
+![這裡本該是張圖，但壞掉了](architecture.jpg)
