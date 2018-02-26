@@ -178,12 +178,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< Updated upstream
 				4D0B9A2C2043F2D700D9744D /* CellTypeTwo.swift in Sources */,
-=======
 				70B8FFC320440397001D5E70 /* Asset.swift in Sources */,
 				70B8FFBE2043F058001D5E70 /* PowerUps.swift in Sources */,
->>>>>>> Stashed changes
 				4D3528F92043E0B200CDF28B /* ShopViewController.swift in Sources */,
 				4D9093A42043B611008CFD75 /* PackViewController.swift in Sources */,
 				4D9093A02043B611008CFD75 /* AppDelegate.swift in Sources */,
