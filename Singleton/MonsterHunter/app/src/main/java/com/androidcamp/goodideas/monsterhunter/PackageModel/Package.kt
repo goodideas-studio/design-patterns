@@ -14,7 +14,7 @@ object Package: ArrayList<Stuff>() {
         this.add(Stuff("sword7", 50, 60))
         this.add(Stuff("sword8", 50, 60))
     }
-    override public fun add(stuff: Stuff): Boolean {
+    override fun add(stuff: Stuff): Boolean {
         super.add(stuff)
         return true
     }

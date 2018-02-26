@@ -36,6 +36,7 @@ class PackFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        Log.d("onStart", "package size: ${Package.size}")
         changeTotalCount()
         initGridView()
     }
