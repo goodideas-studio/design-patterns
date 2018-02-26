@@ -16,6 +16,8 @@
 		4D9093A72043B611008CFD75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D9093A52043B611008CFD75 /* Main.storyboard */; };
 		4D9093A92043B611008CFD75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D9093A82043B611008CFD75 /* Assets.xcassets */; };
 		4D9093AC2043B611008CFD75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D9093AA2043B611008CFD75 /* LaunchScreen.storyboard */; };
+		70B8FFBE2043F058001D5E70 /* PowerUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B8FFBD2043F058001D5E70 /* PowerUps.swift */; };
+		70B8FFC320440397001D5E70 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B8FFC220440397001D5E70 /* Asset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		4D9093A82043B611008CFD75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D9093AB2043B611008CFD75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D9093AD2043B611008CFD75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70B8FFBD2043F058001D5E70 /* PowerUps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PowerUps.swift; path = Singleton_Game/PowerUps.swift; sourceTree = SOURCE_ROOT; };
+		70B8FFC220440397001D5E70 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,8 @@
 		4D3528F52043DFB900CDF28B /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				70B8FFBD2043F058001D5E70 /* PowerUps.swift */,
+				70B8FFC220440397001D5E70 /* Asset.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -92,8 +98,8 @@
 				4D3528F72043DFD500CDF28B /* View */,
 				4D3528F62043DFC500CDF28B /* Controllers */,
 				4D3528F52043DFB900CDF28B /* Module */,
-				4D90939F2043B611008CFD75 /* AppDelegate.swift */,
 				4D9093A82043B611008CFD75 /* Assets.xcassets */,
+				4D90939F2043B611008CFD75 /* AppDelegate.swift */,
 				4D9093AA2043B611008CFD75 /* LaunchScreen.storyboard */,
 				4D9093AD2043B611008CFD75 /* Info.plist */,
 			);
@@ -172,7 +178,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< Updated upstream
 				4D0B9A2C2043F2D700D9744D /* CellTypeTwo.swift in Sources */,
+=======
+				70B8FFC320440397001D5E70 /* Asset.swift in Sources */,
+				70B8FFBE2043F058001D5E70 /* PowerUps.swift in Sources */,
+>>>>>>> Stashed changes
 				4D3528F92043E0B200CDF28B /* ShopViewController.swift in Sources */,
 				4D9093A42043B611008CFD75 /* PackViewController.swift in Sources */,
 				4D9093A02043B611008CFD75 /* AppDelegate.swift in Sources */,
