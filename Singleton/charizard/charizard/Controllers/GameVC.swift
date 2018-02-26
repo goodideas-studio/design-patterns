@@ -15,7 +15,8 @@ class GameVC: UIViewController {
   @IBOutlet weak var ATKLabel: UILabel!
   @IBOutlet weak var DEFLabel: UILabel!
   @IBOutlet weak var balanceLabel: UILabel!
-
+  @IBOutlet weak var imageView: UIImageView!
+    
   @IBAction func didTouchUpWeapon(_ sender: Any) {
     GameManager.current.player!.balance += 5
     balanceLabel.text = "\(GameManager.current.player!.balance)"
@@ -36,5 +37,6 @@ class GameVC: UIViewController {
     ATKLabel.text = "\(GameManager.current.character!.ATK)"
     DEFLabel.text = "\(GameManager.current.character!.DEF)"
     balanceLabel.text = "\(GameManager.current.player!.balance)"
+    imageView.image = UIImage(named: "charizard")
   }
 }
