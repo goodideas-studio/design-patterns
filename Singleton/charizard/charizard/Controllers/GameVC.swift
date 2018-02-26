@@ -1,35 +1,27 @@
-//
-//  GameVC.swift
-//  charizard
-//
-//  Created by EthanLin on 2018/2/26.
-//  Copyright © 2018年 EthanLin. All rights reserved.
-//
-
 import UIKit
 
 class GameVC: UIViewController {
+  @IBOutlet weak var HPLabel: UILabel!
+  @IBOutlet weak var MPLabel: UILabel!
+  @IBOutlet weak var ATKLabel: UILabel!
+  @IBOutlet weak var DEFLabel: UILabel!
+  @IBOutlet weak var balanceLabel: UILabel!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  @IBAction func didTouchUpWeapon(_ sender: Any) {
+    GameManager.current.player!.balance += 5
+    balanceLabel.text = "\(GameManager.current.player!.balance)"
+  }
 
-        // Do any additional setup after loading the view.
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+    GameManager.current.player = Player(balance: 1000, items: [])
+    GameManager.current.character = Character(ATK: 10, DEF: 20, HP: 30, MP: 40)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    HPLabel.text = "\(GameManager.current.character!.HP)"
+    MPLabel.text = "\(GameManager.current.character!.MP)"
+    ATKLabel.text = "\(GameManager.current.character!.ATK)"
+    DEFLabel.text = "\(GameManager.current.character!.DEF)"
+    balanceLabel.text = "\(GameManager.current.player!.balance)"
+  }
 }
