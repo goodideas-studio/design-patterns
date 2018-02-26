@@ -9,30 +9,13 @@
 import UIKit
 
 class PackViewController: UIViewController {
-<<<<<<< Updated upstream
-    
-    var itemsInMyPack = [String]()
-    
-    
 
-<<<<<<< Updated upstream
-    @IBOutlet weak var packItemsCollection: UICollectionView!
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-=======
-=======
-  
-  @IBOutlet weak var totalAsset: UILabel!
   @IBOutlet weak var packItemsCollection: UICollectionView!
+  @IBOutlet weak var totalAsset: UILabel!
   
   var itemsInMyPack = [String]()
   var receiveData: String!
   
->>>>>>> Stashed changes
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -58,24 +41,6 @@ class PackViewController: UIViewController {
 
 extension PackViewController: UICollectionViewDelegate {
   
-}
-
-extension PackViewController: UICollectionViewDataSource {
-  
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    
-    return itemsInMyPack.count
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellOne", for: indexPath) as! CellTypeOne
-    
-    return cell
-  }
-}
-
-extension PackViewController: UICollectionViewDelegate {
-    
 }
 
 extension PackViewController: UICollectionViewDataSource {
