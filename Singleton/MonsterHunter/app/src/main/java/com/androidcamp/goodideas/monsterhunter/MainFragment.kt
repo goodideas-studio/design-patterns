@@ -8,6 +8,16 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.androidcamp.goodideas.monsterhunter.MainModel.Boss
+import com.androidcamp.goodideas.monsterhunter.MainModel.Status
+import kotlinx.android.synthetic.main.fragment_main.*
+
+<<<<<<< HEAD
+=======
+import android.widget.Toast
+import com.androidcamp.goodideas.monsterhunter.MainModel.Boss
+>>>>>>> 00a90fde759c279b5cfa3c511541c60e819e90c1
 import com.androidcamp.goodideas.monsterhunter.MainModel.Status
 import kotlinx.android.synthetic.main.fragment_main.*
 
@@ -26,11 +36,31 @@ class MainFragment : Fragment() {
     }
 
     override fun onStart() {
+
         super.onStart()
         Log.d("onStart", "hp:　${Status.hp}")
         Log.d("onStart", "mp:　${Status.mp}")
         worr_hp.setText(Status.hp.toString())
         worr_mp.setText(Status.mp.toString())
+
+        // init warrior's status
+        Log.d("onStart", "hp:　${Status.hp}")
+        Log.d("onStart", "mp:　${Status.mp}")
+        worr_hp.setText(Status.hp.toString())
+        worr_mp.setText(Status.mp.toString())
+        // attack
+        ib_sword.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(p0: View?) {
+                Status.money += 200
+                Boss.hp -= Status.attack
+                boss_hp.text=Boss.hp.toString()
+                if(Boss.hp==0){
+                    Toast.makeText(this@MainFragment.context,"You win", Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
+        super.onStart()
+
     }
 
     companion object {
