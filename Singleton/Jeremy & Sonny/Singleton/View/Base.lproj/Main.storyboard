@@ -162,6 +162,9 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pack" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="itemCount" destination="jEQ-OS-T12" id="5w7-tk-gbQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
