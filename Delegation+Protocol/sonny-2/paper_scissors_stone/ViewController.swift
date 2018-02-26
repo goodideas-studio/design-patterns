@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         print("UIButton1 has been press")
         chosenOfPlayer = "paper"
         bossrandomchosen()
-//        randomHitValue()
+
         hit()
         print()
         
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
         print("UIButton2 has been press")
         chosenOfPlayer = "scissors"
         bossrandomchosen()
-//        randomHitValue()
+
         hit()
         print()
     }
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
     @IBAction func UIButton3(_ sender: Any) {
         chosenOfPlayer = "stone"
         bossrandomchosen()
-//        randomHitValue()
+
         hit()
         print()
     }
@@ -117,6 +117,7 @@ class ViewController: UIViewController {
         winImage1.image = UIImage(named:"win.png")
         winImage2.image = UIImage(named:"win.png")
         
+        
         UIButton1.setImage(#imageLiteral(resourceName: "paper.png"), for: .normal)
         UIButton1.tintColor = UIColor.red
         
@@ -145,16 +146,17 @@ class ViewController: UIViewController {
                     print("player = paper, bose = stone , player win ")
                     joker.hp -= batman.hitvlaue
                     bossHpValue.text = String(joker.hp)
-//                    hitLabelFadeInOut()
-//                    self.bossHitLabel.alpha = 1
+                    bossHitLabelFadeInOut()
+
                 case "scissors":
                     print("player = paper , boss = scissors , boss WIN ")
                     batman.hp -= joker.hitvlaue
                     playerHpValue.text = String(batman.hp)
-//                    hitLabelFadeInOut()
-//                    self.playerHitLabel.alpha = 1
+                    playerHitLabelFadeInOut()
+
                 default:
                     print("平手")
+                safeLabelFadeInOut()
             }
         case "scissors"://player = scissors
             switch chosenOfBoss! {
@@ -162,12 +164,15 @@ class ViewController: UIViewController {
                 print("player = scissors, bose = paper , player win ")
                 joker.hp -= batman.hitvlaue
                 bossHpValue.text = String(joker.hp)
+                bossHitLabelFadeInOut()
             case "stone":
                 print("player = scissors , boss = stone , boss WIN ")
                 batman.hp -= joker.hitvlaue
                 playerHpValue.text = String(batman.hp)
+                playerHitLabelFadeInOut()
             default:
                 print("平手")
+                safeLabelFadeInOut()
             }
             default://player = stone
                 switch chosenOfBoss! {
@@ -175,12 +180,15 @@ class ViewController: UIViewController {
                     print("player = stone , boss = paper , player WIN ")
                     batman.hp -= joker.hitvlaue
                     playerHpValue.text = String(batman.hp)
+                    playerHitLabelFadeInOut()
                 case "scissors":
                     print("player = stone , boss = scissors , player WIN ")
                     joker.hp -= batman.hitvlaue
                     bossHpValue.text = String(joker.hp)
+                    bossHitLabelFadeInOut()
                 default:
                     print("平手")
+                    safeLabelFadeInOut()
             }
             }//endofthe switch
         }else if joker.hp <= 0{
@@ -248,15 +256,38 @@ class ViewController: UIViewController {
     
     
     
-//    func hitLabelFadeInOut() {
-//
-//        UIView.animate(withDuration: 0.5, animations: {
-//            self.bossHitLabel.alpha = 1
-//            })
-//
-//    }
+    func bossHitLabelFadeInOut() {
+        
+        UIView.animate(withDuration: 0.7, animations: {
+            self.bossHitLabel.alpha = 1
+        }) { (finish) in
+            UIView.animate(withDuration: 0.7, animations: {
+                self.bossHitLabel.alpha = 0
+            })
+        }
+    }//endofthe bossHitLabelFadInOut
+    
+    func playerHitLabelFadeInOut() {
+        
+        UIView.animate(withDuration: 0.7, animations: {
+            self.playerHitLabel.alpha = 1
+        }) { (finish) in
+            UIView.animate(withDuration: 0.7, animations: {
+                self.playerHitLabel.alpha = 0
+            })
+        }
+    }//endofthe playerHitLabelFadInOut
     
     
+    func safeLabelFadeInOut() {
+        UIView.animate(withDuration: 0.7, animations: {
+            self.safeLabel.alpha = 1
+        }) { (finish) in
+            UIView.animate(withDuration: 0.7, animations: {
+                self.safeLabel.alpha = 0
+            })
+    }
+    }//endofthe safeLabelFadInOut
    
     
 }//endofthe class
