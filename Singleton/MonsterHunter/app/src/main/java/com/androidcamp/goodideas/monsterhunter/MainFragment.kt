@@ -13,13 +13,6 @@ import com.androidcamp.goodideas.monsterhunter.MainModel.Boss
 import com.androidcamp.goodideas.monsterhunter.MainModel.Status
 import kotlinx.android.synthetic.main.fragment_main.*
 
-<<<<<<< HEAD
-=======
-import android.widget.Toast
-import com.androidcamp.goodideas.monsterhunter.MainModel.Boss
->>>>>>> 00a90fde759c279b5cfa3c511541c60e819e90c1
-import com.androidcamp.goodideas.monsterhunter.MainModel.Status
-import kotlinx.android.synthetic.main.fragment_main.*
 
 
 class MainFragment : Fragment() {
@@ -40,8 +33,7 @@ class MainFragment : Fragment() {
         super.onStart()
         Log.d("onStart", "hp:　${Status.hp}")
         Log.d("onStart", "mp:　${Status.mp}")
-        worr_hp.setText(Status.hp.toString())
-        worr_mp.setText(Status.mp.toString())
+        tv_money.setText(Status.money.toString())
 
         // init warrior's status
         Log.d("onStart", "hp:　${Status.hp}")
@@ -52,6 +44,8 @@ class MainFragment : Fragment() {
         ib_sword.setOnClickListener(object : View.OnClickListener {
             override fun onClick(p0: View?) {
                 Status.money += 200
+                tv_money.setText(Status.money.toString())
+
                 Boss.hp -= Status.attack
                 boss_hp.text=Boss.hp.toString()
                 if(Boss.hp==0){
@@ -60,7 +54,7 @@ class MainFragment : Fragment() {
             }
         })
         super.onStart()
-
+//
     }
 
     companion object {
