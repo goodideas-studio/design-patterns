@@ -14,31 +14,29 @@ class PackActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pack)
 
-        changeTotalCount()
-        initGridView()
     }
 
-    fun changeTotalCount() {
-        textView_pack_amount.setText(Package.size.toString())
-    }
-
-    fun initGridView() {
-        val adapter = ImageAdapter(this, Package)
-        gridView_pack_stuffList.adapter = adapter
-
-        gridView_pack_stuffList.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, index, long ->
-            Log.d("PackActivity", "clicked")
-            val builder = android.app.AlertDialog.Builder(this)
-            builder.setTitle("使用")
-                    .setMessage("確定要使用此道具?")
-                    .setPositiveButton("確定", DialogInterface.OnClickListener { dialogInterface, i ->
-                        Log.d("UseStuffDialog", "確認")
-                        Package.removeAt(index)
-                        adapter.notifyDataSetChanged()
-                        changeTotalCount()
-                    }).setNegativeButton("取消", DialogInterface.OnClickListener { dialogInterface, i ->  })
-                    .show()
-
-        }
-    }
+//    fun changeTotalCount() {
+//        textView_pack_amount.setText(Package.size.toString())
+//    }
+//
+//    fun initGridView() {
+//        val adapter = ImageAdapter(this, Package)
+//        gridView_pack_stuffList.adapter = adapter
+//
+//        gridView_pack_stuffList.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, index, long ->
+//            Log.d("PackActivity", "clicked")
+//            val builder = android.app.AlertDialog.Builder(this)
+//            builder.setTitle("使用")
+//                    .setMessage("確定要使用此道具?")
+//                    .setPositiveButton("確定", DialogInterface.OnClickListener { dialogInterface, i ->
+//                        Log.d("UseStuffDialog", "確認")
+//                        Package.removeAt(index)
+//                        adapter.notifyDataSetChanged()
+//                        changeTotalCount()
+//                    }).setNegativeButton("取消", DialogInterface.OnClickListener { dialogInterface, i ->  })
+//                    .show()
+//
+//        }
+//    }
 }
