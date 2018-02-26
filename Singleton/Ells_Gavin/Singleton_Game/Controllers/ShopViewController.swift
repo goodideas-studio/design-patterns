@@ -8,12 +8,34 @@
 
 import UIKit
 
-class ShopViewController: UIViewController {
-
+class ShopViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    var itemsInShop = [String]()
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return itemsInShop.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CellTypeTwo
+        
+        
+        return cell
+    }
+    
+    
+    @IBOutlet weak var shopItemCollection: UICollectionView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.shopItemCollection.delegate = self
+        self.shopItemCollection.dataSource = self
+       
+        
     }
 
     override func didReceiveMemoryWarning() {
