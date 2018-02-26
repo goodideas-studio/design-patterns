@@ -25,7 +25,7 @@ class ShopItemAdapter : BaseAdapter {
         var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         var shopView = inflator.inflate(R.layout.item_layout, null)
         shopView.itemImageView.setImageResource(shopItem.image!!)
-        shopView.textView.setText(shopItem.name)
+        shopView.textView.setText(shopItem.name+" "+shopItem.money)
         return shopView
     }
 

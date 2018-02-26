@@ -7,7 +7,7 @@ import com.androidcamp.goodideas.monsterhunter.R
  */
 object SingletonList : ArrayList<ShopItem>() {
     init {
-        this.add(ShopItem("sword1", R.drawable.sword, 50, 30,200))
+        this.add(ShopItem("sword1", R.drawable.sword, 50, 30,100))
         this.add(ShopItem("sword2", R.drawable.sword1, 100, 63,300))
         this.add(ShopItem("sword3", R.drawable.sword2, 96, 63,500))
         this.add(ShopItem("sword4", R.drawable.sword3, 56, 60,700))
