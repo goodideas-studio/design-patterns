@@ -1,6 +1,6 @@
 import Foundation
 
-struct Character {
+class Character {
   var ATK: Int
   var DEF: Int
   var HP: Int
