@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
+import com.androidcamp.goodideas.monsterhunter.MainModel.Status
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), PackFragment.OnFragmentInteractionListener {
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity(), PackFragment.OnFragmentInteractionList
 
     private val ib_sword_click = View.OnClickListener{
         bossHp = bossHp -10
-        status.money = status.money + 5
+        Status.money = Status.money + 5
 //        boss_hp.setText(bossHp.toString())
         Toast.makeText(this,"Boss lose 10 HP \n money add 5 coin", Toast.LENGTH_SHORT).show()
 //        tv_money.setText(status.money.toString())
@@ -53,9 +54,9 @@ class MainActivity : AppCompatActivity(), PackFragment.OnFragmentInteractionList
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        status.money = 100
-        status.hp = 100
-        status.mp = 100
+        Status.money = 100
+        Status.hp = 100
+        Status.mp = 100
 
 
 //        tv_money.setText(status.money.toString())
@@ -70,8 +71,3 @@ class MainActivity : AppCompatActivity(), PackFragment.OnFragmentInteractionList
     }
 }
 
-object status{
-    var money :Int = 0
-    var hp :Int = 0
-    var mp :Int = 0
-}
