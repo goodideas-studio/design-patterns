@@ -4,9 +4,12 @@ import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.androidcamp.goodideas.monsterhunter.MainModel.Status
+import kotlinx.android.synthetic.main.fragment_main.*
 
 
 class MainFragment : Fragment() {
@@ -20,6 +23,14 @@ class MainFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater!!.inflate(R.layout.fragment_main, container, false)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("onStart", "hp:　${Status.hp}")
+        Log.d("onStart", "mp:　${Status.mp}")
+        worr_hp.setText(Status.hp.toString())
+        worr_mp.setText(Status.mp.toString())
     }
 
     companion object {

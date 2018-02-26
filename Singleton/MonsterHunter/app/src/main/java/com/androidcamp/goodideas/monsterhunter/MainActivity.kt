@@ -10,10 +10,8 @@ import android.widget.Toast
 import com.androidcamp.goodideas.monsterhunter.MainModel.Status
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), PackFragment.OnFragmentInteractionListener {
-    override fun onFragmentInteraction(uri: Uri) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+class MainActivity : AppCompatActivity() {
+
 
     var bossHp = 10000
     var selectedFragment: Fragment = MainFragment()
