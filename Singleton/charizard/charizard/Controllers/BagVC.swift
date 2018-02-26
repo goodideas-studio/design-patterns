@@ -39,9 +39,14 @@ extension BagVC: UICollectionViewDelegate, UICollectionViewDataSource {
   }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    GameManager.current.player!.items[indexPath.row].apply(character: GameManager.current.character!)
-    GameManager.current.player!.items.remove(at: indexPath.row)
-    title = "\(GameManager.current.player!.items.count)"
-    collectionView.reloadData()
+    let alert = UIAlertController(title: "確定使用？", message: "價錢：\(GameManager.current.player!.items[indexPath.row].price)", preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+    alert.addAction(UIAlertAction(title: "確定", style: .default) { _ in
+      GameManager.current.player!.items[indexPath.row].apply(character: GameManager.current.character!)
+      GameManager.current.player!.items.remove(at: indexPath.row)
+      self.title = "\(GameManager.current.player!.items.count)"
+      collectionView.reloadData()
+    })
+    present(alert, animated: true, completion: nil)
   }
 }

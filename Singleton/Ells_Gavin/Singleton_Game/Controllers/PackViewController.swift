@@ -9,17 +9,50 @@
 import UIKit
 
 class PackViewController: UIViewController {
+    
+  var itemsInMyPack = [String]()
+    
+    
+  @IBOutlet weak var packItemsCollection: UICollectionView!
+    
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view, typically from a nib.
+    
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(moneyNotify),
+                                           name: .moneyDidSelect,
+                                           object: nil)
+  }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
 
 }
+
+
+// extension PackViewController to be delegate & datasrc of collectionView
+extension PackViewController: UICollectionViewDelegate {
+  
+}
+
+extension PackViewController: UICollectionViewDataSource {
+    
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+    return itemsInMyPack.count
+  }
+    
+    
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellOne", for: indexPath) as! CellInMyBackPack
+        
+    return cell
+  }
+    
+}
+
+
 
