@@ -19,6 +19,10 @@ class PackViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(moneyNotify),
+                                           name: .moneyDidSelect,
+                                           object: nil)
   }
 
   override func didReceiveMemoryWarning() {
@@ -31,7 +35,7 @@ class PackViewController: UIViewController {
 
 // extension PackViewController to be delegate & datasrc of collectionView
 extension PackViewController: UICollectionViewDelegate {
-    
+  
 }
 
 extension PackViewController: UICollectionViewDataSource {
