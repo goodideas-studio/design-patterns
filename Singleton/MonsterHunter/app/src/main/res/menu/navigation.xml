@@ -12,7 +12,7 @@
         android:title="Package" />
 
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_shop"
         android:icon="@drawable/shop"
         android:title="shop" />
 

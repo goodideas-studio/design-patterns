@@ -1,11 +1,9 @@
 package com.androidcamp.goodideas.monsterhunter
 
-import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
@@ -27,11 +25,9 @@ class MainActivity : AppCompatActivity(), PackFragment.OnFragmentInteractionList
             R.id.navigation_dashboard -> {
                 selectedFragment = PackFragment()
             }
-            R.id.navigation_notifications -> {
-                selectedFragment = PackFragment()
-                return@OnNavigationItemSelectedListener true
+            R.id.navigation_shop -> {
+                selectedFragment = ShopFragment()
             }
-
         }
         val transition = supportFragmentManager.beginTransaction()
         transition.replace(R.id.container, selectedFragment)
