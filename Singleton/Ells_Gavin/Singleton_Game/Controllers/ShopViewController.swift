@@ -8,21 +8,11 @@
 
 import UIKit
 
-class ShopViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class ShopViewController: UIViewController {
     
     var itemsInShop = [String]()
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return itemsInShop.count
-    }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CellTypeTwo
-        
-        
-        return cell
-    }
     
     
     @IBOutlet weak var shopItemCollection: UICollectionView!
@@ -42,16 +32,23 @@ class ShopViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+}
+
+extension ShopViewController: UICollectionViewDelegate {
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension ShopViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return itemsInShop.count
     }
-    */
-
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CellAtShop
+        
+        
+        return cell
+    }
 }

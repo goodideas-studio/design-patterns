@@ -8,19 +8,10 @@
 
 import UIKit
 
-class PackViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class PackViewController: UIViewController {
     
     var itemsInMyPack = [String]()
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return itemsInMyPack.count
-    }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellOne", for: indexPath) as! CellTypeOne
-        
-        return cell
-    }
     
 
 <<<<<<< Updated upstream
@@ -46,4 +37,26 @@ class PackViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
 
 }
+
+extension PackViewController: UICollectionViewDelegate {
+    
+}
+
+extension PackViewController: UICollectionViewDataSource {
+    
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+    return itemsInMyPack.count
+  }
+    
+    
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellOne", for: indexPath) as! CellInMyBackPack
+        
+    return cell
+  }
+    
+}
+
+
 

@@ -8,6 +8,12 @@
 
 import UIKit
 
-class CellTypeOne: UICollectionViewCell {
+class CellInMyBackPack: UICollectionViewCell {
+    
+    @IBOutlet weak var itemInPackPic: UIImageView!
+    
+    @IBOutlet weak var itemInPackAffectType: UILabel!
+    
+    @IBOutlet weak var itemInPackPowerVal: UILabel!
     
 }

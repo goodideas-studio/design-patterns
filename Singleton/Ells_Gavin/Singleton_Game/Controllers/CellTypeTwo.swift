@@ -8,6 +8,14 @@
 
 import UIKit
 
-class CellTypeTwo: UICollectionViewCell {
+class CellAtShop: UICollectionViewCell {
+    
+    @IBOutlet weak var itemInShopPic: UIImageView!
+    
+    @IBOutlet weak var itemInShopPrice: UILabel!
+    
+    @IBOutlet weak var itemInShopAffectType: UILabel!
+    
+    @IBOutlet weak var itemInShopPowerVal: UILabel!
     
 }
