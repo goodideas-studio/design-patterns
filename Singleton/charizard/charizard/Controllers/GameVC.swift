@@ -1,13 +1,6 @@
 import UIKit
 
-class RedWater: Item {
-  var name = "红药水"
-  var price = 20
 
-  func apply(character: Character) {
-    character.HP += 100000
-  }
-}
 
 class GameVC: UIViewController {
   @IBOutlet weak var HPLabel: UILabel!
@@ -25,7 +18,7 @@ class GameVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    GameManager.current.player = Player(balance: 1000, items: [RedWater()])
+    GameManager.current.player = Player(balance: 100, items: [])
     GameManager.current.character = Character(ATK: 10, DEF: 20, HP: 30, MP: 40)
   }
 

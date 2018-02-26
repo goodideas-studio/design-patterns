@@ -9,7 +9,15 @@ class BagVC: UIViewController {
     collectionView.delegate = self
     collectionView.dataSource = self
   }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+        title = "\(GameManager.current.player!.items.count)"
+    }
 }
+
+
 
 extension BagVC: UICollectionViewDelegate, UICollectionViewDataSource {
   func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -33,6 +41,7 @@ extension BagVC: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     GameManager.current.player!.items[indexPath.row].apply(character: GameManager.current.character!)
     GameManager.current.player!.items.remove(at: indexPath.row)
+    title = "\(GameManager.current.player!.items.count)"
     collectionView.reloadData()
   }
 }

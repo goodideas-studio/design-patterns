@@ -8,46 +8,52 @@
 
 import UIKit
 
-class RedWater:Item{
-    
-    var name: String
-    
-    var price: Int
-    
-    init(name:String, price:Int) {
-        self.name = name
-        self.price = price
-    }
-    
-    func apply(character: Character) {
-        character.HP += 10
-    }
-    
-}
-
-class BlueWater:Item{
-    var name: String
-    
-    var price: Int
-    
-    init(name:String, price:Int) {
-        self.name = name
-        self.price = price
-    }
-    
-    func apply(character: Character) {
-        character.MP += 5
-    }
-    
-}
+//class RedWater:Item{
+//    
+//    var name: String
+//    
+//    var price: Int
+//    
+//    init(name:String, price:Int) {
+//        self.name = name
+//        self.price = price
+//    }
+//    
+//    func apply(character: Character) {
+//        character.HP += 10
+//    }
+//    
+//}
+//
+//class BlueWater:Item{
+//    var name: String
+//    
+//    var price: Int
+//    
+//    init(name:String, price:Int) {
+//        self.name = name
+//        self.price = price
+//    }
+//    
+//    func apply(character: Character) {
+//        character.MP += 5
+//    }
+//    
+//}
 
 class ShopVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    
-    let redWater = RedWater(name: "紅藥水", price: 100)
-    let blueWater = BlueWater(name: "藍藥水", price: 50)
-    
-    var shoppingItems = [Item]()
+    var shoppingItems: [Item] = [
+        RedWater(name: "紅藥水", price: 100),
+        RedWater(name: "紅藥水", price: 100),
+        RedWater(name: "紅藥水", price: 100),
+        RedWater(name: "紅藥水", price: 100),
+        BlueWater(name: "藍藥水", price: 50),
+        BlueWater(name: "藍藥水", price: 50),
+        BlueWater(name: "藍藥水", price: 50),
+        BlueWater(name: "藍藥水", price: 50),
+        BlueWater(name: "藍藥水", price: 50)
+    ]
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return shoppingItems.count
@@ -63,9 +69,18 @@ class ShopVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        GameManager.current.player?.items.append(shoppingItems[indexPath.row])
-        shoppingItems.remove(at: indexPath.row)
-        shoppingItemCollectionView.reloadData()
+        if GameManager.current.player!.balance >= shoppingItems[indexPath.row].price {
+            GameManager.current.player?.items.append(shoppingItems[indexPath.row])
+            GameManager.current.player?.balance -= shoppingItems[indexPath.row].price
+            title = "\(GameManager.current.player!.balance)"
+            shoppingItems.remove(at: indexPath.row)
+            shoppingItemCollectionView.reloadData()
+        } else {
+            let alert = UIAlertController(title: "不夠錢買", message: "請努力賺錢", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        }
     }
     
 
@@ -74,20 +89,14 @@ class ShopVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        shoppingItems.append(redWater)
-        shoppingItems.append(redWater)
-        shoppingItems.append(redWater)
-        shoppingItems.append(redWater)
-        shoppingItems.append(redWater)
-        shoppingItems.append(redWater)
-        shoppingItems.append(blueWater)
-        shoppingItems.append(blueWater)
-        shoppingItems.append(blueWater)
-        shoppingItems.append(blueWater)
-        
         shoppingItemCollectionView.delegate = self
         shoppingItemCollectionView.dataSource = self
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        title = "\(GameManager.current.player!.balance)"
     }
 
     override func didReceiveMemoryWarning() {
