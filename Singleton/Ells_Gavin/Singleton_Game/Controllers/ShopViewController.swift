@@ -9,15 +9,11 @@
 import UIKit
 
 class ShopViewController: UIViewController {
-    
     var itemsInShop = [String]()
-    
-    
-    
     
     @IBOutlet weak var shopItemCollection: UICollectionView!
     
-    
+    @IBOutlet weak var moneyRemaining: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +22,8 @@ class ShopViewController: UIViewController {
         self.shopItemCollection.dataSource = self
        
         
+        NotificationCenter.default.addObserver(self, selector: #selector(moneyRemainedInWallet(notification:)), name: .moneyDidSelect, object: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +31,16 @@ class ShopViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func moneyRemainedInWallet(notification: NSNotification) {
+    NotificationCenter.default.post(name: .moneyDidSelect, object: moneyRemaining.text)
+        
+        var data = notification.object as! String
+          moneyRemaining.text = data
+    }
 }
+
+
+
 
 extension ShopViewController: UICollectionViewDelegate {
     

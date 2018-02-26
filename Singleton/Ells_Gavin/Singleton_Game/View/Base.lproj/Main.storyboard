@@ -356,6 +356,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="0zw-bg-6ET"/>
                     <connections>
+                        <outlet property="moneyRemaining" destination="aKG-cV-nMi" id="cdz-lf-EXs"/>
                         <outlet property="shopItemCollection" destination="TwR-KY-8s6" id="634-fb-ohr"/>
                     </connections>
                 </viewController>
