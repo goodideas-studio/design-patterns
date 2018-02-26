@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity(), PackFragment.OnFragmentInteractionList
 
 //        tv_money.setText(status.money.toString())
 //
-//        ib_sword.setOnClickListener(ib_sword_click)
+  //      ib_sword.setOnClickListener(ib_sword_click)
 
         val transition = supportFragmentManager.beginTransaction()
         transition.replace(R.id.container, selectedFragment)

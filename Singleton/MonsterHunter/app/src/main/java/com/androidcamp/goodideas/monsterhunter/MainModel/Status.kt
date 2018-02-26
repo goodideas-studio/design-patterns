@@ -7,4 +7,5 @@ object Status{
     var money :Int = 0
     var hp :Int = 0
     var mp :Int = 0
+    var attack:Int=100
 }
