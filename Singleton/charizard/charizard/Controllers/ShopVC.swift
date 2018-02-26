@@ -8,38 +8,9 @@
 
 import UIKit
 
-//class RedWater:Item{
-//    
-//    var name: String
-//    
-//    var price: Int
-//    
-//    init(name:String, price:Int) {
-//        self.name = name
-//        self.price = price
-//    }
-//    
-//    func apply(character: Character) {
-//        character.HP += 10
-//    }
-//    
-//}
-//
-//class BlueWater:Item{
-//    var name: String
-//    
-//    var price: Int
-//    
-//    init(name:String, price:Int) {
-//        self.name = name
-//        self.price = price
-//    }
-//    
-//    func apply(character: Character) {
-//        character.MP += 5
-//    }
-//    
-//}
+let bottonPostKey = "charizard.tabbar.updateShoppingVCUI"
+
+let didTappedShoppingItemKey = "charizard.tabbar.updateBagVCUI"
 
 class ShopVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -69,18 +40,29 @@ class ShopVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if GameManager.current.player!.balance >= shoppingItems[indexPath.row].price {
-            GameManager.current.player?.items.append(shoppingItems[indexPath.row])
-            GameManager.current.player?.balance -= shoppingItems[indexPath.row].price
-            title = "\(GameManager.current.player!.balance)"
-            shoppingItems.remove(at: indexPath.row)
-            shoppingItemCollectionView.reloadData()
-        } else {
+        
+        if  GameManager.current.player!.balance < self.shoppingItems[indexPath.row].price{
             let alert = UIAlertController(title: "不夠錢買", message: "請努力賺錢", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alert.addAction(action)
-            present(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
         }
+        
+        let ensurePurchaseAlert = UIAlertController(title: "確認購買\(shoppingItems[indexPath.row].name)?", message: "確認購買\(shoppingItems[indexPath.row].name)?", preferredStyle: .alert)
+        let ensurePurchaseAction = UIAlertAction(title: "購買", style: .default) { (action) in
+            if GameManager.current.player!.balance >= self.shoppingItems[indexPath.row].price {
+                GameManager.current.player?.items.append(self.shoppingItems[indexPath.row])
+                GameManager.current.player?.balance -= self.shoppingItems[indexPath.row].price
+                self.title = "\(GameManager.current.player!.balance)"
+                self.shoppingItems.remove(at: indexPath.row)
+                self.shoppingItemCollectionView.reloadData()
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue:didTappedShoppingItemKey), object: nil)
+            }
+        }
+        let cancelPurchaseAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        ensurePurchaseAlert.addAction(ensurePurchaseAction)
+        ensurePurchaseAlert.addAction(cancelPurchaseAction)
+        present(ensurePurchaseAlert, animated: true, completion: nil)
     }
     
 
@@ -88,7 +70,7 @@ class ShopVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: NSNotification.Name(rawValue: bottonPostKey), object: nil)
         shoppingItemCollectionView.delegate = self
         shoppingItemCollectionView.dataSource = self
         // Do any additional setup after loading the view.
@@ -99,9 +81,14 @@ class ShopVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         title = "\(GameManager.current.player!.balance)"
     }
 
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func updateUI(){
+        title = "\(GameManager.current.player!.balance)"
     }
     
 

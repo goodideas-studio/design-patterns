@@ -6,6 +6,8 @@ class BagVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: NSNotification.Name(rawValue: didTappedShoppingItemKey), object: nil)
+    
     collectionView.delegate = self
     collectionView.dataSource = self
   }
@@ -49,4 +51,10 @@ extension BagVC: UICollectionViewDelegate, UICollectionViewDataSource {
     })
     present(alert, animated: true, completion: nil)
   }
+    
+  
+    @objc func updateUI(){
+        title = "\(GameManager.current.player!.items.count)"
+    }
+    
 }
