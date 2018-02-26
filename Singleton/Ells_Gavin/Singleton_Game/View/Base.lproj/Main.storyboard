@@ -243,7 +243,7 @@
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="packItemsCollection" destination="E1L-Ct-ocS" id="19Y-nf-eNg"/>
-                        <outlet property="totalAsset" destination="DvJ-Ma-s9r" id="Hc5-eZ-YUL"/>
+                        <outlet property="totalAsset" destination="DvJ-Ma-s9r" id="Evv-fo-wAM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

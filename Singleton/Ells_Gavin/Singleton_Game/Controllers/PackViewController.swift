@@ -11,8 +11,10 @@ import UIKit
 class PackViewController: UIViewController {
     
   var itemsInMyPack = [String]()
+  var receiveData: String!
     
     
+  @IBOutlet weak var totalAsset: UILabel!
   @IBOutlet weak var packItemsCollection: UICollectionView!
     
   override func viewDidLoad() {
@@ -30,6 +32,11 @@ class PackViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 
+  @IBAction func moneyNotify(notification: NSNotification) {
+    receiveData = notification.object as! String
+    totalAsset.text = receiveData
+  }
+  
 }
 
 
