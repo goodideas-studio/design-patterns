@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D254D2C2043F38D0063C5F3 /* BagItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D254D2B2043F38D0063C5F3 /* BagItemCollectionViewCell.swift */; };
 		69D6029900B80C9C22E709AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D6061C4B2236065F7B12F8 /* ViewController.swift */; };
 		69D6040D08EB1ECD42BACE21 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D602B825F33B89121BF624 /* Player.swift */; };
 		69D6047FC0423032E35AF938 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D60D56792DE09873F39A36 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D254D2B2043F38D0063C5F3 /* BagItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		69D600B4037962ABB68F0554 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69D602B825F33B89121BF624 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		69D602E6BE3CFA0E4F3DBC53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				D6395C9C2043EC3200F4185C /* Controllers */,
 				69D6061C4B2236065F7B12F8 /* ViewController.swift */,
 				69D60631B4FDB0296640DD4B /* Model */,
+				2D254D2B2043F38D0063C5F3 /* BagItemCollectionViewCell.swift */,
 			);
 			path = charizard;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				D6395C992043EC1E00F4185C /* BagVC.swift in Sources */,
 				69D6029900B80C9C22E709AD /* ViewController.swift in Sources */,
 				69D6040D08EB1ECD42BACE21 /* Player.swift in Sources */,
+				2D254D2C2043F38D0063C5F3 /* BagItemCollectionViewCell.swift in Sources */,
 				D6395C9B2043EC2B00F4185C /* ShopVC.swift in Sources */,
 				69D6087FC38E330C16716ABC /* Item.swift in Sources */,
 				D6395C972043EC1100F4185C /* GameVC.swift in Sources */,

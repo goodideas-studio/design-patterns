@@ -1,35 +1,38 @@
-//
-//  BagVC.swift
-//  charizard
-//
-//  Created by EthanLin on 2018/2/26.
-//  Copyright © 2018年 EthanLin. All rights reserved.
-//
-
 import UIKit
 
 class BagVC: UIViewController {
+  @IBOutlet weak var collectionView: UICollectionView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    collectionView.delegate = self
+    collectionView.dataSource = self
+  }
+}
+
+extension BagVC: UICollectionViewDelegate, UICollectionViewDataSource {
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
+    return 1
+  }
+
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return GameManager.current.player!.items.count
+  }
+
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? BagItemCollectionViewCell else {
+      fatalError()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+    cell.nameLabel.text = GameManager.current.player!.items[indexPath.row].name
 
-    /*
-    // MARK: - Navigation
+    return cell
+  }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    GameManager.current.player!.items[indexPath.row].apply(character: GameManager.current.character!)
+    GameManager.current.player!.items.remove(at: indexPath.row)
+    collectionView.reloadData()
+  }
 }
