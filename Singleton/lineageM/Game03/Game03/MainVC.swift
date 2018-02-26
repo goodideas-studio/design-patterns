@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainVC: UIViewController {
+class MainVC: UIViewController, useItemDelegate {
     
     @IBOutlet var ATKLabel: UILabel!
     @IBOutlet var DEFLabel: UILabel!
@@ -18,11 +18,48 @@ class MainVC: UIViewController {
     
     @IBAction func earnMoneyButton(_ sender: Any) {
         Money.current.earnFiveMoney()
-        moneyLabel.text = "$ \(Money.current.moneyNumber)"
+        player.HP -= 5
+        HPLabel.text = "HP: \(player.HP)"
+        moneyLabel.text = "$: \(Money.current.moneyNumber)"
+    }
+    
+    let player = Character(HP: 180, maxHP: 180, MP: 30, maxMP: 30, ATK: 10, DEF: 20)
+    
+    func useItem(itemName: String) {
+        switch itemName {
+        case "red_potion":
+            player.HP = min(player.maxHP, player.HP + 10)
+            HPLabel.text = "HP: \(player.HP)"
+        case "orange_potion":
+            player.HP = min(player.maxHP, player.HP + 20)
+            HPLabel.text = "HP \(player.HP)"
+        case "clear_potion":
+            player.HP = min(player.maxHP, player.HP + 30)
+            HPLabel.text = "HP \(player.HP)"
+        case "ancient_red_potion":
+            player.HP = min(player.maxHP, player.HP + 15)
+            HPLabel.text = "HP \(player.HP)"
+        case "ancient_orange_potion":
+            player.HP = min(player.maxHP, player.HP + 30)
+            HPLabel.text = "HP \(player.HP)"
+        case "ancient_clear_potion":
+            player.HP = min(player.maxHP, player.HP + 45)
+            HPLabel.text = "HP \(player.HP)"
+        case "atk_potion":
+            player.ATK += 5
+            ATKLabel.text = "ATK: \(player.ATK)"
+        case "def_potion":
+            player.DEF += 5
+            DEFLabel.text = "DEF: \(player.DEF)"
+        default:
+            break
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let player = Character(HP: 180, maxHP: 180, MP: 30, maxMP: 30, ATK: 10, DEF: 20)
+        let backpackVC = tabBarController?.viewControllers![1] as! PacketVC
+        backpackVC.delegate = self
+        
         ATKLabel.text = "ATK: \(player.ATK)"
         DEFLabel.text = "DEF: \(player.DEF)"
         HPLabel.text = "HP: \(player.HP)"
