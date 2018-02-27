@@ -18,7 +18,7 @@ class Character {
     var atk = 100
     var def = 50
     
-    var dollars:Int?
+    var dollars = 0
     var itemArray = [String]()
     
     private init() {

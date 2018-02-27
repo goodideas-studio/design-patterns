@@ -11,17 +11,19 @@ import UIKit
 
 class PackViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
-
+    var player:Character!
+    
     @IBOutlet weak var packLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var itemCount: UILabel!
     @IBOutlet weak var packColletionView: UICollectionView!
     
     // Pack 數組，接收商店購買物品
-    var ItemInPack = [String]()
+    var ItemInPack:[Item] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Loading PackView")
         
         packLayout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
         packLayout.itemSize = CGSize(width: 150 , height: 150)
@@ -33,8 +35,12 @@ class PackViewController: UIViewController,UICollectionViewDelegate,UICollection
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        print(ItemInPack)
+        if ItemInPack.isEmpty == true {
+            self.itemCount.text = "沒有物品"
+        } else {
+            self.packColletionView.reloadData()
+            self.itemCount.text = "ItemCount:\(ItemInPack.count)"
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,7 +59,7 @@ class PackViewController: UIViewController,UICollectionViewDelegate,UICollection
         
         let packButton = UIButton(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
         packButton.tag = indexPath.row
-        packButton.setImage(UIImage(named: ItemInPack[indexPath.row]), for: .normal)
+        packButton.setImage(UIImage(named: ItemInPack[indexPath.row].itemName), for: .normal)
         packButton.addTarget(self, action: #selector(showPackAlert), for: UIControlEvents.touchUpInside)
         
         cell.addSubview(packButton)
@@ -63,24 +69,41 @@ class PackViewController: UIViewController,UICollectionViewDelegate,UICollection
     
     @objc func showPackAlert(sender:UIButton) -> String{
 
-        let packAlert = UIAlertController(title: "Check", message: "確認要使用？", preferredStyle: UIAlertControllerStyle.alert)
+        let packAlert = UIAlertController(title: "Check", message: "確定要使用\(self.ItemInPack[sender.tag].itemName)嗎？", preferredStyle: UIAlertControllerStyle.alert)
 
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) { (finish) in
             print("取消使用")
 
         }
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (finish) in
-            print("確認使用")
-
+            print("確定要使用\(self.ItemInPack[sender.tag].itemName)嗎？")
+            
+            
+            self.useItem(item: self.ItemInPack[sender.tag])
+            
             self.ItemInPack.remove(at: sender.tag)
-            self.packColletionView.reloadData()
+            
+            if self.ItemInPack.isEmpty == true {
+                self.itemCount.text = "沒有物品"
+                self.packColletionView.reloadData()
+            } else {
+                self.packColletionView.reloadData()
+                self.itemCount.text = "ItemCount:\(self.ItemInPack.count)"
+            }
         }
         packAlert.addAction(cancelAction)
         packAlert.addAction(okAction)
 
         self.present(packAlert, animated: true, completion: nil)
-        return ItemInPack[sender.tag]
+        return ItemInPack[sender.tag].itemName
 
+    }
+    
+    func useItem(item:Item) {
+        Character.shared.hp += item.hp
+        Character.shared.mp += item.mp
+        Character.shared.atk += item.atk
+        Character.shared.def += item.def
     }
 
 }
