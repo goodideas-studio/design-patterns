@@ -24,7 +24,7 @@ class GameVC: UIViewController {
     }
     
     
-    GameManager.current.player = Player(balance: 100, items: [])
+    GameManager.current.player = Player(balance: 2000, items: [])
     GameManager.current.character = Character(ATK: 10, DEF: 20, HP: 30, MP: 40)
   }
 

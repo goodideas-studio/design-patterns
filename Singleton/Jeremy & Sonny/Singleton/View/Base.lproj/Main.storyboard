@@ -162,6 +162,9 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pack" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="itemCount" destination="jEQ-OS-T12" id="5w7-tk-gbQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,7 +198,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iji-k5-4Vw">
                                 <rect key="frame" x="0.0" y="70" width="375" height="548"/>
                                 <connections>
-                                    <segue destination="q8n-VC-h0i" kind="embed" id="fA1-hg-sG5"/>
+                                    <segue destination="q8n-VC-h0i" kind="embed" identifier="gotoShop" id="fA1-hg-sG5"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -215,7 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4HI-ve-uvZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="741.60000000000002" y="1073.6131934032985"/>
+            <point key="canvasLocation" x="721" y="1162"/>
         </scene>
         <!--Shop Collection View Controller-->
         <scene sceneID="zhY-pj-SPl">
@@ -269,7 +272,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jHe-fK-x6m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1568.8" y="1072.263868065967"/>
+            <point key="canvasLocation" x="1673" y="1161"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

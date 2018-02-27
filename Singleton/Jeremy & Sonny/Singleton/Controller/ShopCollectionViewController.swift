@@ -11,13 +11,15 @@ import UIKit
 private let reuseIdentifier = "Cell"
 let shop = Shop()
 
+protocol ShopItemDelegate {
+    func getItem(itemName:String)
+}
 
 class ShopCollectionViewController: UICollectionViewController {
-    
-
-    
 
     let fullsize = UIScreen.main.bounds.size
+    var itemDelegate:ShopItemDelegate?
+    
     
     
     @IBOutlet var myCollectionView: UICollectionView!
@@ -81,11 +83,13 @@ class ShopCollectionViewController: UICollectionViewController {
         }
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (finish) in
             print("確認購買")
+            self.itemDelegate?.getItem(itemName: shop.shopItem[sender.tag])
+            print(shop.shopItem[sender.tag])
             shop.shopItem.remove(at: sender.tag)
             self.myCollectionView.reloadData()
             
-            let notificationName = Notification.Name("BuyItem")
-            NotificationCenter.default.post(name: notificationName, object:nil , userInfo: nil)
+//            let notificationName = Notification.Name("BuyItem")
+//            NotificationCenter.default.post(name: notificationName, object:nil , userInfo: nil)
             
         }
         
@@ -93,6 +97,8 @@ class ShopCollectionViewController: UICollectionViewController {
         shopAlert.addAction(okAction)
         
         self.present(shopAlert, animated: true, completion: nil)
+        
+
         
         return shop.shopItem[sender.tag]
     }

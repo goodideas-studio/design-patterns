@@ -14,6 +14,9 @@ let didTappedShoppingItemKey = "charizard.tabbar.updateBagVCUI"
 
 class ShopVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    
+    @IBOutlet weak var reminderLabel: UILabel!
+    
     var shoppingItems: [Item] = [
         RedWater(name: "紅藥水", price: 100),
         RedWater(name: "紅藥水", price: 100),
@@ -56,6 +59,10 @@ class ShopVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
                 self.title = "\(GameManager.current.player!.balance)"
                 self.shoppingItems.remove(at: indexPath.row)
                 self.shoppingItemCollectionView.reloadData()
+                if self.shoppingItems.isEmpty{
+                    self.shoppingItemCollectionView.isHidden = true
+                    self.reminderLabel.text = "沒貨了喔"
+                }
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue:didTappedShoppingItemKey), object: nil)
             }
         }
@@ -79,6 +86,11 @@ class ShopVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         title = "\(GameManager.current.player!.balance)"
+        if self.shoppingItems.isEmpty{
+            shoppingItemCollectionView.isHidden = true
+            reminderLabel.text = "沒貨了喔"
+            
+        }
     }
 
 

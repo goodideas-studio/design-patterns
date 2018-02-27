@@ -8,7 +8,17 @@
 
 import UIKit
 
-class PackViewController: UIViewController {
+
+class PackViewController: UIViewController, ShopItemDelegate {
+    
+    @IBOutlet weak var itemCount: UILabel!
+    
+    func getItem(itemName: String) {
+        
+        print("getItem")
+        itemCount.text = itemName
+    }
+    
 
     
     var addItemFromShop:String?
@@ -18,8 +28,9 @@ class PackViewController: UIViewController {
 
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
+        super.viewDidLoad()
+       
     }
     
     override func viewDidAppear(_ animated: Bool) {
