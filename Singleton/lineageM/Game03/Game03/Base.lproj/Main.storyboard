@@ -43,13 +43,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qU8-TE-ugu">
-                                <rect key="frame" x="377.66666666666669" y="51" width="26.333333333333314" height="24"/>
+                                <rect key="frame" x="296" y="51" width="80" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="D74-Zi-jip"/>
+                                    <constraint firstAttribute="height" constant="24" id="ktf-77-n4e"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvx-pW-BqL">
-                                <rect key="frame" x="377.66666666666669" y="80" width="29" height="24"/>
+                                <rect key="frame" x="296" y="80" width="29" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -79,6 +83,13 @@
                                     <action selector="earnMoneyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wlg-Oq-YZh"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkD-zU-OSy">
+                                <rect key="frame" x="157" y="168" width="100" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -96,11 +107,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GV8-ye-nh2" secondAttribute="bottom" id="cNB-Gl-y3Q"/>
                             <constraint firstItem="fp5-Ie-llY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gq2-Yi-fo1"/>
                             <constraint firstItem="tJM-JB-Xu6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="h1J-qV-H8L"/>
+                            <constraint firstItem="qU8-TE-ugu" firstAttribute="leading" secondItem="yJj-61-FjM" secondAttribute="trailing" constant="250" id="jLO-vK-QmS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tJM-JB-Xu6" secondAttribute="trailing" id="ni4-09-ma3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dP6-yb-NMe" secondAttribute="trailing" id="rHP-Ma-AKQ"/>
                             <constraint firstItem="GV8-ye-nh2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="u2O-Zg-MNS"/>
                             <constraint firstItem="tJM-JB-Xu6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wjG-G0-YkP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qU8-TE-ugu" secondAttribute="trailing" constant="10" id="zTu-YK-KH6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -110,12 +121,14 @@
                         <outlet property="DEFLabel" destination="TWl-ci-nac" id="7vH-fR-aPg"/>
                         <outlet property="HPLabel" destination="qU8-TE-ugu" id="7F0-Mp-O98"/>
                         <outlet property="MPLabel" destination="Jvx-pW-BqL" id="0KD-O5-Phi"/>
+                        <outlet property="characterImageView" destination="GV8-ye-nh2" id="Per-NU-zOn"/>
+                        <outlet property="damageLabel" destination="hkD-zU-OSy" id="Nw7-BW-emK"/>
                         <outlet property="moneyLabel" destination="fp5-Ie-llY" id="dbO-l4-pPa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1651" y="576"/>
+            <point key="canvasLocation" x="-1652.1739130434785" y="575.54347826086962"/>
         </scene>
         <!--Backpack-->
         <scene sceneID="gJL-Ls-ZZZ">
@@ -204,6 +217,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="N6P-Cu-S3j" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gpM-71-mSj">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

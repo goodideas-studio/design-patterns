@@ -35,14 +35,16 @@ class PacketVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let alert = UIAlertController(title: "使用道具", message: "確定使用？", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "好", style: UIAlertActionStyle.default, handler: { _ in
+        let alert = UIAlertController(title: "使用道具", message: "確定使用\(Backpack.current.backpackItems[indexPath.row])？", preferredStyle: .alert)
+        alert.addAction(
+            UIAlertAction(title: "好", style: UIAlertActionStyle.default, handler: { _ in
             self.delegate?.useItem(itemName: Backpack.current.backpackItems[indexPath.row])
             //print(indexPath)
             Backpack.current.useItems(itemLocation: indexPath.row)
             self.itemNumbersLabel.text = "Item: \(Backpack.current.backpackItems.count) 個"
             self.backpackCollectionView.reloadData()
         }))
+        
         alert.addAction(UIAlertAction(title: "取消", style: UIAlertActionStyle.default, handler: { _ in
         }))
         present(alert, animated: true)

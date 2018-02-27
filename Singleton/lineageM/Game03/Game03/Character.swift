@@ -29,7 +29,7 @@ class Character {
 
 class Backpack {
     static let current = Backpack()
-    var backpackItems = [String]() //["red_potion", "orange_potion", "atk_potion", "def_potion"]
+    var backpackItems = ["red_potion", "orange_potion", "atk_potion", "def_potion"]//[String]() //["red_potion", "orange_potion", "atk_potion", "def_potion"]
     
     private init() { }
     
