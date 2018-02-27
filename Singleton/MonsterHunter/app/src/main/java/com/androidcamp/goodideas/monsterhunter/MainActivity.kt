@@ -1,6 +1,5 @@
 package com.androidcamp.goodideas.monsterhunter
 
-import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
@@ -8,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
 import com.androidcamp.goodideas.monsterhunter.MainModel.Status
+import com.androidcamp.goodideas.monsterhunter.PackageView.PackFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

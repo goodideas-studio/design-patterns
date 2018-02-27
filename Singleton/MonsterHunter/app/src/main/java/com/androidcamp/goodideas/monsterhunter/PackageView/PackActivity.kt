@@ -1,12 +1,8 @@
-package com.androidcamp.goodideas.monsterhunter
+package com.androidcamp.goodideas.monsterhunter.PackageView
 
-import android.content.DialogInterface
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.app.AlertDialog
-import android.util.Log
-import android.widget.AdapterView
-import kotlinx.android.synthetic.main.activity_pack.*
+import com.androidcamp.goodideas.monsterhunter.R
 
 class PackActivity : AppCompatActivity() {
 
@@ -21,7 +17,7 @@ class PackActivity : AppCompatActivity() {
 //    }
 //
 //    fun initGridView() {
-//        val adapter = ImageAdapter(this, Package)
+//        val adapter = StuffAdapter(this, Package)
 //        gridView_pack_stuffList.adapter = adapter
 //
 //        gridView_pack_stuffList.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, index, long ->

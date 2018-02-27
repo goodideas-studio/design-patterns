@@ -31,7 +31,7 @@ class ShopFragment : Fragment() {
                  Status.money-=shopItem.money!!
                     SingletonList.removeAt(removeIndex)
                     gridView.invalidateViews()
-                    Package.add(Stuff(shopItem.name!!,shopItem.hp!!,shopItem.mp!!))
+                    Package.add(Stuff(shopItem.name!!,shopItem.image!!, shopItem.hp!!,shopItem.mp!!))
                     textView_money.text=Status.money.toString()
                 }else if(Status.money<shopItem.money!!){
                     Toast.makeText(this@ShopFragment.context,"You don't have enouth money",Toast.LENGTH_SHORT).show()

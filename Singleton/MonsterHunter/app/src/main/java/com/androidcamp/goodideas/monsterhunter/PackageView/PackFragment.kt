@@ -1,8 +1,7 @@
-package com.androidcamp.goodideas.monsterhunter
+package com.androidcamp.goodideas.monsterhunter.PackageView
 
 import android.content.Context
 import android.content.DialogInterface
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.util.Log
@@ -12,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import com.androidcamp.goodideas.monsterhunter.MainModel.Status
 import com.androidcamp.goodideas.monsterhunter.PackageModel.Package
+import com.androidcamp.goodideas.monsterhunter.R
 import kotlinx.android.synthetic.main.fragment_pack.*
 
 class PackFragment : Fragment() {
@@ -60,7 +60,7 @@ class PackFragment : Fragment() {
     }
 
     fun initGridView() {
-        val adapter = ImageAdapter(activity, Package)
+        val adapter = StuffAdapter(activity, Package)
         gridView_pack_stuffList.adapter = adapter
 
         gridView_pack_stuffList.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, index, long ->
@@ -77,7 +77,6 @@ class PackFragment : Fragment() {
                         changeTotalCount()  // Stuff's count
                     }).setNegativeButton("取消", DialogInterface.OnClickListener { dialogInterface, i ->  })
                     .show()
-
         }
     }
 
