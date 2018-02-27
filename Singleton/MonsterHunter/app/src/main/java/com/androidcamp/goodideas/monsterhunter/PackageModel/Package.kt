@@ -1,4 +1,4 @@
-package com.androidcamp.goodideas.monsterhunter
+package com.androidcamp.goodideas.monsterhunter.PackageModel
 
 /**
  * Created by York on 2018/2/26.
@@ -13,5 +13,9 @@ object Package: ArrayList<Stuff>() {
         this.add(Stuff("sword6", 50, 60))
         this.add(Stuff("sword7", 50, 60))
         this.add(Stuff("sword8", 50, 60))
+    }
+    override fun add(stuff: Stuff): Boolean {
+        super.add(stuff)
+        return true
     }
 }

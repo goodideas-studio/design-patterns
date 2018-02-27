@@ -10,36 +10,39 @@ import UIKit
 
 class PackViewController: UIViewController {
     
-    var itemsInMyPack = [String]()
+  var itemsInMyPack = [String]()
+  var receiveData: String!
     
     
-
-<<<<<<< Updated upstream
-    @IBOutlet weak var packItemsCollection: UICollectionView!
+  @IBOutlet weak var totalAsset: UILabel!
+  @IBOutlet weak var packItemsCollection: UICollectionView!
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-=======
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(moneyNotify),
+                                           name: .moneyDidSelect,
+                                           object: nil)
   }
->>>>>>> Stashed changes
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
 
-
+  @IBAction func moneyNotify(notification: NSNotification) {
+    receiveData = notification.object as! String
+    totalAsset.text = receiveData
+  }
+  
 }
 
+
+// extension PackViewController to be delegate & datasrc of collectionView
 extension PackViewController: UICollectionViewDelegate {
-    
+  
 }
 
 extension PackViewController: UICollectionViewDataSource {

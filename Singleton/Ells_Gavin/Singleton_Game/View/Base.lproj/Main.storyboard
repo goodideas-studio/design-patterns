@@ -39,6 +39,9 @@
                                 <state key="normal" title="Give me money!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="giveMeMoney:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Gil-n7-HJr"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hp:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIm-bW-NcM">
                                 <rect key="frame" x="59" y="63" width="42" height="21"/>
@@ -115,6 +118,9 @@
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="totalAssetLabel" destination="CcU-KK-kuh" id="fL2-xT-JjR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -237,6 +243,7 @@
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="packItemsCollection" destination="E1L-Ct-ocS" id="19Y-nf-eNg"/>
+                        <outlet property="totalAsset" destination="DvJ-Ma-s9r" id="Evv-fo-wAM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -349,6 +356,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="0zw-bg-6ET"/>
                     <connections>
+                        <outlet property="moneyRemaining" destination="aKG-cV-nMi" id="cdz-lf-EXs"/>
                         <outlet property="shopItemCollection" destination="TwR-KY-8s6" id="634-fb-ohr"/>
                     </connections>
                 </viewController>
