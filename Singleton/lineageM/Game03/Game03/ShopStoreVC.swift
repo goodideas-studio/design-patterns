@@ -27,7 +27,6 @@ class ShopStoreVC: UIViewController, UICollectionViewDataSource, UISearchControl
         return cell
     }
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         

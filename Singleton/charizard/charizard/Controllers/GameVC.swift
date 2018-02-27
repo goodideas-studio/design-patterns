@@ -12,24 +12,30 @@ class GameVC: UIViewController {
     
   @IBAction func didTouchUpWeapon(_ sender: Any) {
     GameManager.current.player!.balance += 5
-    balanceLabel.text = "\(GameManager.current.player!.balance)"
+    balanceLabel.text = "$:\(GameManager.current.player!.balance)"
+    NotificationCenter.default.post(name: NSNotification.Name(rawValue:bottonPostKey), object: nil)
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    GameManager.current.player = Player(balance: 100, items: [])
+    for viewController in (self.tabBarController?.viewControllers)!{
+        _ = viewController.view
+    }
+    
+    
+    GameManager.current.player = Player(balance: 2000, items: [])
     GameManager.current.character = Character(ATK: 10, DEF: 20, HP: 30, MP: 40)
   }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
-    HPLabel.text = "\(GameManager.current.character!.HP)"
-    MPLabel.text = "\(GameManager.current.character!.MP)"
-    ATKLabel.text = "\(GameManager.current.character!.ATK)"
-    DEFLabel.text = "\(GameManager.current.character!.DEF)"
-    balanceLabel.text = "\(GameManager.current.player!.balance)"
+    HPLabel.text = "HP:\(GameManager.current.character!.HP)"
+    MPLabel.text = "MP:\(GameManager.current.character!.MP)"
+    ATKLabel.text = "ATK:\(GameManager.current.character!.ATK)"
+    DEFLabel.text = "DEF:\(GameManager.current.character!.DEF)"
+    balanceLabel.text = "$:\(GameManager.current.player!.balance)"
     imageView.image = UIImage(named: "charizard")
   }
 }

@@ -18,8 +18,6 @@
 		5ECE83932043DA2100CB9C68 /* Pack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE83922043DA2100CB9C68 /* Pack.swift */; };
 		5ECE83952043DA5400CB9C68 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE83942043DA5400CB9C68 /* Shop.swift */; };
 		5ECE83972043DBC100CB9C68 /* ItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE83962043DBC100CB9C68 /* ItemInfo.swift */; };
-		5ECE83992043E73200CB9C68 /* ShopCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE83982043E73200CB9C68 /* ShopCollectionViewController.swift */; };
-		5ECE839B2043E83100CB9C68 /* ShopItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE839A2043E83100CB9C68 /* ShopItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +34,6 @@
 		5ECE83922043DA2100CB9C68 /* Pack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pack.swift; sourceTree = "<group>"; };
 		5ECE83942043DA5400CB9C68 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		5ECE83962043DBC100CB9C68 /* ItemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfo.swift; sourceTree = "<group>"; };
-		5ECE83982043E73200CB9C68 /* ShopCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewController.swift; sourceTree = "<group>"; };
-		5ECE839A2043E83100CB9C68 /* ShopItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +83,6 @@
 				5ECE83792043ABFE00CB9C68 /* HomeViewController.swift */,
 				5ECE837B2043ABFE00CB9C68 /* PackViewController.swift */,
 				5ECE838B2043AC2400CB9C68 /* ShopViewController.swift */,
-				5ECE83982043E73200CB9C68 /* ShopCollectionViewController.swift */,
-				5ECE839A2043E83100CB9C68 /* ShopItemCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -186,12 +180,10 @@
 			files = (
 				5ECE838C2043AC2400CB9C68 /* ShopViewController.swift in Sources */,
 				5ECE837C2043ABFE00CB9C68 /* PackViewController.swift in Sources */,
-				5ECE839B2043E83100CB9C68 /* ShopItemCell.swift in Sources */,
 				5ECE83932043DA2100CB9C68 /* Pack.swift in Sources */,
 				5ECE83912043B56700CB9C68 /* Character.swift in Sources */,
 				5ECE83972043DBC100CB9C68 /* ItemInfo.swift in Sources */,
 				5ECE83952043DA5400CB9C68 /* Shop.swift in Sources */,
-				5ECE83992043E73200CB9C68 /* ShopCollectionViewController.swift in Sources */,
 				5ECE83782043ABFE00CB9C68 /* AppDelegate.swift in Sources */,
 				5ECE837A2043ABFE00CB9C68 /* HomeViewController.swift in Sources */,
 			);

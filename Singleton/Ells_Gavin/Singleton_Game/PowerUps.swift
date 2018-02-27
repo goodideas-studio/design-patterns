@@ -24,24 +24,24 @@ struct PowerUps {
 
 let packItem1 = PowerUps(potionImg: UIImage(named: "Attack_Potion")!,
                          attribute: "Attack", powerValue: 5, price: 5)
-let packItem2 = PowerUps(potionImg: UIImage(named: "Attack_Potion")!,
-                         attribute: "Defence", powerValue: 5, price: 5)
-let packItem3 = PowerUps(potionImg: UIImage(named: "Attack_Potion")!,
-                         attribute: "HP", powerValue: 5, price: 5)
+let packItem2 = PowerUps(potionImg: UIImage(named: "Defence_Potion")!,
+                         attribute: "Defence", powerValue: 15, price: 5)
+let packItem3 = PowerUps(potionImg: UIImage(named: "MP_Potion")!,
+                         attribute: "MP", powerValue: 25, price: 5)
 let packItem4 = PowerUps(potionImg: UIImage(named: "Attack_Potion")!,
-                         attribute: "MP", powerValue: 5, price: 5)
-let packItem5 = PowerUps(potionImg: UIImage(named: "Attack_Potion")!,
-                         attribute: "Defence", powerValue: 5, price: 5)
-let packItem6 = PowerUps(potionImg: UIImage(named: "Attack_Potion")!,
-                         attribute: "HP", powerValue: 5, price: 5)
+                         attribute: "Attack", powerValue: 45, price: 5)
+let packItem5 = PowerUps(potionImg: UIImage(named: "Defence_Potion")!,
+                         attribute: "Defence", powerValue: 25, price: 5)
+let packItem6 = PowerUps(potionImg: UIImage(named: "MP_Potion")!,
+                         attribute: "MP", powerValue: 15, price: 5)
 let packItem7 = PowerUps(potionImg: UIImage(named: "Attack_Potion")!,
-                         attribute: "Attack", powerValue: 5, price: 5)
-let packItem8 = PowerUps(potionImg: UIImage(named: "Attack_Potion")!,
-                         attribute: "Defence", powerValue: 5, price: 5)
-let packItem9 = PowerUps(potionImg: UIImage(named: "Attack_Potion")!,
-                         attribute: "Attack", powerValue: 5, price: 5)
+                         attribute: "Attack", powerValue: 35, price: 5)
+let packItem8 = PowerUps(potionImg: UIImage(named: "Defence_Potion")!,
+                         attribute: "Defence", powerValue: 25, price: 5)
+let packItem9 = PowerUps(potionImg: UIImage(named: "MP_Potion")!,
+                         attribute: "MP", powerValue: 15, price: 5)
 
-let itemInPack = [packItem1, packItem2, packItem3, packItem4,
+var itemInPack = [packItem1, packItem2, packItem3, packItem4,
                   packItem5, packItem6, packItem7, packItem8,
                   packItem9]
 
@@ -64,6 +64,6 @@ let shopItem8 = PowerUps(potionImg: UIImage(named: "Attack_Potion")!,
 let shopItem9 = PowerUps(potionImg: UIImage(named: "Attack_Potion")!,
                          attribute: "Attack", powerValue: 5, price: 5)
 
-let itemInShop = [shopItem1, shopItem2, shopItem3, shopItem4,
+var itemInShop = [shopItem1, shopItem2, shopItem3, shopItem4,
                   shopItem5, shopItem6, shopItem7, shopItem8,
                   shopItem9]

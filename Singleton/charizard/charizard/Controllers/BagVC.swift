@@ -2,10 +2,15 @@ import UIKit
 
 class BagVC: UIViewController {
   @IBOutlet weak var collectionView: UICollectionView!
-
+    
+    
+    @IBOutlet weak var reminderLabel: UILabel!
+    
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: NSNotification.Name(rawValue: didTappedShoppingItemKey), object: nil)
+    
     collectionView.delegate = self
     collectionView.dataSource = self
   }
@@ -14,6 +19,10 @@ class BagVC: UIViewController {
         super.viewWillAppear(animated)
         collectionView.reloadData()
         title = "\(GameManager.current.player!.items.count)"
+        if (GameManager.current.player?.items.isEmpty)!{
+            collectionView.isHidden = true
+            reminderLabel.text = "道具用完了，請去商城購買"
+        }
     }
 }
 
@@ -46,7 +55,17 @@ extension BagVC: UICollectionViewDelegate, UICollectionViewDataSource {
       GameManager.current.player!.items.remove(at: indexPath.row)
       self.title = "\(GameManager.current.player!.items.count)"
       collectionView.reloadData()
+        if (GameManager.current.player?.items.isEmpty)!{
+            collectionView.isHidden = true
+            self.reminderLabel.text = "道具用完了，請去商城購買"
+        }
     })
     present(alert, animated: true, completion: nil)
   }
+    
+  
+    @objc func updateUI(){
+        title = "\(GameManager.current.player!.items.count)"
+    }
+    
 }

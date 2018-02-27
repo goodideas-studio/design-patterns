@@ -20,6 +20,8 @@ class MainViewController: UIViewController {
     for viewController in (self.tabBarController?.viewControllers)! {
       _ = viewController.view
     }
+    
+    totalAssetLabel.text = String(Asset.shared.totalAsset)
   }
 
   override func didReceiveMemoryWarning() {
@@ -28,9 +30,7 @@ class MainViewController: UIViewController {
   }
 
   @IBAction func giveMeMoney(_ sender: UIButton) {
-    let tempValue = Int(totalAssetLabel.text!)
-    totalAssetLabel.text = String(tempValue! + 5)
-    NotificationCenter.default.post(name: .moneyDidSelect, object: totalAssetLabel.text)
+    totalAssetLabel.text = String(Asset.shared.increaseMoney(Money: 5))
   }
 }
 

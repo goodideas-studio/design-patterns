@@ -10,9 +10,16 @@ import Foundation
 
 let defaultAsset: Int = 1000
 
-class Asset {
+final class Asset {
   static let shared = Asset()
   var totalAsset: Int = defaultAsset
   
-  private init() {}
+  private init() {
+    print("Asset create.")
+  }
+  
+  func increaseMoney(Money: Int) -> Int {
+    totalAsset += Money
+    return totalAsset
+  }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CellInMyBackPack: UICollectionViewCell {
+class PackCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var itemInPackPic: UIImageView!
     
