@@ -22,8 +22,7 @@ class ShopViewController: UIViewController {
         self.shopItemCollection.dataSource = self
        
         
-        NotificationCenter.default.addObserver(self, selector: #selector(moneyRemainedInWallet(notification:)), name: .moneyDidSelect, object: nil)
-        
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,12 +30,13 @@ class ShopViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func moneyRemainedInWallet(notification: NSNotification) {
-    NotificationCenter.default.post(name: .moneyDidSelect, object: moneyRemaining.text)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        var data = notification.object as! String
-          moneyRemaining.text = data
+        moneyRemaining.text = String(Asset.shared.totalAsset)
+        
     }
+    
 }
 
 
