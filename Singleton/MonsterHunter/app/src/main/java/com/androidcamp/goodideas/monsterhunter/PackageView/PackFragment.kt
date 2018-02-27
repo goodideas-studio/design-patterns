@@ -67,7 +67,10 @@ class PackFragment : Fragment() {
             Log.d("PackActivity", "clicked")
             val builder = android.app.AlertDialog.Builder(activity)
             builder.setTitle("使用")
-                    .setMessage("確定要使用此道具?")
+                    .setMessage("道具: ${Package[index].name}\n " +
+                            "HP +${Package[index].hp}\n " +
+                            "MP +${Package[index].mp}\n" +
+                            "確定使用?")
                     .setPositiveButton("確定", DialogInterface.OnClickListener { dialogInterface, i ->
                         Log.d("UseStuffDialog", "確認")
                         enhanceStatus(index)    // Enhance Warrior's HP and MP
