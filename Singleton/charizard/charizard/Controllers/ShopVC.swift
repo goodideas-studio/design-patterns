@@ -85,7 +85,7 @@ class ShopVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        title = "\(GameManager.current.player!.balance)"
+        navigationItem.title = "\(GameManager.current.player!.balance)"
         if self.shoppingItems.isEmpty{
             shoppingItemCollectionView.isHidden = true
             reminderLabel.text = "沒貨了喔"

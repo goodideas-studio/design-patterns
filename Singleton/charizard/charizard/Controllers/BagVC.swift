@@ -18,7 +18,7 @@ class BagVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         collectionView.reloadData()
-        title = "\(GameManager.current.player!.items.count)"
+        navigationItem.title = "\(GameManager.current.player!.items.count)"
         if (GameManager.current.player?.items.isEmpty)!{
             collectionView.isHidden = true
             reminderLabel.text = "道具用完了，請去商城購買"
