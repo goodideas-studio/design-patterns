@@ -1,6 +1,15 @@
 package com.techapp.james.gridviewdemo
 
 import com.androidcamp.goodideas.monsterhunter.R
+import android.graphics.BitmapFactory
+import android.graphics.Bitmap
+
+import java.io.ByteArrayInputStream
+import java.io.ByteArrayOutputStream
+import android.graphics.drawable.BitmapDrawable
+
+
+
 
 /**
  * Created by James on 2018/2/26.
@@ -18,4 +27,5 @@ object SingletonList : ArrayList<ShopItem>() {
         this.add(ShopItem("sword9", R.drawable.sword, 200, 60,1356))
         this.add(ShopItem("sword10", R.drawable.sword, 300, 98,1489))
     }
+
 }
