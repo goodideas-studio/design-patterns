@@ -37,8 +37,6 @@ class MainActivity : AppCompatActivity() {
         true
     }
 
-
-
     private val ib_sword_click = View.OnClickListener{
         bossHp = bossHp -10
         Status.money = Status.money + 5
@@ -56,7 +54,6 @@ class MainActivity : AppCompatActivity() {
         Status.hp = 100
         Status.mp = 100
 
-
 //        tv_money.setText(status.money.toString())
 //
   //      ib_sword.setOnClickListener(ib_sword_click)
@@ -67,5 +64,6 @@ class MainActivity : AppCompatActivity() {
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
+
 }
 

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.androidcamp.goodideas.monsterhunter.CompressModel.BitmapCompress
 import com.androidcamp.goodideas.monsterhunter.PackageModel.Stuff
 import com.androidcamp.goodideas.monsterhunter.R
 
@@ -15,11 +16,16 @@ import com.androidcamp.goodideas.monsterhunter.R
  * Created by York on 2018/2/26.
  */
 class StuffAdapter(val context: Context, val stuffs: List<Stuff>): BaseAdapter() {
+
     override fun getView(position: Int, p1: View?, p2: ViewGroup?): View {
         var stuffView = LayoutInflater.from(context).inflate(R.layout.stuff, p2, false)
         // set stuff's image
         var stuffImage = stuffView.findViewById<ImageView>(R.id.imageView_stuff)
-        stuffImage.setImageDrawable(context.resources.getDrawable(stuffs[position].image))
+//        stuffImage.setImageDrawable(context.resources.getDrawable(stuffs[position].image))
+        // Compress image and set to ImageView's bitmap
+        val resources = context.resources
+        val bitmap = BitmapCompress().compressBySize(resources, stuffs[position].image, 400, 400)
+        stuffImage.setImageBitmap(bitmap)
         // set stuff's name
         var stuffName = stuffView.findViewById<TextView>(R.id.textView_stuff_name)
         stuffName.setText(stuffs[position].name)
@@ -38,4 +44,5 @@ class StuffAdapter(val context: Context, val stuffs: List<Stuff>): BaseAdapter()
     override fun getCount(): Int {
         return stuffs.size
     }
+
 }
