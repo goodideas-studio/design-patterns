@@ -5,7 +5,7 @@ import com.androidcamp.goodideas.monsterhunter.R
 /**
  * Created by York on 2018/2/26.
  */
-public object Package: ArrayList<Stuff>() {
+object Package: ArrayList<Stuff>() {
     init {
         this.add(Stuff("Blue Water", R.drawable.blue_water, 0, 63))
         this.add(Stuff("Red Water", R.drawable.red_water, 100, 0))

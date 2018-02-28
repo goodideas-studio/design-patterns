@@ -22,6 +22,11 @@ class ShopPresenter {
 
     constructor(context: ShopFragment) {
         this.shopFragment = context
+        if (SingletonList.size == 0) {
+            shopFragment!!.gridView.visibility = View.INVISIBLE
+            shopFragment!!.soldOut.textSize = 50f
+            shopFragment!!.soldOut.visibility = View.VISIBLE
+        }
     }
 
     public fun positiveBtnClick() {

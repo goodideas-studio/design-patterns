@@ -18,6 +18,7 @@ class PackPresenter(val packView: PackView) {
 
     fun showStuffCount() {
         packView.setStuffCount(Package.size)
+
     }
 
     fun setBagImage() {
