@@ -45,6 +45,11 @@ class PackFragment : Fragment(), PackView {
 
     override fun setBagImage(bitmap: Bitmap) {
         imageView_pack_total.setImageBitmap(bitmap)
+        if(Package.isEmpty()) {
+            textView_pack_emptyState.visibility = View.VISIBLE
+        } else {
+            textView_pack_emptyState.visibility = View.GONE
+        }
     }
 
     override fun setStuffCount(stuffCount: Int) {
@@ -66,11 +71,18 @@ class PackFragment : Fragment(), PackView {
                     .setPositiveButton("確定", DialogInterface.OnClickListener { dialogInterface, i ->
                         Log.d("UseStuffDialog", "確認")
                         presenter.enhanceStatus(index)  // Enhance Warrior's HP and MP
-
                         // Update fragment's view
-                        Package.removeAt(index) // Remove item of list
-                        adapter.notifyDataSetChanged()  // notify view that data has been changed
-                        presenter.showStuffCount()  // Stuff's count
+
+                            Log.d("initGridView", "not empty")
+                            Package.removeAt(index) // Remove item of list
+                            adapter.notifyDataSetChanged()  // notify view that data has been changed
+                            presenter.showStuffCount()  // Stuff's count
+                        if(Package.isEmpty()) {
+                            Log.d("initGridView", "empty")
+                            gridView_pack_stuffList.visibility = View.INVISIBLE
+                            textView_pack_emptyState.visibility = View.VISIBLE
+                        }
+
                     }).setNegativeButton("取消", DialogInterface.OnClickListener { dialogInterface, i ->  })
                     .show()
         }

@@ -7,16 +7,17 @@
 
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/md_green_300">
 
         <!--<TextView-->
-            <!--android:id="@+id/textView_pack_total"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_centerInParent="true"-->
-            <!--android:text="Total：" />-->
+        <!--android:id="@+id/textView_pack_total"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:text="Total：" />-->
 
         <ImageView
             android:id="@+id/imageView_pack_total"
@@ -32,19 +33,20 @@
             android:layout_toRightOf="@+id/imageView_pack_total" />
 
         <!--<ImageView-->
-            <!--android:id="@+id/imageView_pack_redWaterIcon"-->
-            <!--android:layout_width="20dp"-->
-            <!--android:layout_height="20dp" />-->
+        <!--android:id="@+id/imageView_pack_redWaterIcon"-->
+        <!--android:layout_width="20dp"-->
+        <!--android:layout_height="20dp" />-->
         <!---->
         <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text=":0"/>-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text=":0"/>-->
 
     </RelativeLayout>
 
     <GridView
         android:id="@+id/gridView_pack_stuffList"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -53,5 +55,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
     </GridView>
+
+    <TextView
+        android:id="@+id/textView_pack_emptyState"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="232dp"
+        android:text="用完囉，快去買新的道具吧"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
 
 </android.support.constraint.ConstraintLayout>
