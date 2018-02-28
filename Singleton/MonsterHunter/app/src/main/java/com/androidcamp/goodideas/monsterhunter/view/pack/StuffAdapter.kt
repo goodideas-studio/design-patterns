@@ -27,7 +27,7 @@ class StuffAdapter(val context: Context, val stuffs: List<Stuff>): BaseAdapter()
         val resources = context.resources
         // Get bitmap class on a new thread
         doAsync {
-            val bitmap = BitmapCompress().compressBySize(resources, stuffs[position].image, 40, 40)
+            val bitmap = BitmapCompress.compressBySize(resources, stuffs[position].image, 40, 40)
             context.runOnUiThread {
                 // set stuff's imageView on UI thread
                 stuffImage.setImageBitmap(bitmap)
