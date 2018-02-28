@@ -32,7 +32,8 @@ class ShopVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let shoppingItemCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ShoppingItemsCell
         
-        shoppingItemCell.shoppingItemNameLabel.text = shoppingItems[indexPath.row].name
+        shoppingItemCell.shoppingItemImageView.image = UIImage(named: shoppingItems[indexPath.row].name)
+//        shoppingItemCell.shoppingItemNameLabel.text = shoppingItems[indexPath.row].name
         shoppingItemCell.shoppingItemPriceLabel.text = String(shoppingItems[indexPath.row].price)
         
         return shoppingItemCell

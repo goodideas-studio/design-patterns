@@ -22,6 +22,16 @@ class GameVC: UIViewController {
         _ = viewController.view
     }
     
+//    if let items = tabBarController??.tabBar.items {
+//        let tabBarImages = getTabBarImages() // tabBarImages: [UIImage]
+//        for i in 0..<items.count {
+//            let tabBarItem = items[i]
+//            let tabBarImage = tabBarImages[i]
+//            tabBarItem.image = tabBarImage.withRenderingMode(.alwaysOriginal)
+//            tabBarItem.selectedImage = tabBarImage
+//        }
+//    }
+    
     
     GameManager.current.player = Player(balance: 2000, items: [])
     GameManager.current.character = Character(ATK: 10, DEF: 20, HP: 30, MP: 40)
