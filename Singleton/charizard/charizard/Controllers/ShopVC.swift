@@ -25,6 +25,11 @@ class ShopVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         BlueWater(name: "藍藥水", price: 50)
     ]
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.tabBarItem = UITabBarItem(title: "Shop", image: UIImage(named: "Shop")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "Shop")?.withRenderingMode(.alwaysOriginal))
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return shoppingItems.count
     }
