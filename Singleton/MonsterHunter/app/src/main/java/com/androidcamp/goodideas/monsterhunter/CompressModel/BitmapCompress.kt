@@ -3,6 +3,7 @@ package com.androidcamp.goodideas.monsterhunter.CompressModel
 import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.util.Log
 
 /**
  * Created by York on 2018/2/27.
@@ -18,13 +19,14 @@ class BitmapCompress: Runnable {
         BitmapFactory.decodeResource(resource, resourceId, options)
 
         // 計算取樣率
-//        options.inSampleSize = calculateFitSize(requestWidth, requestHeight, options)
-        options.inSampleSize = 6
+        options.inSampleSize = calculateFitSize(requestWidth, requestHeight, options)
+//        options.inSampleSize = 6
         options.inJustDecodeBounds = false
         return BitmapFactory.decodeResource(resource, resourceId, options)
     }
 
     private fun calculateFitSize(reqWidth: Int, reqHeight: Int, options: BitmapFactory.Options): Int {
+
         // 原始圖片的寬高
         val height = options.outHeight
         val width = options.outWidth
@@ -37,6 +39,7 @@ class BitmapCompress: Runnable {
                 inSampleSize *= 2
             }
         }
+        Log.d("calculateFitSize", "imSampleSize: ${inSampleSize}")
         return inSampleSize
     }
 

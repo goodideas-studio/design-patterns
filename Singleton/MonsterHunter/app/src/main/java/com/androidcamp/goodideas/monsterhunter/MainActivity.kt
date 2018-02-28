@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
 import com.androidcamp.goodideas.monsterhunter.MainModel.Status
-import com.androidcamp.goodideas.monsterhunter.PackageView.PackFragment
+import com.androidcamp.goodideas.monsterhunter.view.pack.PackFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -53,7 +53,6 @@ class MainActivity : AppCompatActivity() {
         Status.money = 100
         Status.hp = 100
         Status.mp = 100
-
 //        tv_money.setText(status.money.toString())
 //
   //      ib_sword.setOnClickListener(ib_sword_click)

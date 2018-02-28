@@ -1,4 +1,4 @@
-package com.androidcamp.goodideas.monsterhunter.PackageView
+package com.androidcamp.goodideas.monsterhunter.view.pack
 
 import android.content.Context
 import android.content.DialogInterface
@@ -10,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import com.androidcamp.goodideas.monsterhunter.MainModel.Status
-import com.androidcamp.goodideas.monsterhunter.PackageModel.Package
+import com.androidcamp.goodideas.monsterhunter.model.pack.Package
 import com.androidcamp.goodideas.monsterhunter.R
 import kotlinx.android.synthetic.main.fragment_pack.*
 

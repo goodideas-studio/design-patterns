@@ -27,7 +27,6 @@ class MainFragment : Fragment() {
     }
 
     override fun onStart() {
-
         super.onStart()
         Log.d("onStart", "hp:　${Status.hp}")
         Log.d("onStart", "mp:　${Status.mp}")

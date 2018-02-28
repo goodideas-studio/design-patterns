@@ -1,11 +1,6 @@
 package com.androidcamp.goodideas.monsterhunter
 
-import android.content.Context
 import android.content.DialogInterface
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.drawable.BitmapDrawable
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AlertDialog
@@ -15,15 +10,13 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.Toast
 import com.androidcamp.goodideas.monsterhunter.MainModel.Status
-import com.androidcamp.goodideas.monsterhunter.PackageModel.Package
-import com.androidcamp.goodideas.monsterhunter.PackageModel.Stuff
+import com.androidcamp.goodideas.monsterhunter.model.pack.Package
+import com.androidcamp.goodideas.monsterhunter.model.pack.Stuff
 import com.techapp.james.gridviewdemo.ShopItem
 import com.techapp.james.gridviewdemo.ShopItemAdapter
 import com.techapp.james.gridviewdemo.SingletonList
 import kotlinx.android.synthetic.main.fragment_shop_.*
 import kotlinx.android.synthetic.main.item_layout.view.*
-import java.io.ByteArrayInputStream
-import java.io.ByteArrayOutputStream
 
 class ShopFragment : Fragment() {
     var adapter: ShopItemAdapter? = null
@@ -36,7 +29,7 @@ class ShopFragment : Fragment() {
                  Status.money-=shopItem.money!!
                     SingletonList.removeAt(removeIndex)
                     gridView.invalidateViews()
-                    Package.add(Stuff(shopItem.name!!,shopItem.image!!, shopItem.hp!!,shopItem.mp!!))
+                    Package.add(Stuff(shopItem.name!!, shopItem.image!!, shopItem.hp!!, shopItem.mp!!))
                     textView_money.text=Status.money.toString()
                 }else if(Status.money<shopItem.money!!){
                     Toast.makeText(this@ShopFragment.context,"You don't have enouth money",Toast.LENGTH_SHORT).show()
