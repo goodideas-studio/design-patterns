@@ -1,7 +1,7 @@
 # Monster Hunter
 ![image](https://github.com/goodideas-studio/design-patterns/blob/master/Singleton/MonsterHunter/gif_20180228_132916.gif)
 
-此App使用到Singleton的地方在於Status class(角色狀態)、Package class(背包)、SingletonList class(商品)。只要宣告類別為object就有如同Java static class的作用。
+這是一個擁有購買商品及戰鬥的簡易遊戲App，使用到Singleton的地方在於Status class(角色狀態)、Package class(背包)、SingletonList class(商品)。只要宣告類別為object就有如同Java static class的作用。
 
 Example:
 
