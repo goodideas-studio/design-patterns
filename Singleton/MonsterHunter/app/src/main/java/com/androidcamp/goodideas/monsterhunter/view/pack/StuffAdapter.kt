@@ -1,7 +1,6 @@
 package com.androidcamp.goodideas.monsterhunter.view.pack
 
 import android.content.Context
-import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.androidcamp.goodideas.monsterhunter.CompressModel.BitmapCompress
-import com.androidcamp.goodideas.monsterhunter.PackageModel.Stuff
+import com.androidcamp.goodideas.monsterhunter.model.pack.Stuff
 import com.androidcamp.goodideas.monsterhunter.R
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.runOnUiThread

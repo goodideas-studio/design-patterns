@@ -1,4 +1,4 @@
-package com.androidcamp.goodideas.monsterhunter.PackageModel
+package com.androidcamp.goodideas.monsterhunter.model.pack
 
 import com.androidcamp.goodideas.monsterhunter.R
 

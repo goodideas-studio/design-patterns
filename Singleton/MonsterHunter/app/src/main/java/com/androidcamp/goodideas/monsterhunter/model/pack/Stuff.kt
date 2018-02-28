@@ -1,4 +1,4 @@
-package com.androidcamp.goodideas.monsterhunter.PackageModel
+package com.androidcamp.goodideas.monsterhunter.model.pack
 
 /**
  * Created by York on 2018/2/26.
