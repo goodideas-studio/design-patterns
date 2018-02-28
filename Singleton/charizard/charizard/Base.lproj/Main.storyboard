@@ -155,23 +155,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJ2-bO-wDT">
-                                                    <rect key="frame" x="4" y="15" width="67" height="46"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z6y-iF-SYW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="RJ2-bO-wDT" secondAttribute="trailing" constant="4" id="8V8-jS-BCW"/>
-                                            <constraint firstItem="RJ2-bO-wDT" firstAttribute="leading" secondItem="ULt-xA-bE0" secondAttribute="leading" constant="4" id="J71-dS-tl7"/>
-                                            <constraint firstAttribute="bottom" secondItem="RJ2-bO-wDT" secondAttribute="bottom" constant="14" id="LGI-WU-k6D"/>
-                                            <constraint firstItem="RJ2-bO-wDT" firstAttribute="top" secondItem="ULt-xA-bE0" secondAttribute="top" constant="15" id="iYr-2M-pd1"/>
-                                        </constraints>
                                         <size key="customSize" width="75" height="75"/>
                                         <connections>
-                                            <outlet property="nameLabel" destination="RJ2-bO-wDT" id="xi8-G8-sq5"/>
+                                            <outlet property="imageView" destination="Z6y-iF-SYW" id="HAy-rM-IxI"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -316,11 +308,11 @@
             </objects>
             <point key="canvasLocation" x="814.39999999999998" y="132.23388305847078"/>
         </scene>
-        <!--Bag-->
+        <!--Navigation Controller-->
         <scene sceneID="tOV-Bd-E9d">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D50-Uo-fFu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Bag" image="Bag" selectedImage="Bag" id="0zi-ib-0eJ"/>
+                    <tabBarItem key="tabBarItem" title="" selectedImage="Bag" id="0zi-ib-0eJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2jU-9n-ofF">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

@@ -17,9 +17,24 @@ class GameVC: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
     for viewController in (self.tabBarController?.viewControllers)! {
       _ = viewController.view
     }
+
+
+//
+//    for viewController in (self.tabBarController?.viewControllers)!{
+//        _ = viewController.view
+//        print("all views did loaded")
+//        if let bagVC = self.tabBarController?.viewControllers![1] as? BagVC{
+//            bagVC.tabBarItem = UITabBarItem(title: "Bag", image: UIImage(named: "Bag"), selectedImage: UIImage(named: "Bag")?.withRenderingMode(.alwaysOriginal))
+//        }
+//    }
+    
+   
+    
+    
 
     GameManager.current.player = Player(balance: 2000, items: [])
     GameManager.current.character = Character(ATK: 10, DEF: 20, HP: 30, MP: 40)

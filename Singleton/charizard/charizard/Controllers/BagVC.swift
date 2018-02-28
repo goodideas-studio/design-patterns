@@ -41,8 +41,8 @@ extension BagVC: UICollectionViewDelegate, UICollectionViewDataSource {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? BagItemCollectionViewCell else {
       fatalError()
     }
-
-    cell.nameLabel.text = GameManager.current.player!.items[indexPath.row].name
+    cell.imageView.image = UIImage(named: GameManager.current.player!.items[indexPath.row].name)
+//    cell.nameLabel.text = GameManager.current.player!.items[indexPath.row].name
 
     return cell
   }
