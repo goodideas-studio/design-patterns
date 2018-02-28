@@ -102,41 +102,41 @@ class ShopViewController: UIViewController , UICollectionViewDelegate, UICollect
             
             
         } else {
-//            let shopAlert = UIAlertController(title: "購買視窗", message: "確認要購買？扣除 $\(self.shop.shopItem[sender.tag].dollars)", preferredStyle: UIAlertControllerStyle.alert)
-//            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) { (finish) in
-//                print("取消購買")
-//            }
-//
-//            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (finish) in
-//                Character.shared.dollars -= self.shop.shopItem[sender.tag].dollars
-//                self.moneyLabel.text = "\(Character.shared.dollars)"
-//
-//                // tabbar 方式傳值到 PackViewController
-//                if let packVC = self.tabBarController?.viewControllers![1] as? PackViewController {
-//                    // 增加 ItemInPack
-//                    packVC.ItemInPack.append(self.shop.shopItem[sender.tag])
-//                    self.shop.shopItem.remove(at: sender.tag)
-//                    self.shopCollectionView.reloadData()
-//
-//                    if self.shop.shopItem.isEmpty == true {
-//                        self.messageView.alpha = 1
-//                        self.messageView.text = "沒有物品"
-//                    }
-//                }
-//            }
-//
-//
-//            shopAlert.addAction(cancelAction)
-//            shopAlert.addAction(okAction)
-//
-//
-//            self.present(shopAlert, animated: true, completion: nil)
+            let shopAlert = UIAlertController(title: "購買視窗", message: "確認要購買？扣除 $\(self.shop.shopItem[sender.tag].dollars)", preferredStyle: UIAlertControllerStyle.alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) { (finish) in
+                print("取消購買")
+            }
+
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (finish) in
+                Character.shared.dollars -= self.shop.shopItem[sender.tag].dollars
+                self.moneyLabel.text = "\(Character.shared.dollars)"
+
+                // tabbar 方式傳值到 PackViewController
+                if let packVC = self.tabBarController?.viewControllers![1] as? PackViewController {
+                    // 增加 ItemInPack
+                    packVC.ItemInPack.append(self.shop.shopItem[sender.tag])
+                    self.shop.shopItem.remove(at: sender.tag)
+                    self.shopCollectionView.reloadData()
+
+                    if self.shop.shopItem.isEmpty == true {
+                        self.messageView.alpha = 1
+                        self.messageView.text = "沒有物品"
+                    }
+                }
+            }
+
+
+            shopAlert.addAction(cancelAction)
+            shopAlert.addAction(okAction)
+
+
+            self.present(shopAlert, animated: true, completion: nil)
             
-            // mode 2
-            
-            moneyLabel.text = "\(Character.shared.dollars)"
-            shoppingCart.append(self.shop.shopItem[sender.tag])
-            total += self.shop.shopItem[sender.tag].dollars
+//            // mode 2
+//            
+//            moneyLabel.text = "\(Character.shared.dollars)"
+//            shoppingCart.append(self.shop.shopItem[sender.tag])
+//            total += self.shop.shopItem[sender.tag].dollars
 
 //            shop.shopItem.remove(at: sender.tag)
 //            shopCollectionView.reloadData()
