@@ -176,6 +176,12 @@ class MainVC: UIViewController, useItemDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
         let backpackVC = tabBarController?.viewControllers![1] as! PacketVC
         backpackVC.delegate = self
         
@@ -186,8 +192,6 @@ class MainVC: UIViewController, useItemDelegate {
         HPLabel.text = "HP: \(player.HP)"
         MPLabel.text = "MP: \(player.MP)"
         moneyLabel.text = "$: \(Money.current.moneyNumber)"
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
