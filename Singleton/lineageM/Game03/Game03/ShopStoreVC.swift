@@ -38,22 +38,18 @@ class ShopStoreVC: UIViewController, UICollectionViewDataSource, UICollectionVie
         return cell
     }
 
-//<<<<<<< HEAD
-//=======
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        //購買確認
-        if shopItems[indexPath.row] == "red_potion" {
+    func checkMoney(indexPath: IndexPath, itemName: String ) {
+        if shopItems[indexPath.row] == itemName {
             if Money.current.moneyNumber >= ItemsPrice.shared.red_Potion {
                 
                 let purchaseAlert = UIAlertController(title:"購買道具",message:"確認要購買嗎？",preferredStyle:.alert)
                 let confirmAction = UIAlertAction(title:"確定",style:.default){(action)in
-                //購買成功
-                Backpack.current.addItems(itemName: self.shopItems[indexPath.row])
-                Money.current.moneyNumber = Money.current.moneyNumber - ItemsPrice.shared.red_Potion
-                self.moneyLabel.text = "$: \(Money.current.moneyNumber)"
-                self.shopItems.remove(at: indexPath.row)
-                self.shopStoreCollectionView.reloadData()
+                    //購買成功
+                    Backpack.current.addItems(itemName: self.shopItems[indexPath.row])
+                    Money.current.moneyNumber = Money.current.moneyNumber - ItemsPrice.shared.red_Potion
+                    self.moneyLabel.text = "$: \(Money.current.moneyNumber)"
+                    self.shopItems.remove(at: indexPath.row)
+                    self.shopStoreCollectionView.reloadData()
                     
                     //當商店為空
                     if self.shopItems == [] {
@@ -65,247 +61,12 @@ class ShopStoreVC: UIViewController, UICollectionViewDataSource, UICollectionVie
                         self.present(emptyAlert, animated: true, completion: nil)
                     }
                     
-        }
-                let cancelAction = UIAlertAction(title:"取消",style:.cancel)
-                purchaseAlert.addAction(confirmAction)
-                purchaseAlert.addAction(cancelAction)
-                present(purchaseAlert, animated: true, completion: nil)
-                
-            }
-            else {
-                let alert = UIAlertController(title: "金額不足", message: "請努力打怪", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "確認", style: .cancel)
-                alert.addAction(okAction)
-                present(alert, animated: true, completion: nil)
-            }
-        } else if shopItems[indexPath.row] == "orange_potion" {
-            if Money.current.moneyNumber >= ItemsPrice.shared.orange_potion {
-                
-                let purchaseAlert = UIAlertController(title:"購買道具",message:"確認要購買嗎？",preferredStyle:.alert)
-                
-                let confirmAction = UIAlertAction(title:"確定",style:.default){(action)in
-                    //購買成功
-                    Backpack.current.addItems(itemName: self.shopItems[indexPath.row])
-                    Money.current.moneyNumber = Money.current.moneyNumber - ItemsPrice.shared.orange_potion
-                    self.moneyLabel.text = "$: \(Money.current.moneyNumber)"
-                    self.shopItems.remove(at: indexPath.row)
-                    self.shopStoreCollectionView.reloadData()
-                    
-                    if self.shopItems == [] {
-                        let emptyAlert = UIAlertController(title: "商店進貨中", message: "請下次再來", preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "確認", style: .default, handler: { (action) in
-                            print("商店為空")
-                        })
-                        emptyAlert.addAction(okAction)
-                        self.present(emptyAlert, animated: true, completion: nil)
-                    }
-                }
-                
-                let cancelAction = UIAlertAction(title:"取消",style:.cancel)
-                purchaseAlert.addAction(confirmAction)
-                purchaseAlert.addAction(cancelAction)
-                present(purchaseAlert, animated: true, completion: nil)
-            }
-            else {
-                let alert = UIAlertController(title: "金額不足", message: "請努力打怪", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "確認", style: .cancel)
-                alert.addAction(okAction)
-                present(alert, animated: true, completion: nil)
-            }
-        } else if shopItems[indexPath.row] == "clear_potion" {
-            if Money.current.moneyNumber >= ItemsPrice.shared.clear_potion {
-                
-                let purchaseAlert = UIAlertController(title:"購買道具",message:"確認要購買嗎？",preferredStyle:.alert)
-                
-                let confirmAction = UIAlertAction(title:"確定",style:.default){(action)in
-                    //購買成功
-                    Backpack.current.addItems(itemName: self.shopItems[indexPath.row])
-                    Money.current.moneyNumber = Money.current.moneyNumber - ItemsPrice.shared.clear_potion
-                    self.moneyLabel.text = "$: \(Money.current.moneyNumber)"
-                    self.shopItems.remove(at: indexPath.row)
-                    self.shopStoreCollectionView.reloadData()
-                    
-                    if self.shopItems == [] {
-                        let emptyAlert = UIAlertController(title: "商店進貨中", message: "請下次再來", preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "確認", style: .default, handler: { (action) in
-                            print("商店為空")
-                        })
-                        emptyAlert.addAction(okAction)
-                        self.present(emptyAlert, animated: true, completion: nil)
-                    }
-                }
-                
-                let cancelAction = UIAlertAction(title:"取消",style:.cancel)
-                purchaseAlert.addAction(confirmAction)
-                purchaseAlert.addAction(cancelAction)
-                present(purchaseAlert, animated: true, completion: nil)
-            }
-            else {
-                let alert = UIAlertController(title: "金額不足", message: "請努力打怪", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "確認", style: .cancel)
-                alert.addAction(okAction)
-                present(alert, animated: true, completion: nil)
-            }
-        } else if shopItems[indexPath.row] == "ancient_red_potion" {
-            if Money.current.moneyNumber >= ItemsPrice.shared.ancient_red_potion {
-                
-                let purchaseAlert = UIAlertController(title:"購買道具",message:"確認要購買嗎？",preferredStyle:.alert)
-                
-                let confirmAction = UIAlertAction(title:"確定",style:.default){(action)in
-                    //購買成功
-                    Backpack.current.addItems(itemName: self.shopItems[indexPath.row])
-                    Money.current.moneyNumber = Money.current.moneyNumber - ItemsPrice.shared.ancient_red_potion
-                    self.moneyLabel.text = "$: \(Money.current.moneyNumber)"
-                    self.shopItems.remove(at: indexPath.row)
-                    self.shopStoreCollectionView.reloadData()
-                    
-                    
-                    if self.shopItems == [] {
-                        let emptyAlert = UIAlertController(title: "商店進貨中", message: "請下次再來", preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "確認", style: .default, handler: { (action) in
-                            print("商店為空")
-                        })
-                        emptyAlert.addAction(okAction)
-                        self.present(emptyAlert, animated: true, completion: nil)
-                    }
-                }
-                
-                let cancelAction = UIAlertAction(title:"取消",style:.cancel)
-                purchaseAlert.addAction(confirmAction)
-                purchaseAlert.addAction(cancelAction)
-                present(purchaseAlert, animated: true, completion: nil)
-            }
-            else {
-                let alert = UIAlertController(title: "金額不足", message: "請努力打怪", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "確認", style: .cancel)
-                alert.addAction(okAction)
-                present(alert, animated: true, completion: nil)
-            }
-        } else if shopItems[indexPath.row] == "ancient_orange_potion" {
-            if Money.current.moneyNumber >= ItemsPrice.shared.ancient_orange_potion {
-                
-                let purchaseAlert = UIAlertController(title:"購買道具",message:"確認要購買嗎？",preferredStyle:.alert)
-                
-                let confirmAction = UIAlertAction(title:"確定",style:.default){(action)in
-                    //購買成功
-                    Backpack.current.addItems(itemName: self.shopItems[indexPath.row])
-                    Money.current.moneyNumber = Money.current.moneyNumber - ItemsPrice.shared.ancient_orange_potion
-                    self.moneyLabel.text = "$: \(Money.current.moneyNumber)"
-                    self.shopItems.remove(at: indexPath.row)
-                    self.shopStoreCollectionView.reloadData()
-                    
-                    if self.shopItems == [] {
-                        let emptyAlert = UIAlertController(title: "商店進貨中", message: "請下次再來", preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "確認", style: .default, handler: { (action) in
-                            print("商店為空")
-                        })
-                        emptyAlert.addAction(okAction)
-                        self.present(emptyAlert, animated: true, completion: nil)
-                    }
-                }
-                
-                let cancelAction = UIAlertAction(title:"取消",style:.cancel)
-                purchaseAlert.addAction(confirmAction)
-                purchaseAlert.addAction(cancelAction)
-                present(purchaseAlert, animated: true, completion: nil)
-            }
-            else {
-                let alert = UIAlertController(title: "金額不足", message: "請努力打怪", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "確認", style: .cancel)
-                alert.addAction(okAction)
-                present(alert, animated: true, completion: nil)
-            }
-        } else if shopItems[indexPath.row] == "ancient_clear_potion" {
-            if Money.current.moneyNumber >= ItemsPrice.shared.ancient_clear_potion {
-                
-                let purchaseAlert = UIAlertController(title:"購買道具",message:"確認要購買嗎？",preferredStyle:.alert)
-                
-                let confirmAction = UIAlertAction(title:"確定",style:.default){(action)in
-                    //購買成功
-                    Backpack.current.addItems(itemName: self.shopItems[indexPath.row])
-                    Money.current.moneyNumber = Money.current.moneyNumber - ItemsPrice.shared.ancient_clear_potion
-                    self.moneyLabel.text = "$: \(Money.current.moneyNumber)"
-                    self.shopItems.remove(at: indexPath.row)
-                    self.shopStoreCollectionView.reloadData()
-                    
-                    if self.shopItems == [] {
-                        let emptyAlert = UIAlertController(title: "商店進貨中", message: "請下次再來", preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "確認", style: .default, handler: { (action) in
-                            print("商店為空")
-                        })
-                        emptyAlert.addAction(okAction)
-                        self.present(emptyAlert, animated: true, completion: nil)
-                    }
-                }
-                
-                let cancelAction = UIAlertAction(title:"取消",style:.cancel)
-                purchaseAlert.addAction(confirmAction)
-                purchaseAlert.addAction(cancelAction)
-                present(purchaseAlert, animated: true, completion: nil)
-            }
-            else {
-                let alert = UIAlertController(title: "金額不足", message: "請努力打怪", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "確認", style: .cancel)
-                alert.addAction(okAction)
-                present(alert, animated: true, completion: nil)
-            }
-        } else if shopItems[indexPath.row] == "atk_potion" {
-            if Money.current.moneyNumber >= ItemsPrice.shared.atk_potion {
-                
-                let purchaseAlert = UIAlertController(title:"購買道具",message:"確認要購買嗎？",preferredStyle:.alert)
-                
-                let confirmAction = UIAlertAction(title:"確定",style:.default){(action)in
-                    Backpack.current.addItems(itemName: self.shopItems[indexPath.row])
-                    Money.current.moneyNumber = Money.current.moneyNumber - ItemsPrice.shared.atk_potion
-                    self.moneyLabel.text = "$: \(Money.current.moneyNumber)"
-                    self.shopItems.remove(at: indexPath.row)
-                    self.shopStoreCollectionView.reloadData()
-                    
-                    if self.shopItems == [] {
-                        let emptyAlert = UIAlertController(title: "商店進貨中", message: "請下次再來", preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "確認", style: .default, handler: { (action) in
-                            print("商店為空")
-                        })
-                        emptyAlert.addAction(okAction)
-                        self.present(emptyAlert, animated: true, completion: nil)
-                    }
                 }
                 let cancelAction = UIAlertAction(title:"取消",style:.cancel)
                 purchaseAlert.addAction(confirmAction)
                 purchaseAlert.addAction(cancelAction)
                 present(purchaseAlert, animated: true, completion: nil)
-            }
-            else {
-                let alert = UIAlertController(title: "金額不足", message: "請努力打怪", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "確認", style: .cancel)
-                alert.addAction(okAction)
-                present(alert, animated: true, completion: nil)
-            }
-        } else if shopItems[indexPath.row] == "def_potion" {
-            if Money.current.moneyNumber >= ItemsPrice.shared.def_potion{
                 
-                let purchaseAlert = UIAlertController(title:"購買道具",message:"確認要購買嗎？",preferredStyle:.alert)
-                
-                let confirmAction = UIAlertAction(title:"確定",style:.default){(action)in
-                    Backpack.current.addItems(itemName: self.shopItems[indexPath.row])
-                    Money.current.moneyNumber = Money.current.moneyNumber - ItemsPrice.shared.def_potion
-                    self.moneyLabel.text = "$: \(Money.current.moneyNumber)"
-                    self.shopItems.remove(at: indexPath.row)
-                    self.shopStoreCollectionView.reloadData()
-                    
-                    if self.shopItems == [] {
-                        let emptyAlert = UIAlertController(title: "商店進貨中", message: "請下次再來", preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "確認", style: .default, handler: { (action) in
-                            print("商店為空")
-                        })
-                        emptyAlert.addAction(okAction)
-                        self.present(emptyAlert, animated: true, completion: nil)
-                    }
-                }
-                let cancelAction = UIAlertAction(title:"取消",style:.cancel)
-                purchaseAlert.addAction(confirmAction)
-                purchaseAlert.addAction(cancelAction)
-                present(purchaseAlert, animated: true, completion: nil)
             }
             else {
                 let alert = UIAlertController(title: "金額不足", message: "請努力打怪", preferredStyle: .alert)
@@ -314,6 +75,251 @@ class ShopStoreVC: UIViewController, UICollectionViewDataSource, UICollectionVie
                 present(alert, animated: true, completion: nil)
             }
         }
+    }
+    
+//<<<<<<< HEAD
+//=======
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+            checkMoney(indexPath: indexPath, itemName: shopItems[indexPath.row])
+        
+//        //購買確認
+//         else if shopItems[indexPath.row] == "orange_potion" {
+//            if Money.current.moneyNumber >= ItemsPrice.shared.orange_potion {
+//
+//                let purchaseAlert = UIAlertController(title:"購買道具",message:"確認要購買嗎？",preferredStyle:.alert)
+//
+//                let confirmAction = UIAlertAction(title:"確定",style:.default){(action)in
+//                    //購買成功
+//                    Backpack.current.addItems(itemName: self.shopItems[indexPath.row])
+//                    Money.current.moneyNumber = Money.current.moneyNumber - ItemsPrice.shared.orange_potion
+//                    self.moneyLabel.text = "$: \(Money.current.moneyNumber)"
+//                    self.shopItems.remove(at: indexPath.row)
+//                    self.shopStoreCollectionView.reloadData()
+//
+//                    if self.shopItems == [] {
+//                        let emptyAlert = UIAlertController(title: "商店進貨中", message: "請下次再來", preferredStyle: .alert)
+//                        let okAction = UIAlertAction(title: "確認", style: .default, handler: { (action) in
+//                            print("商店為空")
+//                        })
+//                        emptyAlert.addAction(okAction)
+//                        self.present(emptyAlert, animated: true, completion: nil)
+//                    }
+//                }
+//
+//                let cancelAction = UIAlertAction(title:"取消",style:.cancel)
+//                purchaseAlert.addAction(confirmAction)
+//                purchaseAlert.addAction(cancelAction)
+//                present(purchaseAlert, animated: true, completion: nil)
+//            }
+//            else {
+//                let alert = UIAlertController(title: "金額不足", message: "請努力打怪", preferredStyle: .alert)
+//                let okAction = UIAlertAction(title: "確認", style: .cancel)
+//                alert.addAction(okAction)
+//                present(alert, animated: true, completion: nil)
+//            }
+//        } else if shopItems[indexPath.row] == "clear_potion" {
+//            if Money.current.moneyNumber >= ItemsPrice.shared.clear_potion {
+//
+//                let purchaseAlert = UIAlertController(title:"購買道具",message:"確認要購買嗎？",preferredStyle:.alert)
+//
+//                let confirmAction = UIAlertAction(title:"確定",style:.default){(action)in
+//                    //購買成功
+//                    Backpack.current.addItems(itemName: self.shopItems[indexPath.row])
+//                    Money.current.moneyNumber = Money.current.moneyNumber - ItemsPrice.shared.clear_potion
+//                    self.moneyLabel.text = "$: \(Money.current.moneyNumber)"
+//                    self.shopItems.remove(at: indexPath.row)
+//                    self.shopStoreCollectionView.reloadData()
+//
+//                    if self.shopItems == [] {
+//                        let emptyAlert = UIAlertController(title: "商店進貨中", message: "請下次再來", preferredStyle: .alert)
+//                        let okAction = UIAlertAction(title: "確認", style: .default, handler: { (action) in
+//                            print("商店為空")
+//                        })
+//                        emptyAlert.addAction(okAction)
+//                        self.present(emptyAlert, animated: true, completion: nil)
+//                    }
+//                }
+//
+//                let cancelAction = UIAlertAction(title:"取消",style:.cancel)
+//                purchaseAlert.addAction(confirmAction)
+//                purchaseAlert.addAction(cancelAction)
+//                present(purchaseAlert, animated: true, completion: nil)
+//            }
+//            else {
+//                let alert = UIAlertController(title: "金額不足", message: "請努力打怪", preferredStyle: .alert)
+//                let okAction = UIAlertAction(title: "確認", style: .cancel)
+//                alert.addAction(okAction)
+//                present(alert, animated: true, completion: nil)
+//            }
+//        } else if shopItems[indexPath.row] == "ancient_red_potion" {
+//            if Money.current.moneyNumber >= ItemsPrice.shared.ancient_red_potion {
+//
+//                let purchaseAlert = UIAlertController(title:"購買道具",message:"確認要購買嗎？",preferredStyle:.alert)
+//
+//                let confirmAction = UIAlertAction(title:"確定",style:.default){(action)in
+//                    //購買成功
+//                    Backpack.current.addItems(itemName: self.shopItems[indexPath.row])
+//                    Money.current.moneyNumber = Money.current.moneyNumber - ItemsPrice.shared.ancient_red_potion
+//                    self.moneyLabel.text = "$: \(Money.current.moneyNumber)"
+//                    self.shopItems.remove(at: indexPath.row)
+//                    self.shopStoreCollectionView.reloadData()
+//
+//
+//                    if self.shopItems == [] {
+//                        let emptyAlert = UIAlertController(title: "商店進貨中", message: "請下次再來", preferredStyle: .alert)
+//                        let okAction = UIAlertAction(title: "確認", style: .default, handler: { (action) in
+//                            print("商店為空")
+//                        })
+//                        emptyAlert.addAction(okAction)
+//                        self.present(emptyAlert, animated: true, completion: nil)
+//                    }
+//                }
+//
+//                let cancelAction = UIAlertAction(title:"取消",style:.cancel)
+//                purchaseAlert.addAction(confirmAction)
+//                purchaseAlert.addAction(cancelAction)
+//                present(purchaseAlert, animated: true, completion: nil)
+//            }
+//            else {
+//                let alert = UIAlertController(title: "金額不足", message: "請努力打怪", preferredStyle: .alert)
+//                let okAction = UIAlertAction(title: "確認", style: .cancel)
+//                alert.addAction(okAction)
+//                present(alert, animated: true, completion: nil)
+//            }
+//        } else if shopItems[indexPath.row] == "ancient_orange_potion" {
+//            if Money.current.moneyNumber >= ItemsPrice.shared.ancient_orange_potion {
+//
+//                let purchaseAlert = UIAlertController(title:"購買道具",message:"確認要購買嗎？",preferredStyle:.alert)
+//
+//                let confirmAction = UIAlertAction(title:"確定",style:.default){(action)in
+//                    //購買成功
+//                    Backpack.current.addItems(itemName: self.shopItems[indexPath.row])
+//                    Money.current.moneyNumber = Money.current.moneyNumber - ItemsPrice.shared.ancient_orange_potion
+//                    self.moneyLabel.text = "$: \(Money.current.moneyNumber)"
+//                    self.shopItems.remove(at: indexPath.row)
+//                    self.shopStoreCollectionView.reloadData()
+//
+//                    if self.shopItems == [] {
+//                        let emptyAlert = UIAlertController(title: "商店進貨中", message: "請下次再來", preferredStyle: .alert)
+//                        let okAction = UIAlertAction(title: "確認", style: .default, handler: { (action) in
+//                            print("商店為空")
+//                        })
+//                        emptyAlert.addAction(okAction)
+//                        self.present(emptyAlert, animated: true, completion: nil)
+//                    }
+//                }
+//
+//                let cancelAction = UIAlertAction(title:"取消",style:.cancel)
+//                purchaseAlert.addAction(confirmAction)
+//                purchaseAlert.addAction(cancelAction)
+//                present(purchaseAlert, animated: true, completion: nil)
+//            }
+//            else {
+//                let alert = UIAlertController(title: "金額不足", message: "請努力打怪", preferredStyle: .alert)
+//                let okAction = UIAlertAction(title: "確認", style: .cancel)
+//                alert.addAction(okAction)
+//                present(alert, animated: true, completion: nil)
+//            }
+//        } else if shopItems[indexPath.row] == "ancient_clear_potion" {
+//            if Money.current.moneyNumber >= ItemsPrice.shared.ancient_clear_potion {
+//
+//                let purchaseAlert = UIAlertController(title:"購買道具",message:"確認要購買嗎？",preferredStyle:.alert)
+//
+//                let confirmAction = UIAlertAction(title:"確定",style:.default){(action)in
+//                    //購買成功
+//                    Backpack.current.addItems(itemName: self.shopItems[indexPath.row])
+//                    Money.current.moneyNumber = Money.current.moneyNumber - ItemsPrice.shared.ancient_clear_potion
+//                    self.moneyLabel.text = "$: \(Money.current.moneyNumber)"
+//                    self.shopItems.remove(at: indexPath.row)
+//                    self.shopStoreCollectionView.reloadData()
+//
+//                    if self.shopItems == [] {
+//                        let emptyAlert = UIAlertController(title: "商店進貨中", message: "請下次再來", preferredStyle: .alert)
+//                        let okAction = UIAlertAction(title: "確認", style: .default, handler: { (action) in
+//                            print("商店為空")
+//                        })
+//                        emptyAlert.addAction(okAction)
+//                        self.present(emptyAlert, animated: true, completion: nil)
+//                    }
+//                }
+//
+//                let cancelAction = UIAlertAction(title:"取消",style:.cancel)
+//                purchaseAlert.addAction(confirmAction)
+//                purchaseAlert.addAction(cancelAction)
+//                present(purchaseAlert, animated: true, completion: nil)
+//            }
+//            else {
+//                let alert = UIAlertController(title: "金額不足", message: "請努力打怪", preferredStyle: .alert)
+//                let okAction = UIAlertAction(title: "確認", style: .cancel)
+//                alert.addAction(okAction)
+//                present(alert, animated: true, completion: nil)
+//            }
+//        } else if shopItems[indexPath.row] == "atk_potion" {
+//            if Money.current.moneyNumber >= ItemsPrice.shared.atk_potion {
+//
+//                let purchaseAlert = UIAlertController(title:"購買道具",message:"確認要購買嗎？",preferredStyle:.alert)
+//
+//                let confirmAction = UIAlertAction(title:"確定",style:.default){(action)in
+//                    Backpack.current.addItems(itemName: self.shopItems[indexPath.row])
+//                    Money.current.moneyNumber = Money.current.moneyNumber - ItemsPrice.shared.atk_potion
+//                    self.moneyLabel.text = "$: \(Money.current.moneyNumber)"
+//                    self.shopItems.remove(at: indexPath.row)
+//                    self.shopStoreCollectionView.reloadData()
+//
+//                    if self.shopItems == [] {
+//                        let emptyAlert = UIAlertController(title: "商店進貨中", message: "請下次再來", preferredStyle: .alert)
+//                        let okAction = UIAlertAction(title: "確認", style: .default, handler: { (action) in
+//                            print("商店為空")
+//                        })
+//                        emptyAlert.addAction(okAction)
+//                        self.present(emptyAlert, animated: true, completion: nil)
+//                    }
+//                }
+//                let cancelAction = UIAlertAction(title:"取消",style:.cancel)
+//                purchaseAlert.addAction(confirmAction)
+//                purchaseAlert.addAction(cancelAction)
+//                present(purchaseAlert, animated: true, completion: nil)
+//            }
+//            else {
+//                let alert = UIAlertController(title: "金額不足", message: "請努力打怪", preferredStyle: .alert)
+//                let okAction = UIAlertAction(title: "確認", style: .cancel)
+//                alert.addAction(okAction)
+//                present(alert, animated: true, completion: nil)
+//            }
+//        } else if shopItems[indexPath.row] == "def_potion" {
+//            if Money.current.moneyNumber >= ItemsPrice.shared.def_potion{
+//
+//                let purchaseAlert = UIAlertController(title:"購買道具",message:"確認要購買嗎？",preferredStyle:.alert)
+//
+//                let confirmAction = UIAlertAction(title:"確定",style:.default){(action)in
+//                    Backpack.current.addItems(itemName: self.shopItems[indexPath.row])
+//                    Money.current.moneyNumber = Money.current.moneyNumber - ItemsPrice.shared.def_potion
+//                    self.moneyLabel.text = "$: \(Money.current.moneyNumber)"
+//                    self.shopItems.remove(at: indexPath.row)
+//                    self.shopStoreCollectionView.reloadData()
+//
+//                    if self.shopItems == [] {
+//                        let emptyAlert = UIAlertController(title: "商店進貨中", message: "請下次再來", preferredStyle: .alert)
+//                        let okAction = UIAlertAction(title: "確認", style: .default, handler: { (action) in
+//                            print("商店為空")
+//                        })
+//                        emptyAlert.addAction(okAction)
+//                        self.present(emptyAlert, animated: true, completion: nil)
+//                    }
+//                }
+//                let cancelAction = UIAlertAction(title:"取消",style:.cancel)
+//                purchaseAlert.addAction(confirmAction)
+//                purchaseAlert.addAction(cancelAction)
+//                present(purchaseAlert, animated: true, completion: nil)
+//            }
+//            else {
+//                let alert = UIAlertController(title: "金額不足", message: "請努力打怪", preferredStyle: .alert)
+//                let okAction = UIAlertAction(title: "確認", style: .cancel)
+//                alert.addAction(okAction)
+//                present(alert, animated: true, completion: nil)
+//            }
+//        }
     }
     
 //>>>>>>> Update lineageM in Singleton

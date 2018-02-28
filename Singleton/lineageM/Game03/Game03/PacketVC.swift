@@ -69,11 +69,11 @@ class PacketVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        itemNumbersLabel.text = "Item: \(Backpack.current.backpackItems.count) 個"
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        itemNumbersLabel.text = "Item: \(Backpack.current.backpackItems.count) 個"
         backpackCollectionView.reloadData()
         backpackCheck()
     }
