@@ -20,26 +20,28 @@ class PackViewController: UIViewController {
   @IBOutlet weak var hintView: UIView!
   
   weak var delegate: PackViewControllerDelegate?
-    
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-  
+    
     packItemsCollection.delegate = self
     packItemsCollection.dataSource = self
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     
     if Items.shared.itemInPack.count != 0 {
       hintView.isHidden = true
     }
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
     
     totalAsset.text = String(Asset.shared.totalAsset)
     totalItems.text = String(Items.shared.itemInPack.count)
+    
+    packItemsCollection.reloadData()
   }
-
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
@@ -50,20 +52,11 @@ class PackViewController: UIViewController {
 // extension PackViewController to be delegate & datasrc of collectionView
 extension PackViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//    delegate?.characterInfoUpdate(packItem: Items.shared.itemInPack[indexPath.item])
-//    Items.shared.itemInPack.remove(at: indexPath.item)
-//
-//    totalItems.text = String(Items.shared.itemInPack.count)
-//    if Items.shared.itemInPack.count == 0 {
-//      hintView.isHidden = false
-//    }
-//
-//    self.packItemsCollection.reloadData()
     confirm(indexPath: indexPath)
   }
   
   func confirm(indexPath: IndexPath) {
-    let alertController = UIAlertController(title: "送出",
+    let alertController = UIAlertController(title: "使用",
                                             message: "確認要使用？",
                                             preferredStyle: .alert)
     
@@ -82,19 +75,17 @@ extension PackViewController: UICollectionViewDelegate {
     }
     alertController.addAction(okAction)
     
-    // 顯示提示框
     self.present(alertController, animated: true, completion: nil)
   }
 }
 
 extension PackViewController: UICollectionViewDataSource {
-    
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
+    
     return Items.shared.itemInPack.count
   }
-    
-    
+  
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PackItemCell", for: indexPath) as! PackCollectionViewCell
     
@@ -102,9 +93,7 @@ extension PackViewController: UICollectionViewDataSource {
     cell.itemInPackPowerVal.text = String(Items.shared.itemInPack[indexPath.item].powerValue)
     cell.itemInPackAffectType.text = String(Items.shared.itemInPack[indexPath.item].attribute)
     return cell
-  }
     
+  }
+  
 }
-
-
-

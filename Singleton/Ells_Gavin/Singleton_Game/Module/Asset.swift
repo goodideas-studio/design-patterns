@@ -1,14 +1,12 @@
-//
 //  Asset.swift
 //  Singleton_Game
 //
 //  Created by PinguMac on 2018/2/26.
 //  Copyright © 2018年 唐嘉伶. All rights reserved.
-//
 
 import Foundation
 
-let defaultAsset: Int = 1000
+let defaultAsset: Int = 100
 
 final class Asset {
   static let shared = Asset()
@@ -18,10 +16,14 @@ final class Asset {
     print("Asset create.")
   }
   
-  func increaseMoney(Money: Int) -> Int {
-    totalAsset += Money
+  func increaseMoney(money: Int) -> Int {
+    totalAsset += money
     return totalAsset
   }
-    
+  
+  func decrease(money: Int) -> Int {
+    totalAsset -= money
+    return totalAsset
+  }
     
 }

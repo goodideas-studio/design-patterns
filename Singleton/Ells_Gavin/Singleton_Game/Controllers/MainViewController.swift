@@ -32,20 +32,24 @@ class MainViewController: UIViewController {
     packVC.delegate = self
     
     // Initial all view controller in tab bar controller
-    for viewController in (self.tabBarController?.viewControllers)! {
-      _ = viewController.view
-    }
+//    for viewController in (self.tabBarController?.viewControllers)! {
+//      _ = viewController.view
+//    }
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
     
     totalAssetLabel.text = String(Asset.shared.totalAsset)
   }
-
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
 
   @IBAction func giveMeMoney(_ sender: UIButton) {
-    totalAssetLabel.text = String(Asset.shared.increaseMoney(Money: 5))
+    totalAssetLabel.text = String(Asset.shared.increaseMoney(money: 5))
   }
 }
 
@@ -55,6 +59,15 @@ extension MainViewController: PackViewControllerDelegate {
     case ItemAttribute.Attack.rawValue:
       character.ATK += packItem.powerValue
       atkVal.text = String(character.ATK)
+      
+    case ItemAttribute.MP.rawValue:
+      character.MP += packItem.powerValue
+      mpVal.text = String(character.MP)
+      
+    case ItemAttribute.Defence.rawValue:
+      character.DEF += packItem.powerValue
+      defVal.text = String(character.DEF)
+      
     default:
       break
     }
