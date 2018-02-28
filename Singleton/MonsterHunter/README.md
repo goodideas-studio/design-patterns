@@ -3,6 +3,8 @@
 
 此App使用到Singleton的地方在於Status class(角色狀態)、Package class(背包)、SingletonList class(商品)。只要宣告類別為object就有如同Java static class的作用。
 
+Example:
+
 ```
 object Package: ArrayList<Stuff>() {
     init {
