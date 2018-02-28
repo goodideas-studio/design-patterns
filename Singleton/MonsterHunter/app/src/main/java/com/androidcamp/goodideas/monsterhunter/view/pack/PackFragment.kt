@@ -12,7 +12,6 @@ import android.widget.AdapterView
 import com.androidcamp.goodideas.monsterhunter.MainModel.Status
 import com.androidcamp.goodideas.monsterhunter.PackageModel.Package
 import com.androidcamp.goodideas.monsterhunter.R
-import com.androidcamp.goodideas.monsterhunter.view.StuffAdapter
 import kotlinx.android.synthetic.main.fragment_pack.*
 
 class PackFragment : Fragment() {

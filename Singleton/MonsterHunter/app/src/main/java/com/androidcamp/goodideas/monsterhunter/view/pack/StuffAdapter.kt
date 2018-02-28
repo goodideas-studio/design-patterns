@@ -1,4 +1,4 @@
-package com.androidcamp.goodideas.monsterhunter.view
+package com.androidcamp.goodideas.monsterhunter.view.pack
 
 import android.content.Context
 import android.content.res.Resources
