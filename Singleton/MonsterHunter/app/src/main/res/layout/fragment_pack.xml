@@ -11,19 +11,35 @@
         android:layout_height="60dp"
         android:background="@color/md_green_300">
 
-        <TextView
-            android:id="@+id/textView_pack_total"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Total：" />
+        <!--<TextView-->
+            <!--android:id="@+id/textView_pack_total"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:text="Total：" />-->
+
+        <ImageView
+            android:id="@+id/imageView_pack_total"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true" />
 
         <TextView
             android:id="@+id/textView_pack_amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_toRightOf="@+id/textView_pack_total" />
+            android:layout_toRightOf="@+id/imageView_pack_total" />
+
+        <!--<ImageView-->
+            <!--android:id="@+id/imageView_pack_redWaterIcon"-->
+            <!--android:layout_width="20dp"-->
+            <!--android:layout_height="20dp" />-->
+        <!---->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text=":0"/>-->
 
     </RelativeLayout>
 
