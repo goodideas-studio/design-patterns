@@ -1,6 +1,6 @@
 # LineageM 說明
 
-![](https://i.imgur.com/gmoaFNk.gif)
+![demo.gif ](demo.gif)
 
 
 ## 1. 目的
