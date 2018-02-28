@@ -41,6 +41,7 @@ class PacketVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
             self.delegate?.useItem(itemName: Backpack.current.backpackItems[indexPath.row])
             //print(indexPath)
             Backpack.current.useItems(itemLocation: indexPath.row)
+            self.backpackCheck()
             self.itemNumbersLabel.text = "Item: \(Backpack.current.backpackItems.count) 個"
             self.backpackCollectionView.reloadData()
         }))
@@ -51,6 +52,18 @@ class PacketVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         
         //print("\(indexPath)")
     }
+    
+    func backpackCheck() {
+        
+        if Backpack.current.backpackItems == [] {
+            let alert = UIAlertController(title: "包包是空的", message: "快去商店買道具吧", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "好", style: .default, handler: { _ in
+                self.tabBarController?.selectedIndex = 2
+            }))
+            present(alert, animated: true)
+        }
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +73,7 @@ class PacketVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
     
     override func viewDidAppear(_ animated: Bool) {
         backpackCollectionView.reloadData()
+        backpackCheck()
     }
 
     override func didReceiveMemoryWarning() {

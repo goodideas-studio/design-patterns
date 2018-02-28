@@ -1,6 +1,5 @@
 package com.androidcamp.goodideas.monsterhunter.view.pack
 
-import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -12,17 +11,16 @@ import android.widget.AdapterView
 import com.androidcamp.goodideas.monsterhunter.MainModel.Status
 import com.androidcamp.goodideas.monsterhunter.model.pack.Package
 import com.androidcamp.goodideas.monsterhunter.R
+import com.androidcamp.goodideas.monsterhunter.presenter.pack.PackPresenter
 import kotlinx.android.synthetic.main.fragment_pack.*
 
-class PackFragment : Fragment() {
-
-    // TODO: Rename and change types of parameters
-    private var mParam1: String? = null
-    private var mParam2: String? = null
+class PackFragment : Fragment(), PackView {
+    val presenter = PackPresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        //
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
@@ -33,33 +31,21 @@ class PackFragment : Fragment() {
         return view
     }
 
-
     override fun onStart() {
         super.onStart()
         Log.d("onStart", "package size: ${Package.size}")
-        changeTotalCount()
-        initGridView()
+
+        // retrieve package singleton and init gridView
+        presenter.retrievePackage()
+        // show stuff's count
+        presenter.showStuffCount()
     }
 
-    override fun onAttach(context: Context?) {
-        super.onAttach(context)
-
-    }
-
-    override fun onDetach() {
-        super.onDetach()
-    }
-
-    fun changeTotalCount() {
+    override fun setStuffCount() {
         textView_pack_amount.setText(Package.size.toString())
     }
 
-    fun enhanceStatus(index: Int) {
-        Status.hp = Status.hp + Package[index].hp
-        Status.mp = Status.mp + Package[index].mp
-    }
-
-    fun initGridView() {
+    override fun initGridView() {
         val adapter = StuffAdapter(activity, Package)
         gridView_pack_stuffList.adapter = adapter
 
@@ -73,30 +59,14 @@ class PackFragment : Fragment() {
                             "確定使用?")
                     .setPositiveButton("確定", DialogInterface.OnClickListener { dialogInterface, i ->
                         Log.d("UseStuffDialog", "確認")
+                        presenter.
                         enhanceStatus(index)    // Enhance Warrior's HP and MP
                         // Update fragment's view
                         Package.removeAt(index) // Remove item of list
                         adapter.notifyDataSetChanged()  // notify view that data has been changed
-                        changeTotalCount()  // Stuff's count
+                        setStuffCount()  // Stuff's count
                     }).setNegativeButton("取消", DialogInterface.OnClickListener { dialogInterface, i ->  })
                     .show()
         }
     }
-
-//    companion object {
-//        // TODO: Rename parameter arguments, choose names that match
-//        // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-//        private val ARG_PARAM1 = "param1"
-//        private val ARG_PARAM2 = "param2"
-//
-//        // TODO: Rename and change types and number of parameters
-//        fun newInstance(param1: String, param2: String): PackFragment {
-//            val fragment = PackFragment()
-//            val args = Bundle()
-//            args.putString(ARG_PARAM1, param1)
-//            args.putString(ARG_PARAM2, param2)
-//            fragment.arguments = args
-//            return fragment
-//        }
-//    }
-}// Required empty public constructor
+}
