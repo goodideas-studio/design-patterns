@@ -26,6 +26,8 @@ object SingletonList : ArrayList<ShopItem>() {
         this.add(ShopItem("sword8", R.drawable.sword, 180, 55,1620))
         this.add(ShopItem("sword9", R.drawable.sword, 200, 60,1356))
         this.add(ShopItem("sword10", R.drawable.sword, 300, 98,1489))
+        this.add(ShopItem("Red water",R.drawable.red_water,30,0,20))
+        this.add(ShopItem("Blue water",R.drawable.blue_water,0,50,20))
     }
 
 }

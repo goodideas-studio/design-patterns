@@ -51,7 +51,7 @@ class ShopItemAdapter : BaseAdapter {
     var inputStream:InputStream=context!!.resources.openRawResource(drawable)
         var options:BitmapFactory.Options=BitmapFactory.Options()
         options.inJustDecodeBounds=false
-        options.inSampleSize=10
+        options.inSampleSize=6
         var btp:Bitmap=BitmapFactory.decodeStream(inputStream,null,options)
     return btp
     }
