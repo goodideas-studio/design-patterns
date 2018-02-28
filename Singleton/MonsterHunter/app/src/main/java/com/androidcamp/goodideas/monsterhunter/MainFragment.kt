@@ -6,6 +6,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import com.androidcamp.goodideas.monsterhunter.MainModel.Boss
@@ -31,6 +33,7 @@ class MainFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        img_sword_01.alpha = 0F
 
 
         Log.d("onStart", "hp:　${Status.hp}")
@@ -46,18 +49,23 @@ class MainFragment : Fragment() {
         ib_sword.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(p0: View?) {
-                val zhangch = AnimationUtils.loadAnimation(this@MainFragment.context, R.anim.sword)
-                zhangch.setDuration(300)
-                ib_sword.startAnimation(zhangch)
-                val zhangch2 = AnimationUtils.loadAnimation(this@MainFragment.context, R.anim.boss)
-                zhangch2.setDuration(1000)
-                img_boss.startAnimation(zhangch2)
 
 
                 tv_money.setText(Status.money.toString())
                 if(Boss.hp>0) {
                     Boss.hp -= Status.attack
                     Status.money += 200
+
+                    val zhangch = AnimationUtils.loadAnimation(this@MainFragment.context, R.anim.sword)
+                    zhangch.setDuration(300)
+                    ib_sword.startAnimation(zhangch)
+                    val zhangch2 = AnimationUtils.loadAnimation(this@MainFragment.context, R.anim.boss)
+                    zhangch2.setDuration(1000)
+                    img_boss.startAnimation(zhangch2)
+                    val sword_an :Animation= AlphaAnimation(0f,1f)
+
+                    sword_an.duration = 1000
+                    img_sword_01.startAnimation(sword_an)
                     Toast.makeText(this@MainFragment.context,"Boss HP - 100 \n money +100",Toast.LENGTH_SHORT).show()
                 }else{
                     Boss.hp =0

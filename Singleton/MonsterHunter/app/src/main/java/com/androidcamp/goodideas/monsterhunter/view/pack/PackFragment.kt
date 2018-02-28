@@ -1,6 +1,7 @@
 package com.androidcamp.goodideas.monsterhunter.view.pack
 
 import android.content.DialogInterface
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.util.Log
@@ -15,6 +16,7 @@ import com.androidcamp.goodideas.monsterhunter.presenter.pack.PackPresenter
 import kotlinx.android.synthetic.main.fragment_pack.*
 
 class PackFragment : Fragment(), PackView {
+
     val presenter = PackPresenter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,14 +35,20 @@ class PackFragment : Fragment(), PackView {
         super.onStart()
         Log.d("onStart", "package size: ${Package.size}")
 
+        // Compress bitmap and set to imageBag
+        presenter.setBagImage()
         // retrieve package singleton and init gridView
         presenter.retrievePackage()
         // show stuff's count
         presenter.showStuffCount()
     }
 
-    override fun setStuffCount() {
-        textView_pack_amount.setText(Package.size.toString())
+    override fun setBagImage(bitmap: Bitmap) {
+        imageView_pack_total.setImageBitmap(bitmap)
+    }
+
+    override fun setStuffCount(stuffCount: Int) {
+        textView_pack_amount.setText(": ${stuffCount}")
     }
 
     override fun initGridView() {
@@ -62,7 +70,7 @@ class PackFragment : Fragment(), PackView {
                         // Update fragment's view
                         Package.removeAt(index) // Remove item of list
                         adapter.notifyDataSetChanged()  // notify view that data has been changed
-                        setStuffCount()  // Stuff's count
+                        presenter.showStuffCount()  // Stuff's count
                     }).setNegativeButton("取消", DialogInterface.OnClickListener { dialogInterface, i ->  })
                     .show()
         }

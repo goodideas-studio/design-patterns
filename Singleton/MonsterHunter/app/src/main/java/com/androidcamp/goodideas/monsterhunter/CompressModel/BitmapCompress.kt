@@ -34,6 +34,7 @@ object BitmapCompress {
                 inSampleSize *= 2
             }
         }
+
         Log.d("calculateFitSize", "imSampleSize: ${inSampleSize}")
         return inSampleSize
     }

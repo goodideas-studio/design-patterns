@@ -4,5 +4,8 @@
         android:fromXDelta="-50"
         android:toXDelta="-30"
         android:fromYDelta="-20"
-        android:toYDelta="-500"/>
+        android:toYDelta="-600"/>
+    <rotate
+        android:fromDegrees="0"
+        android:toDegrees="60"/>
 </set>

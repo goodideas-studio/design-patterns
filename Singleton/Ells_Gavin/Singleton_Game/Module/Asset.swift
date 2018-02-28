@@ -22,4 +22,6 @@ final class Asset {
     totalAsset += Money
     return totalAsset
   }
+    
+    
 }

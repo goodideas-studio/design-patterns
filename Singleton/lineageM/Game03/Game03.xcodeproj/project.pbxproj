@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7794F2820467DC4005EA108 /* demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = F7794F2720467DC4005EA108 /* demo.gif */; };
 		F7E5CFB12043B65B004A731C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5CFB02043B65B004A731C /* AppDelegate.swift */; };
 		F7E5CFB32043B65B004A731C /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5CFB22043B65B004A731C /* MainVC.swift */; };
 		F7E5CFB62043B65B004A731C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7E5CFB42043B65B004A731C /* Main.storyboard */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F7794F262046741D005EA108 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F7794F2720467DC4005EA108 /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = demo.gif; path = ../../../../../../Downloads/demo.gif; sourceTree = "<group>"; };
 		F7E5CFAD2043B65A004A731C /* Game03.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Game03.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7E5CFB02043B65B004A731C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7E5CFB22043B65B004A731C /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -50,6 +53,8 @@
 		F7E5CFA42043B65A004A731C = {
 			isa = PBXGroup;
 			children = (
+				F7794F2720467DC4005EA108 /* demo.gif */,
+				F7794F262046741D005EA108 /* README.md */,
 				F7E5CFAF2043B65A004A731C /* Game03 */,
 				F7E5CFAE2043B65A004A731C /* Products */,
 			);
@@ -142,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7E5CFBB2043B65B004A731C /* LaunchScreen.storyboard in Resources */,
+				F7794F2820467DC4005EA108 /* demo.gif in Resources */,
 				F7E5CFB82043B65B004A731C /* Assets.xcassets in Resources */,
 				F7E5CFB62043B65B004A731C /* Main.storyboard in Resources */,
 			);
