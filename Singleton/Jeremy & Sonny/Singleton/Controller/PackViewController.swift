@@ -90,8 +90,6 @@ class PackViewController: UIViewController,UICollectionViewDelegate,UICollection
             }
         }
         
-        
-        
         packAlert.addAction(cancelAction)
         packAlert.addAction(okAction)
 

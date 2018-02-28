@@ -11,6 +11,10 @@ import UIKit
 class HomeViewController: UIViewController {
     
     
+    @IBOutlet weak var ghostImage: UIImageView!
+    @IBOutlet weak var hpMpView: UIView!
+    @IBOutlet weak var hpView: UIView!
+    @IBOutlet weak var mpView: UIView!
     
     @IBOutlet weak var attackImage: UIImageView!
     @IBOutlet weak var mainView: UIView!
@@ -22,6 +26,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var hpLabel: UILabel!
     @IBOutlet weak var mpLabel: UILabel!
     @IBOutlet weak var moneyLabel: UILabel!
+    @IBOutlet weak var attackButton: UIButton!
     
     @IBAction func attackAction(_ sender: UIButton) {
         
@@ -43,6 +48,10 @@ class HomeViewController: UIViewController {
             })
         })
         
+        Character.shared.hp -= 10
+        
+        updateStatus()
+        updateHPMP()
         Character.shared.dollars += 100
         moneyLabel.text = String(Character.shared.dollars)
         
@@ -65,11 +74,11 @@ class HomeViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        atkLabel.text = "ATK:\(Character.shared.atk)"
-        defLabel.text = "DEF:\(Character.shared.def)"
-        hpLabel.text = "HP:\(Character.shared.hp)"
-        mpLabel.text = "MP:\(Character.shared.mp)"
-        moneyLabel.text = "\(Character.shared.dollars)"
+        updateHPMP()
+        updateStatus()
+        ghostImage.center.y += 30
+        ghostImage.alpha = 0
+        
         
         UIView.animate(withDuration: 0.8, delay: 0, options: [UIViewAnimationOptions.autoreverse,.repeat], animations: {
             self.monsterImage.center.y -= 50
@@ -82,6 +91,39 @@ class HomeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func updateHPMP() {
+        
+        if Character.shared.hp <= 0 {
+            self.hpView.frame = CGRect(x: 0, y: 0, width: 0, height: 10)
+            UIView.animate(withDuration: 1, animations: {
+                UIView.animate(withDuration: 1, animations: {
+                    self.ghostImage.alpha = 1
+                    self.ghostImage.center.y -= 30
+                })
+            }, completion: { (finish) in
+                UIView.animate(withDuration: 1, animations: {
+                    self.ghostImage.alpha = 0
+                })
+            })
+            
+            
+            self.attackButton.isEnabled = false
+        } else {
+            self.attackButton.isEnabled = true
+            self.hpView.frame = CGRect(x: 0, y: 0, width: Character.shared.hp, height: 10)
+        }
+        
+        
+    }
+    
+    func updateStatus() {
+        atkLabel.text = "ATK:\(Character.shared.atk)"
+        defLabel.text = "DEF:\(Character.shared.def)"
+        hpLabel.text = "HP:\(Character.shared.hp)"
+        mpLabel.text = "MP:\(Character.shared.mp)"
+        moneyLabel.text = "\(Character.shared.dollars)"
     }
 
 
