@@ -11,6 +11,5 @@ import Foundation
 class Pack {
     // 背包物品
     var packItem = [String]()
-    
-    
+
 }

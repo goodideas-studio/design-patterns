@@ -8,20 +8,12 @@
 
 import UIKit
 
-protocol ShopDelegate {
-    func PutInPack(itemName:String)
-}
-
-
-
 class ShopViewController: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource {
     
     // 創建 Shop 實例
     var shop = Shop()
-    
-    // Delegate
-    var shopItemDelegate:ShopDelegate?
-    
+    var shoppingCart:[Item] = []
+    var total = 0
     
     @IBOutlet weak var messageView: UILabel!
     @IBOutlet weak var moneyLabel: UILabel!
@@ -45,7 +37,8 @@ class ShopViewController: UIViewController , UICollectionViewDelegate, UICollect
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        moneyLabel.text = "Money:\(Character.shared.dollars)"
+        messageView.alpha = 0
+        moneyLabel.text = "\(Character.shared.dollars)"
     }
 
     
@@ -67,20 +60,30 @@ class ShopViewController: UIViewController , UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         
-        let shopButton = UIButton(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
+        let shopButton = UIButton(frame: CGRect(x: 10, y: 10, width: 130, height: 130))
         shopButton.tag = indexPath.row
         shopButton.setImage(UIImage(named: shop.shopItem[indexPath.row].itemName), for: .normal)
         shopButton.addTarget(self, action: #selector(showShopAlert), for: UIControlEvents.touchUpInside)
         
-        cell.addSubview(shopButton)
+        let selectedView = UIView(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
+        selectedView.alpha = 1
+        selectedView.backgroundColor = .white
+        
+        selectedView.addSubview(shopButton)
+        cell.addSubview(selectedView)
         
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.cellForItem(at: indexPath)?.alpha = 1
+        collectionView.cellForItem(at: indexPath)?.backgroundView?.backgroundColor = .blue
+    }
+    
     // Selector Cell按鈕方法
-    @objc func showShopAlert(sender:UIButton) -> String{
+    @objc func showShopAlert(sender:UIButton){
         
-        if Character.shared.dollars <= shop.shopItem[sender.tag].dollars {
+        if Character.shared.dollars < shop.shopItem[sender.tag].dollars {
             
             UIView.animate(withDuration: 0.4, animations: {
                 self.messageView.alpha = 1
@@ -96,46 +99,57 @@ class ShopViewController: UIViewController , UICollectionViewDelegate, UICollect
             
             
         } else {
-            let shopAlert = UIAlertController(title: "Check", message: "確認要購買？", preferredStyle: UIAlertControllerStyle.alert)
+            let shopAlert = UIAlertController(title: "購買視窗", message: "確認要購買？扣除 $\(self.shop.shopItem[sender.tag].dollars)", preferredStyle: UIAlertControllerStyle.alert)
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) { (finish) in
                 print("取消購買")
             }
+
             let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (finish) in
                 Character.shared.dollars -= self.shop.shopItem[sender.tag].dollars
-                self.moneyLabel.text = "Money:$\(Character.shared.dollars)"
-                
-                
-                
+                self.moneyLabel.text = "\(Character.shared.dollars)"
+
                 // tabbar 方式傳值到 PackViewController
                 if let packVC = self.tabBarController?.viewControllers![1] as? PackViewController {
-                    
                     // 增加 ItemInPack
                     packVC.ItemInPack.append(self.shop.shopItem[sender.tag])
-                    // 修改標題 物品數量
-                    packVC.itemCount.text = "ItemCount:\(packVC.ItemInPack.count)"
+                    self.shop.shopItem.remove(at: sender.tag)
+                    self.shopCollectionView.reloadData()
                     
-                }
-                
-                self.shop.shopItem.remove(at: sender.tag)
-                
-                if self.shop.shopItem.isEmpty == true {
-                    self.messageView.alpha = 1
-                    self.messageView.text = "沒有物品"
-                    self.shopCollectionView.reloadData()
-                } else {
-                    self.shopCollectionView.reloadData()
+                    if self.shop.shopItem.isEmpty == true {
+                        self.messageView.alpha = 1
+                        self.messageView.text = "沒有物品"
+                    }
                 }
             }
+
+
             shopAlert.addAction(cancelAction)
             shopAlert.addAction(okAction)
-            
+
+
             self.present(shopAlert, animated: true, completion: nil)
-        }
-        
-        
-        
-        return shop.shopItem[sender.tag].itemName
-        
+            
+//            // mode 2
+//            Character.shared.dollars -= self.shop.shopItem[sender.tag].dollars
+//            moneyLabel.text = "\(Character.shared.dollars)"
+//            shoppingCart.append(self.shop.shopItem[sender.tag])
+//            total += self.shop.shopItem[sender.tag].dollars
+//
+//            shop.shopItem.remove(at: sender.tag)
+//            shopCollectionView.reloadData()
+
+            
+       }
     }
-    
+//
+
+    @IBAction func buyButton(_ sender: UIButton) {
+//        // mode 2
+//        if let packVC = self.tabBarController?.viewControllers![1] as? PackViewController {
+//
+//            packVC.ItemInPack = shoppingCart
+//            shoppingCart = []
+//        }
+    }
+
 }

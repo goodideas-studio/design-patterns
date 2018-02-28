@@ -12,6 +12,11 @@ class HomeViewController: UIViewController {
     
     
     
+    @IBOutlet weak var attackImage: UIImageView!
+    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var monsterImage: UIImageView!
+    @IBOutlet weak var heroImage: UIImageView!
+    
     @IBOutlet weak var atkLabel: UILabel!
     @IBOutlet weak var defLabel: UILabel!
     @IBOutlet weak var hpLabel: UILabel!
@@ -19,29 +24,36 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var moneyLabel: UILabel!
     
     @IBAction func attackAction(_ sender: UIButton) {
-        print("atk")
+        
+        if heroImage.image == #imageLiteral(resourceName: "Hero-icon") {
+            heroImage.image = #imageLiteral(resourceName: "Hero-icon-atk")
+            attackImage.image = #imageLiteral(resourceName: "attack-1")
+        } else {
+            attackImage.image = #imageLiteral(resourceName: "attack-2")
+            heroImage.image = #imageLiteral(resourceName: "Hero-icon")
+        }
+        
+        UIView.animate(withDuration: 0.4, animations: {
+            self.attackImage.alpha = 0.8
+        }, completion: { (finish) in
+            UIView.animate(withDuration: 0.8, animations: {
+                self.attackImage.alpha = 0
+            }, completion: { (finish) in
+                
+            })
+        })
+        
         Character.shared.dollars += 100
         moneyLabel.text = String(Character.shared.dollars)
-        
-        // tabBar 傳值到 shopView
-        
         
     }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        attackImage.alpha = 0
         
-        // 載入角色素質
-        atkLabel.text = "ATK:\(Character.shared.atk)"
-        defLabel.text = "DEF:\(Character.shared.def)"
-        hpLabel.text = "HP:\(Character.shared.hp)"
-        mpLabel.text = "MP:\(Character.shared.mp)"
-        moneyLabel.text = "\(Character.shared.dollars)"
-        
-        
-        
-        
+        // load其他View
         if let viewControllers = tabBarController?.viewControllers {
             for viewController in viewControllers {
                 let _ = viewController.view
@@ -58,6 +70,12 @@ class HomeViewController: UIViewController {
         hpLabel.text = "HP:\(Character.shared.hp)"
         mpLabel.text = "MP:\(Character.shared.mp)"
         moneyLabel.text = "\(Character.shared.dollars)"
+        
+        UIView.animate(withDuration: 0.8, delay: 0, options: [UIViewAnimationOptions.autoreverse,.repeat], animations: {
+            self.monsterImage.center.y -= 50
+        }) { (finish) in
+            self.monsterImage.center.y += 50
+        }
     }
     
     

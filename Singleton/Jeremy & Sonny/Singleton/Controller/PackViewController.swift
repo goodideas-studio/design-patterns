@@ -11,7 +11,6 @@ import UIKit
 
 class PackViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
-    var player:Character!
     
     @IBOutlet weak var packLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var itemCount: UILabel!
@@ -35,6 +34,7 @@ class PackViewController: UIViewController,UICollectionViewDelegate,UICollection
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
         if ItemInPack.isEmpty == true {
             self.itemCount.text = "沒有物品"
         } else {
@@ -55,7 +55,7 @@ class PackViewController: UIViewController,UICollectionViewDelegate,UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCell", for: indexPath) 
         
         let packButton = UIButton(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
         packButton.tag = indexPath.row
@@ -68,7 +68,8 @@ class PackViewController: UIViewController,UICollectionViewDelegate,UICollection
     }
     
     @objc func showPackAlert(sender:UIButton) -> String{
-
+        
+        
         let packAlert = UIAlertController(title: "Check", message: "確定要使用\(self.ItemInPack[sender.tag].itemName)嗎？", preferredStyle: UIAlertControllerStyle.alert)
 
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) { (finish) in
@@ -78,19 +79,19 @@ class PackViewController: UIViewController,UICollectionViewDelegate,UICollection
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (finish) in
             print("確定要使用\(self.ItemInPack[sender.tag].itemName)嗎？")
             
-            
             self.useItem(item: self.ItemInPack[sender.tag])
-            
             self.ItemInPack.remove(at: sender.tag)
+            self.packColletionView.reloadData()
             
             if self.ItemInPack.isEmpty == true {
-                self.itemCount.text = "沒有物品"
-                self.packColletionView.reloadData()
+                self.itemCount.text = "沒有道具"
             } else {
-                self.packColletionView.reloadData()
                 self.itemCount.text = "ItemCount:\(self.ItemInPack.count)"
             }
         }
+        
+        
+        
         packAlert.addAction(cancelAction)
         packAlert.addAction(okAction)
 
