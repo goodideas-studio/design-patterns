@@ -6,9 +6,20 @@ class BagVC: UIViewController {
     
     @IBOutlet weak var reminderLabel: UILabel!
     
+    
+    //storyboard init先呼叫此方法
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.tabBarItem = UITabBarItem(title: "Bag", image: UIImage(named: "Bag")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "Bag")?.withRenderingMode(.alwaysOriginal))
+    }
+    
   override func viewDidLoad() {
     super.viewDidLoad()
-
+//    if let bagVC = self.navigationController?.tabBarController?.viewControllers![1] as? BagVC{
+//        print("add")
+//        bagVC.tabBarItem = UITabBarItem(title: "Bag", image: UIImage(named: "Bag"), selectedImage: UIImage(named: "Bag")?.withRenderingMode(.alwaysOriginal))
+//    }
+//    self.tabBarItem = UITabBarItem(title: "Bag", image: UIImage(named: "Bag")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "Bag")?.withRenderingMode(.alwaysOriginal))
     collectionView.delegate = self
     collectionView.dataSource = self
   }
