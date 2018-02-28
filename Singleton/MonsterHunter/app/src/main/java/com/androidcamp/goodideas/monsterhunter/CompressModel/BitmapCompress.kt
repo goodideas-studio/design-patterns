@@ -22,7 +22,6 @@ class BitmapCompress {
     }
 
     private fun calculateFitSize(reqWidth: Int, reqHeight: Int, options: BitmapFactory.Options): Int {
-
         // 原始圖片的寬高
         val height = options.outHeight
         val width = options.outWidth
