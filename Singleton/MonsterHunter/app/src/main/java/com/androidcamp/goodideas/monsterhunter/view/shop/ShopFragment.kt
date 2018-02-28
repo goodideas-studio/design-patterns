@@ -35,10 +35,11 @@ class ShopFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        shopPresenter = ShopPresenter(this)
+
     }
 
     override fun onStart() {
+        shopPresenter = ShopPresenter(this)
         adapter = ShopItemAdapter(this.context, SingletonList)
         gridView.adapter = adapter
         gridView.setOnItemClickListener(object : AdapterView.OnItemClickListener {

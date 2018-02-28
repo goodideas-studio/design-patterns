@@ -54,7 +54,7 @@ class MainFragment : Fragment() {
                 tv_money.setText(Status.money.toString())
                 if(Boss.hp>0) {
                     Boss.hp -= Status.attack
-                    Status.money += 200
+                    Status.money += 1000
 
                     val zhangch = AnimationUtils.loadAnimation(this@MainFragment.context, R.anim.sword)
                     zhangch.setDuration(300)
