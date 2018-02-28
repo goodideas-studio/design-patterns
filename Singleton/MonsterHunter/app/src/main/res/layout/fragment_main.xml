@@ -7,7 +7,7 @@
     tools:context="com.androidcamp.goodideas.monsterhunter.MainFragment">
 
     <LinearLayout
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintBottom_toTopOf="@+id/img_boss"
         app:layout_constraintEnd_toStartOf="@+id/worr_status"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +55,7 @@
         app:srcCompat="@drawable/sword" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/img_boss"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/worr_status"

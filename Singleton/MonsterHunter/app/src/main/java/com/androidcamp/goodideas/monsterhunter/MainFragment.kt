@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import com.androidcamp.goodideas.monsterhunter.MainModel.Boss
 import com.androidcamp.goodideas.monsterhunter.MainModel.Status
@@ -14,6 +15,8 @@ import kotlinx.android.synthetic.main.fragment_main.*
 
 
 class MainFragment : Fragment() {
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +31,8 @@ class MainFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+
+
         Log.d("onStart", "hp:　${Status.hp}")
         Log.d("onStart", "mp:　${Status.mp}")
         tv_money.setText(Status.money.toString())
@@ -39,11 +44,25 @@ class MainFragment : Fragment() {
         worr_mp.setText(Status.mp.toString())
         // attack
         ib_sword.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(p0: View?) {
-                Status.money += 200
-                tv_money.setText(Status.money.toString())
 
-                Boss.hp -= Status.attack
+            override fun onClick(p0: View?) {
+                val zhangch = AnimationUtils.loadAnimation(this@MainFragment.context, R.anim.sword)
+                zhangch.setDuration(300)
+                ib_sword.startAnimation(zhangch)
+                val zhangch2 = AnimationUtils.loadAnimation(this@MainFragment.context, R.anim.boss)
+                zhangch2.setDuration(1000)
+                img_boss.startAnimation(zhangch2)
+
+
+                tv_money.setText(Status.money.toString())
+                if(Boss.hp>0) {
+                    Boss.hp -= Status.attack
+                    Status.money += 200
+                    Toast.makeText(this@MainFragment.context,"Boss HP - 100 \n money +100",Toast.LENGTH_SHORT).show()
+                }else{
+                    Boss.hp =0
+
+                }
                 boss_hp.text=Boss.hp.toString()
                 if(Boss.hp==0){
                     Toast.makeText(this@MainFragment.context,"You win", Toast.LENGTH_SHORT).show()
