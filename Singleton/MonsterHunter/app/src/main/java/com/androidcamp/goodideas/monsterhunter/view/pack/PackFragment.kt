@@ -19,8 +19,6 @@ class PackFragment : Fragment(), PackView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        //
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
@@ -59,8 +57,8 @@ class PackFragment : Fragment(), PackView {
                             "確定使用?")
                     .setPositiveButton("確定", DialogInterface.OnClickListener { dialogInterface, i ->
                         Log.d("UseStuffDialog", "確認")
-                        presenter.
-                        enhanceStatus(index)    // Enhance Warrior's HP and MP
+                        presenter.enhanceStatus(index)  // Enhance Warrior's HP and MP
+
                         // Update fragment's view
                         Package.removeAt(index) // Remove item of list
                         adapter.notifyDataSetChanged()  // notify view that data has been changed

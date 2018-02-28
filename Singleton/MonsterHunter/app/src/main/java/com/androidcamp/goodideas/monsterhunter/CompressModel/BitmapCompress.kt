@@ -8,11 +8,7 @@ import android.util.Log
 /**
  * Created by York on 2018/2/27.
  */
-class BitmapCompress: Runnable {
-    override fun run() {
-
-    }
-
+class BitmapCompress {
     fun compressBySize(resource: Resources, resourceId: Int, requestWidth: Int, requestHeight: Int): Bitmap {
         val options = BitmapFactory.Options()
         options.inJustDecodeBounds = true
