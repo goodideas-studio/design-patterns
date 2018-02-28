@@ -1,4 +1,4 @@
-package com.androidcamp.goodideas.monsterhunter
+package com.androidcamp.goodideas.monsterhunter.view.shop
 
 import android.content.DialogInterface
 import android.os.Bundle
@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.Toast
 import com.androidcamp.goodideas.monsterhunter.MainModel.Status
+import com.androidcamp.goodideas.monsterhunter.R
 import com.androidcamp.goodideas.monsterhunter.model.pack.Package
 import com.androidcamp.goodideas.monsterhunter.model.pack.Stuff
 import com.techapp.james.gridviewdemo.ShopItem

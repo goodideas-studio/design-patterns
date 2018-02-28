@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Toast
 import com.androidcamp.goodideas.monsterhunter.MainModel.Status
 import com.androidcamp.goodideas.monsterhunter.view.pack.PackFragment
+import com.androidcamp.goodideas.monsterhunter.view.shop.ShopFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
