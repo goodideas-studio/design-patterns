@@ -115,7 +115,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Main" id="Pa8-OK-wR9"/>
+                    <tabBarItem key="tabBarItem" title="Main" image="character" id="Pa8-OK-wR9"/>
                     <connections>
                         <outlet property="ATKLabel" destination="yJj-61-FjM" id="5vL-bc-zI2"/>
                         <outlet property="DEFLabel" destination="TWl-ci-nac" id="7vH-fR-aPg"/>
@@ -201,7 +201,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rf4-LO-Pi9"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Backpack" id="vny-Gs-Vdi"/>
+                    <tabBarItem key="tabBarItem" title="Backpack" image="backpack" id="vny-Gs-Vdi"/>
                     <connections>
                         <outlet property="backpackCollectionView" destination="p8o-fA-mdu" id="GYU-Ax-jmF"/>
                         <outlet property="itemNumbersLabel" destination="kLz-LP-VHa" id="tYG-LT-Ijw"/>
@@ -302,9 +302,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XXm-VF-35o"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="ShopStore" id="2oy-kt-6S1"/>
+                    <tabBarItem key="tabBarItem" title="ShopStore" image="shopstore" id="2oy-kt-6S1"/>
                     <connections>
                         <outlet property="moneyLabel" destination="3vn-Ci-k8T" id="HKo-NS-fof"/>
+                        <outlet property="shopStoreCollectionView" destination="Bl3-CC-ZdP" id="DCk-pR-gNj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lNg-fd-g4r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -313,8 +314,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="backpack" width="32" height="32"/>
+        <image name="character" width="32" height="32"/>
         <image name="knight" width="606" height="748"/>
         <image name="red_potion" width="32" height="32"/>
+        <image name="shopstore" width="32" height="32"/>
         <image name="weapon" width="64" height="64"/>
     </resources>
 </document>
