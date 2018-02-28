@@ -9,8 +9,6 @@ class BagVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: NSNotification.Name(rawValue: didTappedShoppingItemKey), object: nil)
-    
     collectionView.delegate = self
     collectionView.dataSource = self
   }
@@ -18,10 +16,12 @@ class BagVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         collectionView.reloadData()
-        title = "\(GameManager.current.player!.items.count)"
+        navigationItem.title = "\(GameManager.current.player!.items.count)"
         if (GameManager.current.player?.items.isEmpty)!{
             collectionView.isHidden = true
             reminderLabel.text = "道具用完了，請去商城購買"
+        } else {
+          collectionView.isHidden = false
         }
     }
 }
@@ -48,12 +48,12 @@ extension BagVC: UICollectionViewDelegate, UICollectionViewDataSource {
   }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let alert = UIAlertController(title: "確定使用？", message: "價錢：\(GameManager.current.player!.items[indexPath.row].price)", preferredStyle: .alert)
+    let alert = UIAlertController(title: "確定使用？", message: nil, preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
     alert.addAction(UIAlertAction(title: "確定", style: .default) { _ in
       GameManager.current.player!.items[indexPath.row].apply(character: GameManager.current.character!)
       GameManager.current.player!.items.remove(at: indexPath.row)
-      self.title = "\(GameManager.current.player!.items.count)"
+      self.navigationItem.title = "\(GameManager.current.player!.items.count)"
       collectionView.reloadData()
         if (GameManager.current.player?.items.isEmpty)!{
             collectionView.isHidden = true
@@ -62,10 +62,4 @@ extension BagVC: UICollectionViewDelegate, UICollectionViewDataSource {
     })
     present(alert, animated: true, completion: nil)
   }
-    
-  
-    @objc func updateUI(){
-        title = "\(GameManager.current.player!.items.count)"
-    }
-    
 }

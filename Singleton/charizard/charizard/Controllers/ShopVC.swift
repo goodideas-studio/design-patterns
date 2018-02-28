@@ -8,10 +8,6 @@
 
 import UIKit
 
-let bottonPostKey = "charizard.tabbar.updateShoppingVCUI"
-
-let didTappedShoppingItemKey = "charizard.tabbar.updateBagVCUI"
-
 class ShopVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     
@@ -56,14 +52,13 @@ class ShopVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             if GameManager.current.player!.balance >= self.shoppingItems[indexPath.row].price {
                 GameManager.current.player?.items.append(self.shoppingItems[indexPath.row])
                 GameManager.current.player?.balance -= self.shoppingItems[indexPath.row].price
-                self.title = "\(GameManager.current.player!.balance)"
+                self.navigationItem.title = "\(GameManager.current.player!.balance)"
                 self.shoppingItems.remove(at: indexPath.row)
                 self.shoppingItemCollectionView.reloadData()
                 if self.shoppingItems.isEmpty{
                     self.shoppingItemCollectionView.isHidden = true
                     self.reminderLabel.text = "沒貨了喔"
                 }
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue:didTappedShoppingItemKey), object: nil)
             }
         }
         let cancelPurchaseAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
@@ -77,7 +72,6 @@ class ShopVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: NSNotification.Name(rawValue: bottonPostKey), object: nil)
         shoppingItemCollectionView.delegate = self
         shoppingItemCollectionView.dataSource = self
         // Do any additional setup after loading the view.
@@ -85,11 +79,12 @@ class ShopVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        title = "\(GameManager.current.player!.balance)"
-        if self.shoppingItems.isEmpty{
+        navigationItem.title = "\(GameManager.current.player!.balance)"
+        if shoppingItems.isEmpty {
             shoppingItemCollectionView.isHidden = true
             reminderLabel.text = "沒貨了喔"
-            
+        } else {
+            shoppingItemCollectionView.isHidden = false
         }
     }
 
@@ -97,10 +92,6 @@ class ShopVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @objc func updateUI(){
-        title = "\(GameManager.current.player!.balance)"
     }
     
 

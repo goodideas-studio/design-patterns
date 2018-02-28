@@ -13,7 +13,6 @@ class GameVC: UIViewController {
   @IBAction func didTouchUpWeapon(_ sender: Any) {
     GameManager.current.player!.balance += 5
     balanceLabel.text = "$:\(GameManager.current.player!.balance)"
-    NotificationCenter.default.post(name: NSNotification.Name(rawValue:bottonPostKey), object: nil)
   }
 
   override func viewDidLoad() {

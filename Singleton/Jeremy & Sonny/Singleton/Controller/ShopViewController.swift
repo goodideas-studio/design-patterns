@@ -23,11 +23,15 @@ class ShopViewController: UIViewController , UICollectionViewDelegate, UICollect
     var shopItemDelegate:ShopDelegate?
     
     
+    @IBOutlet weak var messageView: UILabel!
+    @IBOutlet weak var moneyLabel: UILabel!
     @IBOutlet weak var shopCollectionView: UICollectionView!
     @IBOutlet weak var shopLayout: UICollectionViewFlowLayout!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Loading ShopView")
+        
         
         // shop 排版
         shopLayout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
@@ -39,12 +43,21 @@ class ShopViewController: UIViewController , UICollectionViewDelegate, UICollect
         shopCollectionView.delegate = self
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        moneyLabel.text = "Money:\(Character.shared.dollars)"
+    }
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         
     }
+    
+    
+    
     
     // CollectionView協定
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -56,46 +69,72 @@ class ShopViewController: UIViewController , UICollectionViewDelegate, UICollect
         
         let shopButton = UIButton(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
         shopButton.tag = indexPath.row
-        shopButton.setImage(UIImage(named: shop.shopItem[indexPath.row]), for: .normal)
+        shopButton.setImage(UIImage(named: shop.shopItem[indexPath.row].itemName), for: .normal)
         shopButton.addTarget(self, action: #selector(showShopAlert), for: UIControlEvents.touchUpInside)
         
         cell.addSubview(shopButton)
         
         return cell
-        
-        
     }
     
+    // Selector Cell按鈕方法
     @objc func showShopAlert(sender:UIButton) -> String{
         
-        let shopAlert = UIAlertController(title: "Check", message: "確認要購買？", preferredStyle: UIAlertControllerStyle.alert)
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) { (finish) in
-            print("取消購買")
+        if Character.shared.dollars <= shop.shopItem[sender.tag].dollars {
             
-        }
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (finish) in
-            print("確認購買")
-            
-            
-            // tabbar 方式傳值到 PackViewController
-            if let packVC = self.tabBarController?.viewControllers![1] as? PackViewController {
+            UIView.animate(withDuration: 0.4, animations: {
+                self.messageView.alpha = 1
+                self.messageView.center.y -= 20
+            }, completion: { (finish) in
+                UIView.animate(withDuration: 1, animations: {
+                    self.messageView.alpha = 0
+                }, completion: { (finish) in
+                    self.messageView.center.y += 20
+                })
                 
-                // 增加 ItemInPack
-                packVC.ItemInPack.append(self.shop.shopItem[sender.tag])
-                // 修改標題 物品數量
-                packVC.itemCount.text = "ItemCount:\(packVC.ItemInPack.count)"
-                packVC.packColletionView.reloadData()
-            }
+            })
             
-            self.shop.shopItem.remove(at: sender.tag)
-            self.shopCollectionView.reloadData()
+            
+        } else {
+            let shopAlert = UIAlertController(title: "Check", message: "確認要購買？", preferredStyle: UIAlertControllerStyle.alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default) { (finish) in
+                print("取消購買")
+            }
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel) { (finish) in
+                Character.shared.dollars -= self.shop.shopItem[sender.tag].dollars
+                self.moneyLabel.text = "Money:$\(Character.shared.dollars)"
+                
+                
+                
+                // tabbar 方式傳值到 PackViewController
+                if let packVC = self.tabBarController?.viewControllers![1] as? PackViewController {
+                    
+                    // 增加 ItemInPack
+                    packVC.ItemInPack.append(self.shop.shopItem[sender.tag])
+                    // 修改標題 物品數量
+                    packVC.itemCount.text = "ItemCount:\(packVC.ItemInPack.count)"
+                    
+                }
+                
+                self.shop.shopItem.remove(at: sender.tag)
+                
+                if self.shop.shopItem.isEmpty == true {
+                    self.messageView.alpha = 1
+                    self.messageView.text = "沒有物品"
+                    self.shopCollectionView.reloadData()
+                } else {
+                    self.shopCollectionView.reloadData()
+                }
+            }
+            shopAlert.addAction(cancelAction)
+            shopAlert.addAction(okAction)
+            
+            self.present(shopAlert, animated: true, completion: nil)
         }
-        shopAlert.addAction(cancelAction)
-        shopAlert.addAction(okAction)
         
-        self.present(shopAlert, animated: true, completion: nil)
-        return shop.shopItem[sender.tag]
+        
+        
+        return shop.shopItem[sender.tag].itemName
         
     }
     

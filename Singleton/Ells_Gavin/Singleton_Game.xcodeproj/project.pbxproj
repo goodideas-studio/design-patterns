@@ -19,6 +19,7 @@
 		70B8FFBE2043F058001D5E70 /* PowerUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B8FFBD2043F058001D5E70 /* PowerUps.swift */; };
 		70B8FFC320440397001D5E70 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B8FFC220440397001D5E70 /* Asset.swift */; };
 		70B8FFC620440E5F001D5E70 /* NofiticationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B8FFC520440E5F001D5E70 /* NofiticationCenter.swift */; };
+		70B8FFCB2045A443001D5E70 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B8FFCA2045A443001D5E70 /* Character.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		70B8FFBD2043F058001D5E70 /* PowerUps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PowerUps.swift; path = Singleton_Game/PowerUps.swift; sourceTree = SOURCE_ROOT; };
 		70B8FFC220440397001D5E70 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		70B8FFC520440E5F001D5E70 /* NofiticationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NofiticationCenter.swift; sourceTree = "<group>"; };
+		70B8FFCA2045A443001D5E70 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				70B8FFBD2043F058001D5E70 /* PowerUps.swift */,
 				70B8FFC220440397001D5E70 /* Asset.swift */,
+				70B8FFCA2045A443001D5E70 /* Character.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -63,8 +66,8 @@
 			children = (
 				4D9093A12043B611008CFD75 /* MainViewController.swift */,
 				4D9093A32043B611008CFD75 /* PackViewController.swift */,
-				70B8FFC7204538C6001D5E70 /* Pack Cell */,
 				4D3528F82043E0B200CDF28B /* ShopViewController.swift */,
+				70B8FFC7204538C6001D5E70 /* Pack Cell */,
 				4D0B9A2B2043F2D700D9744D /* CellTypeTwo.swift */,
 			);
 			path = Controllers;
@@ -204,6 +207,7 @@
 				4D9093A42043B611008CFD75 /* PackViewController.swift in Sources */,
 				4D9093A02043B611008CFD75 /* AppDelegate.swift in Sources */,
 				4D9093A22043B611008CFD75 /* MainViewController.swift in Sources */,
+				70B8FFCB2045A443001D5E70 /* Character.swift in Sources */,
 				4D60D761204401FB001804A6 /* PackCollectionViewCell.swift in Sources */,
 				70B8FFC620440E5F001D5E70 /* NofiticationCenter.swift in Sources */,
 			);

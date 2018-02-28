@@ -8,7 +8,18 @@
 
 import Foundation
 
-struct ItemInfo {
+
+protocol Item {
+    var itemName:String {get}
+    var hp:Int {get}
+    var mp:Int {get}
+    var atk:Int {get}
+    var def:Int {get}
+    var dollars:Int {get}
+    
+}
+
+struct ItemInfo:Item {
     
     var itemName:String = ""
     var hp:Int = 0
@@ -32,9 +43,10 @@ struct ItemInfo {
     
 }
 
-// 創建實例
-var bigBluePostion = ItemInfo(itemName: "BigBluePostion", hp: 0, mp: 50, atk: 0, def: 0, dollars: 50)
-var bigRedPostion = ItemInfo(itemName: "BigBluePostion", hp: 50, mp: 00, atk: 0, def: 0, dollars: 50)
-var GreenPostion = ItemInfo(itemName: "BigBluePostion", hp: 0, mp: 0, atk: 100, def: 100, dollars: 200)
-var bluePostion = ItemInfo(itemName: "BigBluePostion", hp: 0, mp: 10, atk: 0, def: 0, dollars: 10)
-var redPostion = ItemInfo(itemName: "BigBluePostion", hp: 10, mp: 0, atk: 0, def: 0, dollars: 10)
+
+
+
+
+
+
+
