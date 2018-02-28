@@ -17,6 +17,11 @@ object Package: ArrayList<Stuff>() {
 
 }
 ```
+```
+    fun showStuffCount() {
+        packView.setStuffCount(Package.size)
+    }
+```
 
 ## MainFragment 
 主畫面為與怪物戰鬥，上方顯示的資訊為金錢、角色的HP、MP和攻擊、防禦力，點擊右下角的武器圖案便會攻擊怪物。
