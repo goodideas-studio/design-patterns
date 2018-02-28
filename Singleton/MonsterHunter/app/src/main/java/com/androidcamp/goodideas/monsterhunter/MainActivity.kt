@@ -53,7 +53,6 @@ class MainActivity : AppCompatActivity() {
         Status.money = 100
         Status.hp = 100
         Status.mp = 100
-
 //        tv_money.setText(status.money.toString())
 //
   //      ib_sword.setOnClickListener(ib_sword_click)
