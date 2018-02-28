@@ -7,11 +7,11 @@ import com.androidcamp.goodideas.monsterhunter.R
  */
 public object Package: ArrayList<Stuff>() {
     init {
-        this.add(Stuff("sword1", R.drawable.sword1, 100, 63))
-        this.add(Stuff("sword2", R.drawable.sword2, 100, 63))
-        this.add(Stuff("sword3", R.drawable.sword3, 96, 63))
-        this.add(Stuff("sword4", R.drawable.sword4, 56, 60))
-        this.add(Stuff("sword5", R.drawable.sword5, 55, 96))
+        this.add(Stuff("魔力藥水", R.drawable.blue_water, 0, 63))
+        this.add(Stuff("生命藥水", R.drawable.red_water, 100, 0))
+        this.add(Stuff("魔力藥水", R.drawable.blue_water, 0, 63))
+        this.add(Stuff("生命藥水", R.drawable.red_water, 56, 0))
+        this.add(Stuff("魔力藥水", R.drawable.blue_water, 0, 96))
     }
 
 }
