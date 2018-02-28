@@ -18,14 +18,23 @@ class MainVC: UIViewController, useItemDelegate {
     @IBOutlet weak var damageLabel: UILabel!
     @IBOutlet var characterImageView: UIImageView!
     
+// fight 場景
+    @IBOutlet weak var fightView: UIView!
+    @IBOutlet weak var background1: UIImageView!
+    @IBOutlet weak var background2: UIImageView!
+    @IBOutlet weak var playerImageView: UIImageView!
+    @IBOutlet weak var monsterImageView: UIImageView!
+    
+    
     @IBAction func earnMoneyButton(_ sender: Any) {
+        //fight()
         Money.current.earnFiveMoney()
         let damage = Double(arc4random_uniform(10 - UInt32(player.DEF / 5))) * (30 / Double(player.ATK))
         player.HP = max(player.HP - Int(damage), 0)
         view.addSubview(damageLabel)
         
         damageLabel.frame.origin = CGPoint(x: 157, y: 168)
-        print(damage)
+        //print(damage)
         damageLabel.text = "- \(Int(damage))"
         
         UIView.animate(withDuration: 0.5, animations: {
@@ -87,6 +96,8 @@ class MainVC: UIViewController, useItemDelegate {
     var playerHPLayer: CAGradientLayer!
     var playerMPLayer: CAGradientLayer!
     
+    var player = Character(HP: 180, maxHP: 180, MP: 30, maxMP: 30, ATK: 10, DEF: 20)
+    
     func createPlayerHPLayer(ratio: Double) {
         if let playerHPLayer = playerHPLayer {
             playerHPLayer.removeFromSuperlayer()
@@ -137,9 +148,7 @@ class MainVC: UIViewController, useItemDelegate {
         
         self.view.layer.addSublayer(playerMPLayer)
     }
-    
-    var player = Character(HP: 180, maxHP: 180, MP: 30, maxMP: 30, ATK: 10, DEF: 20)
-    
+
     func useItem(itemName: String) {
         
         switch itemName {
@@ -172,6 +181,15 @@ class MainVC: UIViewController, useItemDelegate {
         default:
             break
         }
+    }
+    
+    func fight() {
+        
+        background1.image = UIImage(named: "background001")
+        background2.image = UIImage(named: "background002")
+        playerImageView.image = UIImage(named: "騎士右走2")
+        monsterImageView.image = UIImage(named: "骷髏左走2")
+
     }
     
     override func viewDidLoad() {
