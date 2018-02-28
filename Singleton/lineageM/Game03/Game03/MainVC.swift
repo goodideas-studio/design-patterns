@@ -176,15 +176,16 @@ class MainVC: UIViewController, useItemDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        createPlayerHPLayer(ratio: 1)
+        createPlayerMPLayer(ratio: 1)
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         let backpackVC = tabBarController?.viewControllers![1] as! PacketVC
         backpackVC.delegate = self
-        
-        createPlayerHPLayer(ratio: 1)
-        createPlayerMPLayer(ratio: 1)
+        createPlayerHPLayer(ratio: Double(player.HP) / Double(player.maxHP))
+        createPlayerMPLayer(ratio: Double(player.MP) / Double(player.maxMP))
         ATKLabel.text = "ATK: \(player.ATK)"
         DEFLabel.text = "DEF: \(player.DEF)"
         HPLabel.text = "HP: \(player.HP)"

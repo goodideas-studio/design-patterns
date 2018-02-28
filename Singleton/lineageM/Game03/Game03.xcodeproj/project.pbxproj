@@ -17,6 +17,7 @@
 		F7E5CFC72043B94A004A731C /* ShopStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5CFC62043B94A004A731C /* ShopStoreVC.swift */; };
 		F7E5CFC92043DA8A004A731C /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5CFC82043DA8A004A731C /* Money.swift */; };
 		F7E5CFCD2043EF7F004A731C /* BackpackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5CFCC2043EF7F004A731C /* BackpackCell.swift */; };
+		F7EC34E020464B3600B1972D /* ItemsPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC34DF20464B3600B1972D /* ItemsPrice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F7E5CFC62043B94A004A731C /* ShopStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopStoreVC.swift; sourceTree = "<group>"; };
 		F7E5CFC82043DA8A004A731C /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		F7E5CFCC2043EF7F004A731C /* BackpackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackpackCell.swift; sourceTree = "<group>"; };
+		F7EC34DF20464B3600B1972D /* ItemsPrice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsPrice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		F7E5CFAF2043B65A004A731C /* Game03 */ = {
 			isa = PBXGroup;
 			children = (
+				F7EC34DF20464B3600B1972D /* ItemsPrice.swift */,
 				F7E5CFCC2043EF7F004A731C /* BackpackCell.swift */,
 				F7E5CFB02043B65B004A731C /* AppDelegate.swift */,
 				F7E5CFC82043DA8A004A731C /* Money.swift */,
@@ -151,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7EC34E020464B3600B1972D /* ItemsPrice.swift in Sources */,
 				F7E5CFC92043DA8A004A731C /* Money.swift in Sources */,
 				F7E5CFB32043B65B004A731C /* MainVC.swift in Sources */,
 				F7E5CFCD2043EF7F004A731C /* BackpackCell.swift in Sources */,
