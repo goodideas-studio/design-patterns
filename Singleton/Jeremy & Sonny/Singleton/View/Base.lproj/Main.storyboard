@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -223,7 +223,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="atkLabel" destination="Pqc-CD-hgZ" id="EiZ-XU-tH3"/>
                         <outlet property="attackButton" destination="5Nf-Pv-Jy9" id="vBJ-gT-xR5"/>
@@ -307,7 +307,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Pack" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Pack" image="backpack" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="itemCount" destination="jEQ-OS-T12" id="5w7-tk-gbQ"/>
                         <outlet property="packColletionView" destination="MKg-OL-fpD" id="C1F-2q-qWD"/>
@@ -427,7 +427,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="B3w-QR-aqw"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Shop" image="second" id="vV1-ei-CsQ"/>
+                    <tabBarItem key="tabBarItem" title="Shop" image="cart" id="vV1-ei-CsQ"/>
                     <connections>
                         <outlet property="messageView" destination="2DI-zN-ACb" id="ZRR-oF-nyu"/>
                         <outlet property="moneyLabel" destination="inq-ev-cij" id="Wo5-H8-8wG"/>
@@ -464,9 +464,11 @@
         <image name="attack" width="256" height="256"/>
         <image name="attack-2" width="169" height="237"/>
         <image name="back" width="1024" height="576"/>
+        <image name="backpack" width="30" height="25"/>
+        <image name="cart" width="30" height="30"/>
         <image name="ghost" width="512" height="512"/>
+        <image name="home" width="30" height="30"/>
         <image name="money" width="512" height="512"/>
-        <image name="second" width="30" height="30"/>
         <image name="slime" width="1024" height="1024"/>
         <image name="title" width="728" height="208"/>
     </resources>
