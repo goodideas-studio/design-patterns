@@ -18,6 +18,7 @@ class Shop {
         ItemInfo(itemName: "BluePotion", hp: 0, mp: 50, atk: 0, def: 0, dollars: 50),
         ItemInfo(itemName: "RedPotion", hp: 50, mp:0 , atk: 0, def: 0, dollars: 50),
         ItemInfo(itemName: "GreenPotion", hp: 0, mp: 0, atk: 50, def: 50, dollars: 200)
+        
 ]
     
 }
