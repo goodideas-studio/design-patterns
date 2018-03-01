@@ -6,15 +6,15 @@
   被從 APP Store 下架之後， YY 只好展開了冒(跑)險(路)之旅。
 
 ## Views
-###Tab View one: 
+### Tab View one: 
 
 YY 只要按下紅色按鈕，就可以增加金錢 
 
-###Tab View two: 
+### Tab View two: 
 
 裡面的藥水，有四個屬性: HP, MP, Defense, Attack ，(點選)喝下之後藥水會消失，並會依據藥水屬性可以分別加成屬性。
 
-###Tab View three: 
+### Tab View three: 
 
 YY 在這裡可以購買藥水。如果錢不夠時，會彈出警告視窗無法購買。
 
