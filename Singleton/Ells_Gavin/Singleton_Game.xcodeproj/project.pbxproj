@@ -16,6 +16,7 @@
 		4D9093A72043B611008CFD75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D9093A52043B611008CFD75 /* Main.storyboard */; };
 		4D9093A92043B611008CFD75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D9093A82043B611008CFD75 /* Assets.xcassets */; };
 		4D9093AC2043B611008CFD75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D9093AA2043B611008CFD75 /* LaunchScreen.storyboard */; };
+		4DDEAA28204795B4005930F7 /* PassingPowerUpsAttributesToCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDEAA27204795B4005930F7 /* PassingPowerUpsAttributesToCharacter.swift */; };
 		70B8FFBE2043F058001D5E70 /* PowerUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B8FFBD2043F058001D5E70 /* PowerUps.swift */; };
 		70B8FFC320440397001D5E70 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B8FFC220440397001D5E70 /* Asset.swift */; };
 		70B8FFC620440E5F001D5E70 /* NofiticationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B8FFC520440E5F001D5E70 /* NofiticationCenter.swift */; };
@@ -34,6 +35,7 @@
 		4D9093A82043B611008CFD75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D9093AB2043B611008CFD75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D9093AD2043B611008CFD75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DDEAA27204795B4005930F7 /* PassingPowerUpsAttributesToCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassingPowerUpsAttributesToCharacter.swift; sourceTree = "<group>"; };
 		70B8FFBD2043F058001D5E70 /* PowerUps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PowerUps.swift; path = Singleton_Game/PowerUps.swift; sourceTree = SOURCE_ROOT; };
 		70B8FFC220440397001D5E70 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		70B8FFC520440E5F001D5E70 /* NofiticationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NofiticationCenter.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				70B8FFBD2043F058001D5E70 /* PowerUps.swift */,
 				70B8FFC220440397001D5E70 /* Asset.swift */,
 				70B8FFCA2045A443001D5E70 /* Character.swift */,
+				4DDEAA27204795B4005930F7 /* PassingPowerUpsAttributesToCharacter.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -64,10 +67,10 @@
 		4D3528F62043DFC500CDF28B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4DDEAA262047908A005930F7 /* Shop Cell */,
 				4D9093A12043B611008CFD75 /* MainViewController.swift */,
 				4D9093A32043B611008CFD75 /* PackViewController.swift */,
 				4D3528F82043E0B200CDF28B /* ShopViewController.swift */,
+				4DDEAA262047908A005930F7 /* Shop Cell */,
 				70B8FFC7204538C6001D5E70 /* Pack Cell */,
 			);
 			path = Controllers;
@@ -210,6 +213,7 @@
 			files = (
 				4D0B9A2C2043F2D700D9744D /* ShopItemCollectionCell.swift in Sources */,
 				70B8FFC320440397001D5E70 /* Asset.swift in Sources */,
+				4DDEAA28204795B4005930F7 /* PassingPowerUpsAttributesToCharacter.swift in Sources */,
 				70B8FFBE2043F058001D5E70 /* PowerUps.swift in Sources */,
 				4D3528F92043E0B200CDF28B /* ShopViewController.swift in Sources */,
 				4D9093A42043B611008CFD75 /* PackViewController.swift in Sources */,
