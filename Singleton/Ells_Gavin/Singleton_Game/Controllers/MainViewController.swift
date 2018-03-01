@@ -12,6 +12,7 @@ enum ItemAttribute: String {
   case Attack = "Attack"
   case Defence = "Defence"
   case MP = "MP"
+  case HP = "HP"
 }
 
 class MainViewController: UIViewController {
@@ -67,6 +68,10 @@ extension MainViewController: PackViewControllerDelegate {
     case ItemAttribute.Defence.rawValue:
       character.DEF += packItem.powerValue
       defVal.text = String(character.DEF)
+      
+    case ItemAttribute.HP.rawValue:
+      character.HP += packItem.powerValue
+      hpVal.text = String(character.HP)
       
     default:
       break

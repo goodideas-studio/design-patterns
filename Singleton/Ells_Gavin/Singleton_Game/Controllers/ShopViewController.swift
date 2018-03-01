@@ -63,14 +63,17 @@ extension ShopViewController: UICollectionViewDelegate {
       alertController.addAction(cancelAction)
       
       let okAction = UIAlertAction(title: "確定", style: .default) { (action) in
+        
+        
         self.moneyRemaining.text = String(Asset.shared.decrease(money: Items.shared.itemInShop[indexPath.item].price))
-      
+        
         Items.shared.itemInPack.append(Items.shared.itemInShop[indexPath.item])
         Items.shared.itemInShop.remove(at: indexPath.item)
       
         self.itemsRemainedInShop.text = String(Items.shared.itemInShop.count)
-      
         self.shopItemCollection.reloadData()
+        
+        
       }
       alertController.addAction(okAction)
       
@@ -86,7 +89,8 @@ extension ShopViewController: UICollectionViewDataSource {
   }
     
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CellAtShop
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ShopItemCollectionCell
+    cell.itemInShopPic.contentMode = .scaleAspectFit
     cell.itemInShopPic.image = Items.shared.itemInShop[indexPath.item].potionImg
     cell.itemInShopPrice.text = String(Items.shared.itemInShop[indexPath.item].price)
     cell.itemInShopPowerVal.text = String(Items.shared.itemInShop[indexPath.item].powerValue)

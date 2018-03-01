@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D0B9A2C2043F2D700D9744D /* CellTypeTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B9A2B2043F2D700D9744D /* CellTypeTwo.swift */; };
+		4D0B9A2C2043F2D700D9744D /* ShopItemCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B9A2B2043F2D700D9744D /* ShopItemCollectionCell.swift */; };
 		4D3528F92043E0B200CDF28B /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3528F82043E0B200CDF28B /* ShopViewController.swift */; };
 		4D60D761204401FB001804A6 /* PackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D60D760204401FB001804A6 /* PackCollectionViewCell.swift */; };
 		4D9093A02043B611008CFD75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90939F2043B611008CFD75 /* AppDelegate.swift */; };
@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4D0B9A2B2043F2D700D9744D /* CellTypeTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTypeTwo.swift; sourceTree = "<group>"; };
+		4D0B9A2B2043F2D700D9744D /* ShopItemCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItemCollectionCell.swift; sourceTree = "<group>"; };
 		4D3528F82043E0B200CDF28B /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		4D60D760204401FB001804A6 /* PackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackCollectionViewCell.swift; sourceTree = "<group>"; };
 		4D90939C2043B611008CFD75 /* Singleton_Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Singleton_Game.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,11 +64,11 @@
 		4D3528F62043DFC500CDF28B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4DDEAA262047908A005930F7 /* Shop Cell */,
 				4D9093A12043B611008CFD75 /* MainViewController.swift */,
 				4D9093A32043B611008CFD75 /* PackViewController.swift */,
 				4D3528F82043E0B200CDF28B /* ShopViewController.swift */,
 				70B8FFC7204538C6001D5E70 /* Pack Cell */,
-				4D0B9A2B2043F2D700D9744D /* CellTypeTwo.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -110,6 +110,14 @@
 				4D9093AD2043B611008CFD75 /* Info.plist */,
 			);
 			path = Singleton_Game;
+			sourceTree = "<group>";
+		};
+		4DDEAA262047908A005930F7 /* Shop Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4D0B9A2B2043F2D700D9744D /* ShopItemCollectionCell.swift */,
+			);
+			path = "Shop Cell";
 			sourceTree = "<group>";
 		};
 		70B8FFC420440E2E001D5E70 /* Extension */ = {
@@ -200,7 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D0B9A2C2043F2D700D9744D /* CellTypeTwo.swift in Sources */,
+				4D0B9A2C2043F2D700D9744D /* ShopItemCollectionCell.swift in Sources */,
 				70B8FFC320440397001D5E70 /* Asset.swift in Sources */,
 				70B8FFBE2043F058001D5E70 /* PowerUps.swift in Sources */,
 				4D3528F92043E0B200CDF28B /* ShopViewController.swift in Sources */,

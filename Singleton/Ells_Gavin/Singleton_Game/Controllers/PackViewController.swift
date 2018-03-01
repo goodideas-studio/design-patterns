@@ -27,6 +27,8 @@ class PackViewController: UIViewController {
     
     packItemsCollection.delegate = self
     packItemsCollection.dataSource = self
+    
+    
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +40,11 @@ class PackViewController: UIViewController {
     
     totalAsset.text = String(Asset.shared.totalAsset)
     totalItems.text = String(Items.shared.itemInPack.count)
+    
+    //hide the hintView
+    if Items.shared.itemInPack.count != 0 {
+      hintView.isHidden = true
+    }
     
     packItemsCollection.reloadData()
   }
@@ -88,6 +95,8 @@ extension PackViewController: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PackItemCell", for: indexPath) as! PackCollectionViewCell
+    
+    cell.itemInPackPic.contentMode = .scaleAspectFit
     
     cell.itemInPackPic.image = Items.shared.itemInPack[indexPath.item].potionImg
     cell.itemInPackPowerVal.text = String(Items.shared.itemInPack[indexPath.item].powerValue)

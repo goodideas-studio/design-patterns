@@ -6,7 +6,7 @@
 
 import UIKit
 
-class CellAtShop: UICollectionViewCell {
+class ShopItemCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var itemInShopPic: UIImageView!
     
