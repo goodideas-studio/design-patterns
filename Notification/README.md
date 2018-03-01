@@ -1,4 +1,4 @@
-![Game](ReadMe/game.jpg)
+![Game](resources/game.jpg)
 
 ## 主畫面
  - 畫面上顯示三個遊戲的血量進度（玩家 & 魔王）
