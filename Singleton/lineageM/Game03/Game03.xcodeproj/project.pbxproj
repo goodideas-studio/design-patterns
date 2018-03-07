@@ -52,8 +52,8 @@
 			isa = PBXGroup;
 			children = (
 				F7794F262046741D005EA108 /* README.md */,
-				F7E5CFAF2043B65A004A731C /* Game03 */,
 				F7E5CFAE2043B65A004A731C /* Products */,
+				F7E5CFAF2043B65A004A731C /* Game03 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,20 +68,44 @@
 		F7E5CFAF2043B65A004A731C /* Game03 */ = {
 			isa = PBXGroup;
 			children = (
-				F7EC34DF20464B3600B1972D /* ItemsPrice.swift */,
-				F7E5CFCC2043EF7F004A731C /* BackpackCell.swift */,
 				F7E5CFB02043B65B004A731C /* AppDelegate.swift */,
-				F7E5CFC82043DA8A004A731C /* Money.swift */,
+				F7E5CFB92043B65B004A731C /* LaunchScreen.storyboard */,
+				F7E5CFBC2043B65B004A731C /* Info.plist */,
+				F7F8F04A2047C1560067D53C /* views */,
+				F7F8F0492047C1400067D53C /* controllers */,
+				F7F8F0482047C1350067D53C /* model */,
+				F7E5CFB42043B65B004A731C /* Main.storyboard */,
+				F7E5CFB72043B65B004A731C /* Assets.xcassets */,
+			);
+			path = Game03;
+			sourceTree = "<group>";
+		};
+		F7F8F0482047C1350067D53C /* model */ = {
+			isa = PBXGroup;
+			children = (
 				F7E5CFC22043B84A004A731C /* Character.swift */,
+				F7EC34DF20464B3600B1972D /* ItemsPrice.swift */,
+				F7E5CFC82043DA8A004A731C /* Money.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		F7F8F0492047C1400067D53C /* controllers */ = {
+			isa = PBXGroup;
+			children = (
 				F7E5CFB22043B65B004A731C /* MainVC.swift */,
 				F7E5CFC42043B91D004A731C /* PacketVC.swift */,
 				F7E5CFC62043B94A004A731C /* ShopStoreVC.swift */,
-				F7E5CFB42043B65B004A731C /* Main.storyboard */,
-				F7E5CFB72043B65B004A731C /* Assets.xcassets */,
-				F7E5CFB92043B65B004A731C /* LaunchScreen.storyboard */,
-				F7E5CFBC2043B65B004A731C /* Info.plist */,
 			);
-			path = Game03;
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		F7F8F04A2047C1560067D53C /* views */ = {
+			isa = PBXGroup;
+			children = (
+				F7E5CFCC2043EF7F004A731C /* BackpackCell.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

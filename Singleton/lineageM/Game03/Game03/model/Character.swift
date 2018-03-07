@@ -9,20 +9,28 @@
 import Foundation
 
 class Character {
+    var name: String
     var HP: Int
     var maxHP: Int
     var MP: Int
     var maxMP: Int
     var ATK: Int
     var DEF: Int
+    var reward: Int
     
-    init (HP: Int, maxHP: Int, MP: Int, maxMP: Int, ATK: Int, DEF: Int) {
+    init (name: String, HP: Int, maxHP: Int, MP: Int, maxMP: Int, ATK: Int, DEF: Int, reward: Int) {
+        self.name = name
         self.HP = HP
         self.maxHP = maxHP
         self.MP = MP
         self.maxMP = maxMP
         self.ATK = ATK
         self.DEF = DEF
+        self.reward = reward
+    }
+    
+    convenience init() {
+        self.init(name: "unknow", HP: 1, maxHP: 1, MP: 1, maxMP: 1, ATK: 1, DEF: 1, reward: 1)
     }
     
 }

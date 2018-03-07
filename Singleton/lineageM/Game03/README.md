@@ -1,7 +1,13 @@
 # LineageM 說明
 
-![demo.gif ](demo.gif)
+改版後效果
+![demo2.git](demo.git)
+## 改版內容
+增加遊戲動畫，需與怪物對戰後才可以獲得金錢
+怪物與角色損血都有動畫
 
+
+![demo.gif ](demo.gif)
 
 ## 1. 目的
 
