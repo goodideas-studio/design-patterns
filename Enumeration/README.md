@@ -2,7 +2,11 @@
 
 ## Description
 
-Enumeration pattern 允許開發者以 for-in 的方式依序遍歷，而不管其資料結構為和。因此無論是使用 array、set、dictionary，還是自定義的data type，Enumeration允許遍歷它們。
+Enumeration pattern 允許開發者以 for-in 的方式依序走訪 element，而不管其資料結構為何 ( array、set、dictionary，還是自定義的data type )。
+
+其目的在於隱藏 object type的實作內容，僅提供外界一個可存取物件內部 property 的 interface ( makeIterator() )，程式只要透過該 Iterator interface，即可走訪該 object type 的各個 element。
+
+
 
 ## Question 1
 
