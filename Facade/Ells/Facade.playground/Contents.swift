@@ -8,7 +8,6 @@ import Foundation
 //完成
 //後來仙廚決定引進人類最新科技「炒飯達人」，只需要將原本的原料（Struct）投入「炒飯達人」，即可在 24 小時後取得香噴噴的「完美炒飯」。
 
-class 炒飯達人 {}
 // 原料
 struct 蛋黃 {
   var 熟了: Bool
@@ -50,32 +49,30 @@ class 冰箱 {
   }
 }
 
-class 炒飯鍋 {
+class 炒飯達人 {
   var perfectFiredRice = 完美炒飯(isPerfect: false)
   
   func pot(rice: 白米, eggWhite: 蛋白, eggYellow: 蛋黃, ginger: 蔥, oil: 油, cookTime: 時間) -> Bool {
     if rice.熟了 == true && eggWhite.炒香了 == true && eggYellow.熟了 == true, ginger.炒香了 == true && cookTime.seconds >= 7749 {
       perfectFiredRice.isPerfect = true
-      
     } else {
       perfectFiredRice.isPerfect = false
     }
+    
     return perfectFiredRice.isPerfect
   }
 }
-class 鍋鏟 {
-  
-}
-//var superRice = 白米(熟了: true)
-//let cookPot = 炒飯鍋
-//cookPot.pot(superRice)
-//extension 白米 {
-//  var 冰過 = {
-//    var isFrozened: Bool
-//    return isFrozened
-//  }
-//
-//}
-//extensions may not contain stored properties
+
+let perfectRice = 白米(熟了: true)
+let perfectEggWhite = 蛋白(炒香了: true)
+let perfectEggYellow = 蛋黃(熟了: true)
+let perfectGinger = 蔥(炒香了: true)
+let perfectOil = 油(加油: true)
+let perfectOverCookTime = 時間(seconds: 7750)
+
+let mom = 炒飯達人()
+mom.pot(rice: perfectRice, eggWhite: perfectEggWhite, eggYellow: perfectEggYellow, ginger: perfectGinger, oil: perfectOil, cookTime: perfectOverCookTime)
+
+mom.perfectFiredRice.isPerfect
 
 
