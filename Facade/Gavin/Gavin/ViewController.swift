@@ -13,6 +13,15 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    
+    let chief = Chief()
+    chief.cookDish(riceWeight: 300, oilWeight: 10, greenOnionWeight: 10, pepperWeight: 10)
+
+    chief.cookDish(riceWeight: 800, oilWeight: 10, greenOnionWeight: 10, pepperWeight: 10)
+
+    chief.prepareRice(weight: 500)
+
+    chief.cookDish(riceWeight: 800, oilWeight: 10, greenOnionWeight: 10, pepperWeight: 10)
   }
 
   override func didReceiveMemoryWarning() {

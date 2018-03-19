@@ -12,6 +12,13 @@
 		703A6671205F59D200828719 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 703A666F205F59D200828719 /* Main.storyboard */; };
 		703A6673205F59D200828719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 703A6672205F59D200828719 /* Assets.xcassets */; };
 		703A6676205F59D200828719 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 703A6674205F59D200828719 /* LaunchScreen.storyboard */; };
+		703A667E205F5B1200828719 /* Flavor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A667D205F5B1200828719 /* Flavor.swift */; };
+		703A6680205F5D0200828719 /* Cookwares.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A667F205F5D0200828719 /* Cookwares.swift */; };
+		703A6683205F65A000828719 /* Storages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A6682205F65A000828719 /* Storages.swift */; };
+		703A6685205F65E800828719 /* Chief.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A6684205F65E800828719 /* Chief.swift */; };
+		703A6688205F6C6800828719 /* FriedRice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A6687205F6C6800828719 /* FriedRice.swift */; };
+		703A668C205F99FC00828719 /* Rice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A668B205F99FC00828719 /* Rice.swift */; };
+		703A668F205F9A2800828719 /* Eggs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703A668E205F9A2800828719 /* Eggs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		703A6672205F59D200828719 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		703A6675205F59D200828719 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		703A6677205F59D200828719 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		703A667D205F5B1200828719 /* Flavor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flavor.swift; sourceTree = "<group>"; };
+		703A667F205F5D0200828719 /* Cookwares.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cookwares.swift; sourceTree = "<group>"; };
+		703A6682205F65A000828719 /* Storages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storages.swift; sourceTree = "<group>"; };
+		703A6684205F65E800828719 /* Chief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chief.swift; sourceTree = "<group>"; };
+		703A6687205F6C6800828719 /* FriedRice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriedRice.swift; sourceTree = "<group>"; };
+		703A668B205F99FC00828719 /* Rice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rice.swift; sourceTree = "<group>"; };
+		703A668E205F9A2800828719 /* Eggs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eggs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +68,69 @@
 		703A666A205F59D200828719 /* Gavin */ = {
 			isa = PBXGroup;
 			children = (
+				703A6691205FAB0300828719 /* Tools */,
+				703A6689205F99D700828719 /* Ingredients */,
+				703A6686205F6C2E00828719 /* Protocols */,
 				703A666B205F59D200828719 /* AppDelegate.swift */,
 				703A666D205F59D200828719 /* ViewController.swift */,
 				703A666F205F59D200828719 /* Main.storyboard */,
 				703A6672205F59D200828719 /* Assets.xcassets */,
 				703A6674205F59D200828719 /* LaunchScreen.storyboard */,
 				703A6677205F59D200828719 /* Info.plist */,
+				703A6684205F65E800828719 /* Chief.swift */,
 			);
 			path = Gavin;
+			sourceTree = "<group>";
+		};
+		703A6686205F6C2E00828719 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				703A6687205F6C6800828719 /* FriedRice.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		703A6689205F99D700828719 /* Ingredients */ = {
+			isa = PBXGroup;
+			children = (
+				703A6690205F9B1A00828719 /* Others */,
+				703A668D205F9A1100828719 /* Eggs */,
+				703A668A205F99E600828719 /* Rice */,
+			);
+			path = Ingredients;
+			sourceTree = "<group>";
+		};
+		703A668A205F99E600828719 /* Rice */ = {
+			isa = PBXGroup;
+			children = (
+				703A668B205F99FC00828719 /* Rice.swift */,
+			);
+			path = Rice;
+			sourceTree = "<group>";
+		};
+		703A668D205F9A1100828719 /* Eggs */ = {
+			isa = PBXGroup;
+			children = (
+				703A668E205F9A2800828719 /* Eggs.swift */,
+			);
+			path = Eggs;
+			sourceTree = "<group>";
+		};
+		703A6690205F9B1A00828719 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				703A667D205F5B1200828719 /* Flavor.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		703A6691205FAB0300828719 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				703A667F205F5D0200828719 /* Cookwares.swift */,
+				703A6682205F65A000828719 /* Storages.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +205,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				703A668C205F99FC00828719 /* Rice.swift in Sources */,
+				703A6683205F65A000828719 /* Storages.swift in Sources */,
+				703A6680205F5D0200828719 /* Cookwares.swift in Sources */,
 				703A666E205F59D200828719 /* ViewController.swift in Sources */,
+				703A668F205F9A2800828719 /* Eggs.swift in Sources */,
+				703A6688205F6C6800828719 /* FriedRice.swift in Sources */,
+				703A6685205F65E800828719 /* Chief.swift in Sources */,
+				703A667E205F5B1200828719 /* Flavor.swift in Sources */,
 				703A666C205F59D200828719 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
