@@ -49,7 +49,17 @@ class 冰箱 {
   }
 }
 
+
+var perfectRice = 白米(熟了: true)
+var perfectEggWhite = 蛋白(炒香了: true)
+var perfectEggYellow = 蛋黃(熟了: true)
+var perfectGinger = 蔥(炒香了: true)
+var perfectOil = 油(加油: true)
+var perfectOverCookTime = 時間(seconds: 7750)
+
 class 炒飯達人 {
+  
+  
   var perfectFiredRice = 完美炒飯(isPerfect: false)
   
   func pot(rice: 白米, eggWhite: 蛋白, eggYellow: 蛋黃, ginger: 蔥, oil: 油, cookTime: 時間) -> Bool {
@@ -63,12 +73,7 @@ class 炒飯達人 {
   }
 }
 
-let perfectRice = 白米(熟了: true)
-let perfectEggWhite = 蛋白(炒香了: true)
-let perfectEggYellow = 蛋黃(熟了: true)
-let perfectGinger = 蔥(炒香了: true)
-let perfectOil = 油(加油: true)
-let perfectOverCookTime = 時間(seconds: 7750)
+
 
 let mom = 炒飯達人()
 mom.pot(rice: perfectRice, eggWhite: perfectEggWhite, eggYellow: perfectEggYellow, ginger: perfectGinger, oil: perfectOil, cookTime: perfectOverCookTime)
