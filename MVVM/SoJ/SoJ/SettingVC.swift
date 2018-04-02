@@ -81,6 +81,7 @@ class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
+            
             if timeSettingDidMark[indexPath.row] {
                 return
             } else {
