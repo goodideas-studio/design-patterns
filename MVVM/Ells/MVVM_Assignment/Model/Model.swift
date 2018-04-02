@@ -15,3 +15,7 @@ var rowInSectionThree = ["F", "C"]
 var sections = [0: rowInSectionOne, 1: rowInSectionTwo, 2: rowInSectionThree]
 
 var selectedRowsInsections: [[Bool]] = [[true, false], [true, false], [true, false]]
+var pickedRows: [Int] = [0, 0, 0]
+
+
+let darkSkyAPIKey = "1fa5d253522d32733acb1ebcdb58c1dc"

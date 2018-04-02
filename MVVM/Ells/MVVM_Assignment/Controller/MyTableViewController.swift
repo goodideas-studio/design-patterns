@@ -29,6 +29,10 @@ class MyTableViewController: UITableViewController {
     self.navigationItem.rightBarButtonItem = self.editButtonItem
     
   }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    
+  }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
@@ -60,38 +64,39 @@ class MyTableViewController: UITableViewController {
     cell.textLabel?.text = sections[indexPath.section]?[indexPath.row]
     cell.accessoryType = .none
     
-    cell.isSelected = false
+//    cell.isSelected = selectedRowsInsections[indexPath.section][indexPath.row]
     return cell
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-    
+    //set indexPath to corresponding array data of selectedIndexPath
     selectedIndexPath = [(myTableView.indexPathForSelectedRow?.section)!: (myTableView.indexPathForSelectedRow?.row)!]
     
-    if selectedRowsInsections[indexPath.section][indexPath.row] {
+    //if selectedRowsInsections[indexPath.section][indexPath.row] {
       for i in 0..<selectedRowsInsections[indexPath.section].count {
-        selectedRowsInsections[indexPath.section][indexPath.row] = false
+        // lets set all cell in selectedRowsInsections to be false for now
+        selectedRowsInsections[indexPath.section][i] = false
         let cell = myTableView.cellForRow(at: [indexPath.section, i])
         cell?.accessoryType = .none
       }
+      // make the selected cell in selectedRowsInsections to be true again
       selectedRowsInsections[indexPath.section][indexPath.row] = true
-      myTableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-      userdefaults.set(selectedRowsInsections[indexPath.section][indexPath.row], forKey: "selected")
+      myTableView.cellForRow(at: indexPath)?.accessoryType = selectedRowsInsections[indexPath.section][indexPath.row] ? .checkmark: .none
+    
+      userdefaults.set(selectedRowsInsections, forKey: "picked")
+    var storeArray: [[Bool]] = (userdefaults.array(forKey: "picked") as? [[Bool]])!
       
-      var storeArray = userdefaults.stringArray(forKey: "selected")
-      myTableView.reloadData()
-      
-      print(selectedRowsInsections[indexPath.section], indexPath)
+      print(indexPath)
       print(storeArray)
-    }
+    //}
+
   }
   
   
   
   override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
     
-    tableView.cellForRow(at: indexPath)?.accessoryType = .none
+    //tableView.cellForRow(at: indexPath)?.accessoryType = .none
   }
   
   @IBAction func doneSetting(_ sender: UIBarButtonItem) {
