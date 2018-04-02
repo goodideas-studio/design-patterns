@@ -7,15 +7,18 @@
 //
 
 import XCTest
+@testable import designPatterns_MVVM
 
 class designPatterns_MVVMTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        // 設定測試前要做的準備事情
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
+        //收尾的動作
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }

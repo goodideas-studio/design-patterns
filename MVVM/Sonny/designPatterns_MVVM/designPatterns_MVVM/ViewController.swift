@@ -14,8 +14,8 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
 //    var section1Array = ["12 Hour","24 Hour"]
 //    var section2Array = ["Impreial", "Metric"]
 //    var section3Array = ["Fahrenheit","Celcius"]
-    
-    var selectIndex = [[true,false],[true,false],[true,false],]
+    var indexDidTapped:Int?
+    var selectIndex: [[Bool]] = [[true,false],[true,false],[true,false]]
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.sectionArray.count
@@ -40,7 +40,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
 //        switch indexPath.section {
 //        case 0:
@@ -56,52 +56,77 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
 //
 //        }
         
-        cell.textLabel?.text = sectionArray[indexPath.section][indexPath.row]
+        //text of the cell
+//        cell.textLabel?.text = sectionArray[indexPath.section][indexPath.row]
+//        cell.accessoryType = .none
+        
+//        print(selectIndex[indexPath.section][indexPath.row])
+//
+//        //accorytype of the cell
+//
+////        for (x, valueX) in selectIndex.enumerated() {
+////            for (y, valueY) in valueX.enumerated() {
+////                print(x,y)
+////
+////            }
+//////                                if selectIndex[x][y] == true {
+//////                                    sectionArray[x][y].accessoryType = .checkmark
+//////                            }else {
+//////                                sectionArray[x][y].accessoryType = .none
+//////                            }
+////        }
+////        for x in selectIndex[indexPath.section] {
+////            dump(x)
+////
+////        }
+//
+//
+//
+//
+//
         
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print(sectionArray[indexPath.section][indexPath.row])
-//        print(tableView.indexPathForSelectedRow)
-//        print("section:\(indexPath.section), row:\(indexPath.row)")
-        let cell = tableView.cellForRow(at: indexPath)
-//        cell?.accessoryType = .checkmark
-        let selectSection = indexPath.section
-        let selectRow = indexPath.row
-          print("section:\(selectSection), row:\(selectRow)")
-        
-        switch selectSection {
-        case 0:
-            switch selectRow {
-            case 0:
-                if  selectIndex[0][selectRow] == true {
-                            print("selectRow 1")
-                            return
-                            }else {
-                            cell?.accessoryType = .checkmark
-                            selectIndex[0][0] = true
-                            selectIndex[0][1] = false
-                            print("selectSection 2")
-                        }
-            default:
-                break
-            }
-            
-        default:
-            break
-            
-        }
+//
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+////        print(sectionArray[indexPath.section][indexPath.row])
+////        print(tableView.indexPathForSelectedRow)
+////        print("section:\(indexPath.section), row:\(indexPath.row)")
+//        let cell = tableView.cellForRow(at: indexPath)
+////        cell?.accessoryType = .checkmark
+//        let selectSection = indexPath.section
+//        let selectRow = indexPath.row
+//          print("section:\(selectSection), row:\(selectRow)")
+//
+//        switch selectSection {
+//        case 0:
+//            for i in 0..<indexPath.row {
+//                if selectRow == i {
+//                    tableView.cellForRow(at: [0,i])?.accessoryType = .checkmark
+//                    print("checkmark")
+//                }else {
+//                    tableView.cellForRow(at: [0,i])?.accessoryType = .none
+//                    print("none")
+//                }
+//            }
+//        default:
+//            break
+//
+//        }
         
         
         
         
-    }
+//    }
   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

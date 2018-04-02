@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E01626CC2072086700C2A14B /* designPatterns_MVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01626CB2072086700C2A14B /* designPatterns_MVVMTests.swift */; };
 		E0806E65206DDA1E00A97CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0806E64206DDA1E00A97CF6 /* AppDelegate.swift */; };
 		E0806E67206DDA1E00A97CF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0806E66206DDA1E00A97CF6 /* ViewController.swift */; };
 		E0806E6A206DDA1E00A97CF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0806E68206DDA1E00A97CF6 /* Main.storyboard */; };
@@ -15,7 +16,20 @@
 		E0806E77206E226500A97CF6 /* sectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0806E76206E226500A97CF6 /* sectionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E01626CE2072086700C2A14B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E0806E59206DDA1E00A97CF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0806E60206DDA1E00A97CF6;
+			remoteInfo = designPatterns_MVVM;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		E01626C92072086600C2A14B /* designPatterns_MVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = designPatterns_MVVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E01626CB2072086700C2A14B /* designPatterns_MVVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = designPatterns_MVVMTests.swift; sourceTree = "<group>"; };
+		E01626CD2072086700C2A14B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0806E61206DDA1E00A97CF6 /* designPatterns_MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = designPatterns_MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0806E64206DDA1E00A97CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0806E66206DDA1E00A97CF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,6 +41,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E01626C62072086600C2A14B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E0806E5E206DDA1E00A97CF6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -37,10 +58,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E01626CA2072086600C2A14B /* designPatterns_MVVMTests */ = {
+			isa = PBXGroup;
+			children = (
+				E01626CB2072086700C2A14B /* designPatterns_MVVMTests.swift */,
+				E01626CD2072086700C2A14B /* Info.plist */,
+			);
+			path = designPatterns_MVVMTests;
+			sourceTree = "<group>";
+		};
 		E0806E58206DDA1E00A97CF6 = {
 			isa = PBXGroup;
 			children = (
 				E0806E63206DDA1E00A97CF6 /* designPatterns_MVVM */,
+				E01626CA2072086600C2A14B /* designPatterns_MVVMTests */,
 				E0806E62206DDA1E00A97CF6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				E0806E61206DDA1E00A97CF6 /* designPatterns_MVVM.app */,
+				E01626C92072086600C2A14B /* designPatterns_MVVMTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +102,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E01626C82072086600C2A14B /* designPatterns_MVVMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E01626D22072086700C2A14B /* Build configuration list for PBXNativeTarget "designPatterns_MVVMTests" */;
+			buildPhases = (
+				E01626C52072086600C2A14B /* Sources */,
+				E01626C62072086600C2A14B /* Frameworks */,
+				E01626C72072086600C2A14B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E01626CF2072086700C2A14B /* PBXTargetDependency */,
+			);
+			name = designPatterns_MVVMTests;
+			productName = designPatterns_MVVMTests;
+			productReference = E01626C92072086600C2A14B /* designPatterns_MVVMTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E0806E60206DDA1E00A97CF6 /* designPatterns_MVVM */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0806E73206DDA1E00A97CF6 /* Build configuration list for PBXNativeTarget "designPatterns_MVVM" */;
@@ -97,6 +147,11 @@
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = SonnyCompany;
 				TargetAttributes = {
+					E01626C82072086600C2A14B = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E0806E60206DDA1E00A97CF6;
+					};
 					E0806E60206DDA1E00A97CF6 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -117,11 +172,19 @@
 			projectRoot = "";
 			targets = (
 				E0806E60206DDA1E00A97CF6 /* designPatterns_MVVM */,
+				E01626C82072086600C2A14B /* designPatterns_MVVMTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E01626C72072086600C2A14B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E0806E5F206DDA1E00A97CF6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -135,6 +198,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E01626C52072086600C2A14B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E01626CC2072086700C2A14B /* designPatterns_MVVMTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E0806E5D206DDA1E00A97CF6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -146,6 +217,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E01626CF2072086700C2A14B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E0806E60206DDA1E00A97CF6 /* designPatterns_MVVM */;
+			targetProxy = E01626CE2072086700C2A14B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E0806E68206DDA1E00A97CF6 /* Main.storyboard */ = {
@@ -167,6 +246,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E01626D02072086700C2A14B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DPX664SYD7;
+				INFOPLIST_FILE = designPatterns_MVVMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Class-Prefix.designPatterns-MVVMTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/designPatterns_MVVM.app/designPatterns_MVVM";
+			};
+			name = Debug;
+		};
+		E01626D12072086700C2A14B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DPX664SYD7;
+				INFOPLIST_FILE = designPatterns_MVVMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Class-Prefix.designPatterns-MVVMTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/designPatterns_MVVM.app/designPatterns_MVVM";
+			};
+			name = Release;
+		};
 		E0806E71206DDA1E00A97CF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -307,6 +418,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E01626D22072086700C2A14B /* Build configuration list for PBXNativeTarget "designPatterns_MVVMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E01626D02072086700C2A14B /* Debug */,
+				E01626D12072086700C2A14B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E0806E5C206DDA1E00A97CF6 /* Build configuration list for PBXProject "designPatterns_MVVM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
