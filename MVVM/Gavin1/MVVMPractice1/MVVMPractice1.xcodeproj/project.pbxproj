@@ -12,6 +12,7 @@
 		70054270206FFC5F0025C3AD /* GreetingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7005426F206FFC5F0025C3AD /* GreetingViewModel.swift */; };
 		7005427220710F260025C3AD /* SettingsViewUnitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7005427120710F260025C3AD /* SettingsViewUnitsViewModel.swift */; };
 		7005427420710FCE0025C3AD /* SettingsViewTemperatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7005427320710FCE0025C3AD /* SettingsViewTemperatureViewModel.swift */; };
+		7005427F2071FD6D0025C3AD /* MVVMPractice1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7005427E2071FD6D0025C3AD /* MVVMPractice1Tests.swift */; };
 		70B82DC2206CE10D00C1D7F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B82DC1206CE10D00C1D7F8 /* AppDelegate.swift */; };
 		70B82DC4206CE10D00C1D7F8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B82DC3206CE10D00C1D7F8 /* RootViewController.swift */; };
 		70B82DC7206CE10D00C1D7F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B82DC5206CE10D00C1D7F8 /* Main.storyboard */; };
@@ -25,12 +26,25 @@
 		70E0982A206E118100EF7490 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E09829206E118100EF7490 /* User.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		700542812071FD6D0025C3AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70B82DB6206CE10D00C1D7F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70B82DBD206CE10D00C1D7F8;
+			remoteInfo = MVVMPractice1;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		70054267206FF9520025C3AD /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
 		70054269206FF99A0025C3AD /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		7005426F206FFC5F0025C3AD /* GreetingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewModel.swift; sourceTree = "<group>"; };
 		7005427120710F260025C3AD /* SettingsViewUnitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewUnitsViewModel.swift; sourceTree = "<group>"; };
 		7005427320710FCE0025C3AD /* SettingsViewTemperatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewTemperatureViewModel.swift; sourceTree = "<group>"; };
+		7005427C2071FD6D0025C3AD /* MVVMPractice1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMPractice1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7005427E2071FD6D0025C3AD /* MVVMPractice1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMPractice1Tests.swift; sourceTree = "<group>"; };
+		700542802071FD6D0025C3AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70B82DBE206CE10D00C1D7F8 /* MVVMPractice1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVMPractice1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B82DC1206CE10D00C1D7F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70B82DC3206CE10D00C1D7F8 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +61,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		700542792071FD6D0025C3AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		70B82DBB206CE10D00C1D7F8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,12 +112,22 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
+		7005427D2071FD6D0025C3AD /* MVVMPractice1Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7005427E2071FD6D0025C3AD /* MVVMPractice1Tests.swift */,
+				700542802071FD6D0025C3AD /* Info.plist */,
+			);
+			path = MVVMPractice1Tests;
+			sourceTree = "<group>";
+		};
 		70B82DB5206CE10D00C1D7F8 = {
 			isa = PBXGroup;
 			children = (
 				70E09825206DD54000EF7490 /* Storyboard */,
 				7005426B206FFBF70025C3AD /* Practice2 */,
 				70B82DC0206CE10D00C1D7F8 /* MVVMPractice1 */,
+				7005427D2071FD6D0025C3AD /* MVVMPractice1Tests */,
 				70B82DBF206CE10D00C1D7F8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				70B82DBE206CE10D00C1D7F8 /* MVVMPractice1.app */,
+				7005427C2071FD6D0025C3AD /* MVVMPractice1Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -204,6 +236,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7005427B2071FD6D0025C3AD /* MVVMPractice1Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 700542832071FD6D0025C3AD /* Build configuration list for PBXNativeTarget "MVVMPractice1Tests" */;
+			buildPhases = (
+				700542782071FD6D0025C3AD /* Sources */,
+				700542792071FD6D0025C3AD /* Frameworks */,
+				7005427A2071FD6D0025C3AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				700542822071FD6D0025C3AD /* PBXTargetDependency */,
+			);
+			name = MVVMPractice1Tests;
+			productName = MVVMPractice1Tests;
+			productReference = 7005427C2071FD6D0025C3AD /* MVVMPractice1Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		70B82DBD206CE10D00C1D7F8 /* MVVMPractice1 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70B82DD0206CE10D00C1D7F8 /* Build configuration list for PBXNativeTarget "MVVMPractice1" */;
@@ -227,10 +277,15 @@
 		70B82DB6206CE10D00C1D7F8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = PinguMac;
 				TargetAttributes = {
+					7005427B2071FD6D0025C3AD = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 70B82DBD206CE10D00C1D7F8;
+					};
 					70B82DBD206CE10D00C1D7F8 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -251,11 +306,19 @@
 			projectRoot = "";
 			targets = (
 				70B82DBD206CE10D00C1D7F8 /* MVVMPractice1 */,
+				7005427B2071FD6D0025C3AD /* MVVMPractice1Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7005427A2071FD6D0025C3AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		70B82DBC206CE10D00C1D7F8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -269,6 +332,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		700542782071FD6D0025C3AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7005427F2071FD6D0025C3AD /* MVVMPractice1Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		70B82DBA206CE10D00C1D7F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -291,6 +362,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		700542822071FD6D0025C3AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70B82DBD206CE10D00C1D7F8 /* MVVMPractice1 */;
+			targetProxy = 700542812071FD6D0025C3AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		70B82DC5206CE10D00C1D7F8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -311,6 +390,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		700542842071FD6D0025C3AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XRUZX72PMD;
+				INFOPLIST_FILE = MVVMPractice1Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PinguDemo.MVVMPractice1Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVMPractice1.app/MVVMPractice1";
+			};
+			name = Debug;
+		};
+		700542852071FD6D0025C3AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XRUZX72PMD;
+				INFOPLIST_FILE = MVVMPractice1Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PinguDemo.MVVMPractice1Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVMPractice1.app/MVVMPractice1";
+			};
+			name = Release;
+		};
 		70B82DCE206CE10D00C1D7F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -455,6 +570,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		700542832071FD6D0025C3AD /* Build configuration list for PBXNativeTarget "MVVMPractice1Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				700542842071FD6D0025C3AD /* Debug */,
+				700542852071FD6D0025C3AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		70B82DB9206CE10D00C1D7F8 /* Build configuration list for PBXProject "MVVMPractice1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
