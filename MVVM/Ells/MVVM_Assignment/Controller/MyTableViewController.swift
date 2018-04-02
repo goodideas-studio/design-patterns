@@ -71,12 +71,13 @@ class MyTableViewController: UITableViewController {
     
     if selectedRowsInsections[indexPath.section][indexPath.row] {
       for i in 0..<selectedRowsInsections[indexPath.section].count {
-        //selectedRowsInsections[indexPath.section][indexPath.row] = false
+        selectedRowsInsections[indexPath.section][indexPath.row] = false
         let cell = myTableView.cellForRow(at: [indexPath.section, i])
+        cell?.accessoryType = .none
       }
       selectedRowsInsections[indexPath.section][indexPath.row] = true
       myTableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-      userdefaults.set(selectedRowsInsections, forKey: "selected")
+      userdefaults.set(selectedRowsInsections[indexPath.section][indexPath.row], forKey: "selected")
       
       var storeArray = userdefaults.stringArray(forKey: "selected")
       myTableView.reloadData()
