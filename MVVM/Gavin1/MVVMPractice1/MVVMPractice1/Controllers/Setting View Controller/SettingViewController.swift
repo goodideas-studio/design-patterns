@@ -35,7 +35,6 @@ extension SettingViewController: UITableViewDataSource {
     static var count: Int {
       return (Section.temperature.rawValue + 1)
     }
-    
   }
   
   func numberOfSections(in tableView: UITableView) -> Int {
@@ -58,36 +57,33 @@ extension SettingViewController: UITableViewDataSource {
       fatalError("Unexpected cell")
     }
     
+    var viewModel: SettingsRepresentable?
+    
     switch section {
     case .time:
-      cell.mainLabel.text = (indexPath.row == 0) ? "24 Hour" : "12 Hour"
-      
-      let timeNotation = UserDefaults.timeNotation()
-      if indexPath.row == timeNotation.rawValue {
-        cell.accessoryType = .checkmark
-      } else {
-        cell.accessoryType = .none
+      guard let timeNotation = TimeNotation(rawValue: indexPath.row) else {
+        fatalError("Time Section: Unexpected Index Path")
       }
+      
+      viewModel = SettingsViewTimeViewModel(timeNotation: timeNotation)
       
     case .units:
-      cell.mainLabel.text = (indexPath.row == 0) ? "Imperial" : "Metric"
-      
-      let unitsNotation = UserDefaults.unitsNotation()
-      if indexPath.row == unitsNotation.rawValue {
-        cell.accessoryType = .checkmark
-      } else {
-        cell.accessoryType = .none
+      guard let unitsNotation = UnitsNotation(rawValue: indexPath.row) else {
+        fatalError("Units Section: Unexpected Index Path")
       }
+      
+      viewModel = SettingsViewUnitsViewModel(unitsNotation: unitsNotation)
       
     case .temperature:
-      cell.mainLabel.text = (indexPath.row == 0) ? "Fahrenheit" : "Celcius"
-      
-      let temperatureNotation = UserDefaults.temperatureNotation()
-      if indexPath.row == temperatureNotation.rawValue {
-        cell.accessoryType = .checkmark
-      } else {
-        cell.accessoryType = .none
+      guard let temperatureNotation = TemperatureNotation(rawValue: indexPath.row) else {
+        fatalError("Temperature Section: Unexpected Index Path")
       }
+      
+      viewModel = SettingsViewTemperatureViewModel(temperatureNotation: temperatureNotation)
+    }
+    
+    if let viewModel = viewModel {
+      cell.configure(withViewModel: viewModel)
     }
     
     return cell

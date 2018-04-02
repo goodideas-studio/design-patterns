@@ -13,9 +13,6 @@ class TableViewCell: UITableViewCell {
   // MARK: - Type Properties
   static let reuseIdentifier = "SettingsCell"
   
-  // MARK: - Properties
-  @IBOutlet var mainLabel: UILabel!
-  
   // MARK: - Initialization
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -26,8 +23,8 @@ class TableViewCell: UITableViewCell {
   
   // MARK: - Configuration
   func configure(withViewModel viewModel: SettingsRepresentable) {
-    mainLabel.text = viewModel.text
-    accessoryType = viewModel.accessoryType
+    textLabel?.text = viewModel.text
+    accessoryType = UITableViewCellAccessoryType(rawValue: viewModel.accessoryType)!
   }
   
 }

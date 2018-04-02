@@ -6,9 +6,9 @@
 //  Copyright © 2018年 PinguMac. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 protocol SettingsRepresentable {
   var text: String { get }
-  var accessoryType: UITableViewCellAccessoryType { get }
+  var accessoryType: Int { get }
 }

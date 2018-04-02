@@ -6,11 +6,16 @@
 //  Copyright © 2018年 PinguMac. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 struct SettingsViewTimeViewModel: SettingsRepresentable {
   
   let timeNotation: TimeNotation
+  
+  private enum Accessory: Int {
+    case none = 0
+    case checkmark = 3
+  }
   
   var text: String {
     switch timeNotation {
@@ -21,11 +26,11 @@ struct SettingsViewTimeViewModel: SettingsRepresentable {
     }
   }
   
-  var accessoryType: UITableViewCellAccessoryType {
+  var accessoryType: Int {
     if UserDefaults.timeNotation() == timeNotation {
-      return .checkmark
+      return Accessory.checkmark.rawValue
     } else {
-      return .none
+      return Accessory.none.rawValue
     }
   }
   
