@@ -31,14 +31,13 @@ class MyTableViewController: UITableViewController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    
+    //myTableView.cellForRow(at: selectedRowsInsections[storeArray[]])
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
 
- 
   override func numberOfSections(in tableView: UITableView) -> Int {
     return sections.count
   }
@@ -84,7 +83,7 @@ class MyTableViewController: UITableViewController {
       myTableView.cellForRow(at: indexPath)?.accessoryType = selectedRowsInsections[indexPath.section][indexPath.row] ? .checkmark: .none
     
       userdefaults.set(selectedRowsInsections, forKey: "picked")
-    var storeArray: [[Bool]] = (userdefaults.array(forKey: "picked") as? [[Bool]])!
+     storeArray = (userdefaults.array(forKey: "picked") as? [[Bool]])!
       
       print(indexPath)
       print(storeArray)
@@ -140,16 +139,6 @@ class MyTableViewController: UITableViewController {
         // Return false if you do not want the item to be re-orderable.
         return true
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+ */
 
 

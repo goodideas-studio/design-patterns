@@ -19,6 +19,9 @@
 		4DD05BE5206DFBC1000DC74B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD05BE4206DFBC1000DC74B /* Model.swift */; };
 		4DD05BE9206DFEEE000DC74B /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD05BE8206DFEEE000DC74B /* MyTableViewController.swift */; };
 		4DE7C0F120720861008E21C2 /* MVVM_AssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7C0F020720861008E21C2 /* MVVM_AssignmentTests.swift */; };
+		4DE7C0F92072648C008E21C2 /* WeatherFactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7C0F82072648C008E21C2 /* WeatherFactCell.swift */; };
+		4DE7C0FC207266F5008E21C2 /* WeatherFactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7C0FB207266F5008E21C2 /* WeatherFactViewController.swift */; };
+		4DE7C0FE20726840008E21C2 /* ViewModel_WeatherFactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE7C0FD20726840008E21C2 /* ViewModel_WeatherFactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		4DE7C0EE20720861008E21C2 /* MVVM_AssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVM_AssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE7C0F020720861008E21C2 /* MVVM_AssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_AssignmentTests.swift; sourceTree = "<group>"; };
 		4DE7C0F220720861008E21C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DE7C0F82072648C008E21C2 /* WeatherFactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFactCell.swift; sourceTree = "<group>"; };
+		4DE7C0FB207266F5008E21C2 /* WeatherFactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFactViewController.swift; sourceTree = "<group>"; };
+		4DE7C0FD20726840008E21C2 /* ViewModel_WeatherFactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel_WeatherFactViewController.swift; sourceTree = "<group>"; };
 		535038A1BF41B6B2EA11AD52 /* Pods_MVVM_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FE35D93A4660533465D2861 /* Pods-MVVM_Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM_Assignment.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM_Assignment/Pods-MVVM_Assignment.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,10 +112,11 @@
 		4DD05BCC206DE3A9000DC74B /* MVVM_Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				4DE7C0FA207264A3008E21C2 /* View */,
 				4DD05BE7206DFBE4000DC74B /* Model */,
 				4DD05BE6206DFBD3000DC74B /* Controller */,
 				4DD05BCD206DE3A9000DC74B /* AppDelegate.swift */,
-				4DD05BD1206DE3A9000DC74B /* Main.storyboard */,
+				4DE7C0F82072648C008E21C2 /* WeatherFactCell.swift */,
 				4DD05BD7206DE3A9000DC74B /* Assets.xcassets */,
 				4DD05BD9206DE3A9000DC74B /* LaunchScreen.storyboard */,
 				4DD05BDC206DE3A9000DC74B /* Info.plist */,
@@ -124,6 +131,8 @@
 				4DD05BCF206DE3A9000DC74B /* ViewController.swift */,
 				4DD05BE2206DFA1F000DC74B /* MyCell.swift */,
 				4DD05BE8206DFEEE000DC74B /* MyTableViewController.swift */,
+				4DE7C0FB207266F5008E21C2 /* WeatherFactViewController.swift */,
+				4DE7C0FD20726840008E21C2 /* ViewModel_WeatherFactViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -143,6 +152,14 @@
 				4DE7C0F220720861008E21C2 /* Info.plist */,
 			);
 			path = MVVM_AssignmentTests;
+			sourceTree = "<group>";
+		};
+		4DE7C0FA207264A3008E21C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4DD05BD1206DE3A9000DC74B /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		CF995C0155432B72307D2ECC /* Pods */ = {
@@ -371,10 +388,13 @@
 			files = (
 				4DD05BE5206DFBC1000DC74B /* Model.swift in Sources */,
 				4DD05BE9206DFEEE000DC74B /* MyTableViewController.swift in Sources */,
+				4DE7C0FE20726840008E21C2 /* ViewModel_WeatherFactViewController.swift in Sources */,
 				4DD05BD6206DE3A9000DC74B /* MVVM_Assignment.xcdatamodeld in Sources */,
 				4DD05BE3206DFA1F000DC74B /* MyCell.swift in Sources */,
 				4DD05BD0206DE3A9000DC74B /* ViewController.swift in Sources */,
 				4DD05BCE206DE3A9000DC74B /* AppDelegate.swift in Sources */,
+				4DE7C0F92072648C008E21C2 /* WeatherFactCell.swift in Sources */,
+				4DE7C0FC207266F5008E21C2 /* WeatherFactViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
