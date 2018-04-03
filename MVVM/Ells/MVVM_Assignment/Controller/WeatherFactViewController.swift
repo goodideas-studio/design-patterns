@@ -60,8 +60,10 @@ class WeatherFactViewController: UITableViewController, CLLocationManagerDelegat
     if location.horizontalAccuracy > 0 {
       locationManager.stopUpdatingLocation()
       print("latitude is: \(location.coordinate.latitude), longitude is: \(location.coordinate.longitude)")
-      let latitude = location.coordinate.latitude
-      let longtitude = location.coordinate.longitude
+      var lat = location.coordinate.latitude
+      var long = location.coordinate.longitude
+      var latitude = String(format: "%.4f", lat)
+      var longtitude = String(format: "%.4f", long)
       
       location_API_Suffix = "\(latitude)," + "\(longtitude)"
       darkSkyAPIKey = "\(darkSkyAPI_Prefix)" + "\(location_API_Suffix)"
@@ -70,3 +72,6 @@ class WeatherFactViewController: UITableViewController, CLLocationManagerDelegat
   }
  
 }
+
+
+
