@@ -84,7 +84,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
 //
 //
 //
-        
+//        cell.accessoryType = .checkmark
         return cell
     }
 //

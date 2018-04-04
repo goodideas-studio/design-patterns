@@ -8,28 +8,59 @@
 
 /* Begin PBXBuildFile section */
 		D605AF0A206BDBC6004BA4D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D605AF09206BDBC6004BA4D9 /* AppDelegate.swift */; };
-		D605AF0C206BDBC6004BA4D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D605AF0B206BDBC6004BA4D9 /* ViewController.swift */; };
+		D605AF0C206BDBC6004BA4D9 /* UnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D605AF0B206BDBC6004BA4D9 /* UnitViewController.swift */; };
 		D605AF0F206BDBC6004BA4D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D605AF0D206BDBC6004BA4D9 /* Main.storyboard */; };
 		D605AF11206BDBC6004BA4D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D605AF10206BDBC6004BA4D9 /* Assets.xcassets */; };
 		D605AF14206BDBC6004BA4D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D605AF12206BDBC6004BA4D9 /* LaunchScreen.storyboard */; };
 		D605AF1C206BDCF3004BA4D9 /* UnitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D605AF1B206BDCF3004BA4D9 /* UnitTableViewCell.swift */; };
 		D605AF20206BDD0F004BA4D9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D605AF1F206BDD0F004BA4D9 /* Model.swift */; };
+		D62C930A207350E0001868C0 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62C9309207350E0001868C0 /* WeatherViewController.swift */; };
+		D62C930C207350EF001868C0 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62C930B207350EF001868C0 /* APIManager.swift */; };
+		D62C930E2073525B001868C0 /* WeatherDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62C930D2073525B001868C0 /* WeatherDownViewController.swift */; };
+		D62C931020737AC0001868C0 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62C930F20737AC0001868C0 /* WeatherData.swift */; };
+		D62C931220737F94001868C0 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62C931120737F94001868C0 /* WeatherTableViewCell.swift */; };
+		D6D5B7E72072082500E9CDAD /* MVVMUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D5B7E62072082500E9CDAD /* MVVMUnitTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D6D5B7E92072082500E9CDAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D605AEFE206BDBC6004BA4D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D605AF05206BDBC6004BA4D9;
+			remoteInfo = MVVM;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D605AF06206BDBC6004BA4D9 /* MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D605AF09206BDBC6004BA4D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D605AF0B206BDBC6004BA4D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D605AF0B206BDBC6004BA4D9 /* UnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitViewController.swift; sourceTree = "<group>"; };
 		D605AF0E206BDBC6004BA4D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D605AF10206BDBC6004BA4D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D605AF13206BDBC6004BA4D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D605AF15206BDBC6004BA4D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D605AF1B206BDCF3004BA4D9 /* UnitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTableViewCell.swift; sourceTree = "<group>"; };
 		D605AF1F206BDD0F004BA4D9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D62C9309207350E0001868C0 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		D62C930B207350EF001868C0 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		D62C930D2073525B001868C0 /* WeatherDownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDownViewController.swift; sourceTree = "<group>"; };
+		D62C930F20737AC0001868C0 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		D62C931120737F94001868C0 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		D6D5B7E42072082500E9CDAD /* MVVMUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6D5B7E62072082500E9CDAD /* MVVMUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMUnitTests.swift; sourceTree = "<group>"; };
+		D6D5B7E82072082500E9CDAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D605AF03206BDBC6004BA4D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6D5B7E12072082500E9CDAD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				D605AF08206BDBC6004BA4D9 /* MVVM */,
+				D6D5B7E52072082500E9CDAD /* MVVMUnitTests */,
 				D605AF07206BDBC6004BA4D9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				D605AF06206BDBC6004BA4D9 /* MVVM.app */,
+				D6D5B7E42072082500E9CDAD /* MVVMUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				D605AF1B206BDCF3004BA4D9 /* UnitTableViewCell.swift */,
+				D62C931120737F94001868C0 /* WeatherTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -81,7 +115,9 @@
 		D605AF1E206BDCFD004BA4D9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D605AF0B206BDBC6004BA4D9 /* ViewController.swift */,
+				D605AF0B206BDBC6004BA4D9 /* UnitViewController.swift */,
+				D62C9309207350E0001868C0 /* WeatherViewController.swift */,
+				D62C930D2073525B001868C0 /* WeatherDownViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -90,8 +126,19 @@
 			isa = PBXGroup;
 			children = (
 				D605AF1F206BDD0F004BA4D9 /* Model.swift */,
+				D62C930B207350EF001868C0 /* APIManager.swift */,
+				D62C930F20737AC0001868C0 /* WeatherData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D6D5B7E52072082500E9CDAD /* MVVMUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				D6D5B7E62072082500E9CDAD /* MVVMUnitTests.swift */,
+				D6D5B7E82072082500E9CDAD /* Info.plist */,
+			);
+			path = MVVMUnitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,19 +161,42 @@
 			productReference = D605AF06206BDBC6004BA4D9 /* MVVM.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D6D5B7E32072082500E9CDAD /* MVVMUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6D5B7ED2072082500E9CDAD /* Build configuration list for PBXNativeTarget "MVVMUnitTests" */;
+			buildPhases = (
+				D6D5B7E02072082500E9CDAD /* Sources */,
+				D6D5B7E12072082500E9CDAD /* Frameworks */,
+				D6D5B7E22072082500E9CDAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D6D5B7EA2072082500E9CDAD /* PBXTargetDependency */,
+			);
+			name = MVVMUnitTests;
+			productName = MVVMUnitTests;
+			productReference = D6D5B7E42072082500E9CDAD /* MVVMUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D605AEFE206BDBC6004BA4D9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = EthanLin;
 				TargetAttributes = {
 					D605AF05206BDBC6004BA4D9 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+					};
+					D6D5B7E32072082500E9CDAD = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D605AF05206BDBC6004BA4D9;
 					};
 				};
 			};
@@ -144,6 +214,7 @@
 			projectRoot = "";
 			targets = (
 				D605AF05206BDBC6004BA4D9 /* MVVM */,
+				D6D5B7E32072082500E9CDAD /* MVVMUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -159,6 +230,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D6D5B7E22072082500E9CDAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -166,14 +244,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D605AF0C206BDBC6004BA4D9 /* ViewController.swift in Sources */,
+				D62C930C207350EF001868C0 /* APIManager.swift in Sources */,
+				D605AF0C206BDBC6004BA4D9 /* UnitViewController.swift in Sources */,
+				D62C930A207350E0001868C0 /* WeatherViewController.swift in Sources */,
 				D605AF0A206BDBC6004BA4D9 /* AppDelegate.swift in Sources */,
 				D605AF1C206BDCF3004BA4D9 /* UnitTableViewCell.swift in Sources */,
+				D62C930E2073525B001868C0 /* WeatherDownViewController.swift in Sources */,
+				D62C931220737F94001868C0 /* WeatherTableViewCell.swift in Sources */,
+				D62C931020737AC0001868C0 /* WeatherData.swift in Sources */,
 				D605AF20206BDD0F004BA4D9 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D6D5B7E02072082500E9CDAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6D5B7E72072082500E9CDAD /* MVVMUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D6D5B7EA2072082500E9CDAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D605AF05206BDBC6004BA4D9 /* MVVM */;
+			targetProxy = D6D5B7E92072082500E9CDAD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D605AF0D206BDBC6004BA4D9 /* Main.storyboard */ = {
@@ -332,6 +431,46 @@
 			};
 			name = Release;
 		};
+		D6D5B7EB2072082500E9CDAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 47R4BK8PQH;
+				INFOPLIST_FILE = MVVMUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ethan510010.MVVMUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVM.app/MVVM";
+			};
+			name = Debug;
+		};
+		D6D5B7EC2072082500E9CDAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 47R4BK8PQH;
+				INFOPLIST_FILE = MVVMUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ethan510010.MVVMUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVM.app/MVVM";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -349,6 +488,15 @@
 			buildConfigurations = (
 				D605AF19206BDBC6004BA4D9 /* Debug */,
 				D605AF1A206BDBC6004BA4D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6D5B7ED2072082500E9CDAD /* Build configuration list for PBXNativeTarget "MVVMUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6D5B7EB2072082500E9CDAD /* Debug */,
+				D6D5B7EC2072082500E9CDAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

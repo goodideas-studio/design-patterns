@@ -8,19 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+
+class UnitViewController: UIViewController {
     
-    
-//    var index:IndexPath?
     
     @IBAction func saveDoneAction(_ sender: UIBarButtonItem) {
-        
-//        if let choiceIndex = index{
-//            print(choiceIndex.section)
-//            print(choiceIndex.row)
-//            timeUnitArray[choiceIndex.row].isSelected = UserDefaults.standard.bool(forKey: "timeChoice")
-//            print(timeUnitArray[choiceIndex.row].isSelected)
-//        }
         
         self.navigationController?.popViewController(animated: true)
         
@@ -58,7 +50,7 @@ class ViewController: UIViewController {
 
 
 }
-extension ViewController: UITableViewDelegate, UITableViewDataSource{
+extension UnitViewController: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
