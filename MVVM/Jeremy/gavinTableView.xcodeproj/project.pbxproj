@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E29B1ED20730BE600D9E8C9 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E29B1EC20730BE600D9E8C9 /* WeatherTableViewCell.swift */; };
+		5E7304AB20720A6E00F7168F /* gavinTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7304AA20720A6E00F7168F /* gavinTableViewTests.swift */; };
+		5E8BFA002071FFB800E19CEA /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8BF9FF2071FFB800E19CEA /* WeatherModel.swift */; };
 		5EB2BEF5206CDCEE0075F8D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB2BEF4206CDCEE0075F8D9 /* AppDelegate.swift */; };
 		5EB2BEF7206CDCEE0075F8D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB2BEF6206CDCEE0075F8D9 /* ViewController.swift */; };
 		5EB2BEFA206CDCEE0075F8D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EB2BEF8206CDCEE0075F8D9 /* Main.storyboard */; };
@@ -15,7 +18,22 @@
 		5EB2BF07206CDD570075F8D9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB2BF06206CDD570075F8D9 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5E7304AD20720A6F00F7168F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EB2BEE9206CDCEE0075F8D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5EB2BEF0206CDCEE0075F8D9;
+			remoteInfo = gavinTableView;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		5E29B1EC20730BE600D9E8C9 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		5E7304A820720A6E00F7168F /* gavinTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gavinTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E7304AA20720A6E00F7168F /* gavinTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gavinTableViewTests.swift; sourceTree = "<group>"; };
+		5E7304AC20720A6E00F7168F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E8BF9FF2071FFB800E19CEA /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		5EB2BEF1206CDCEE0075F8D9 /* gavinTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gavinTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB2BEF4206CDCEE0075F8D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EB2BEF6206CDCEE0075F8D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,6 +45,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5E7304A520720A6E00F7168F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5EB2BEEE206CDCEE0075F8D9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -37,10 +62,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E29B1E920730B7600D9E8C9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5EB2BEF4206CDCEE0075F8D9 /* AppDelegate.swift */,
+				5EB2BEF6206CDCEE0075F8D9 /* ViewController.swift */,
+				5EB2BF06206CDD570075F8D9 /* TableViewController.swift */,
+				5E29B1EC20730BE600D9E8C9 /* WeatherTableViewCell.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		5E29B1EA20730B8200D9E8C9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5EB2BEF8206CDCEE0075F8D9 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		5E29B1EB20730BBD00D9E8C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E8BF9FF2071FFB800E19CEA /* WeatherModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5E7304A920720A6E00F7168F /* gavinTableViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				5E7304AA20720A6E00F7168F /* gavinTableViewTests.swift */,
+				5E7304AC20720A6E00F7168F /* Info.plist */,
+			);
+			path = gavinTableViewTests;
+			sourceTree = "<group>";
+		};
 		5EB2BEE8206CDCEE0075F8D9 = {
 			isa = PBXGroup;
 			children = (
 				5EB2BEF3206CDCEE0075F8D9 /* gavinTableView */,
+				5E7304A920720A6E00F7168F /* gavinTableViewTests */,
 				5EB2BEF2206CDCEE0075F8D9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				5EB2BEF1206CDCEE0075F8D9 /* gavinTableView.app */,
+				5E7304A820720A6E00F7168F /* gavinTableViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,10 +119,9 @@
 		5EB2BEF3206CDCEE0075F8D9 /* gavinTableView */ = {
 			isa = PBXGroup;
 			children = (
-				5EB2BEF4206CDCEE0075F8D9 /* AppDelegate.swift */,
-				5EB2BEF6206CDCEE0075F8D9 /* ViewController.swift */,
-				5EB2BEF8206CDCEE0075F8D9 /* Main.storyboard */,
-				5EB2BF06206CDD570075F8D9 /* TableViewController.swift */,
+				5E29B1EA20730B8200D9E8C9 /* View */,
+				5E29B1E920730B7600D9E8C9 /* Controller */,
+				5E29B1EB20730BBD00D9E8C9 /* Model */,
 				5EB2BEFB206CDCEE0075F8D9 /* Assets.xcassets */,
 				5EB2BEFD206CDCEE0075F8D9 /* LaunchScreen.storyboard */,
 				5EB2BF00206CDCEE0075F8D9 /* Info.plist */,
@@ -70,6 +132,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5E7304A720720A6E00F7168F /* gavinTableViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E7304AF20720A6F00F7168F /* Build configuration list for PBXNativeTarget "gavinTableViewTests" */;
+			buildPhases = (
+				5E7304A420720A6E00F7168F /* Sources */,
+				5E7304A520720A6E00F7168F /* Frameworks */,
+				5E7304A620720A6E00F7168F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5E7304AE20720A6F00F7168F /* PBXTargetDependency */,
+			);
+			name = gavinTableViewTests;
+			productName = gavinTableViewTests;
+			productReference = 5E7304A820720A6E00F7168F /* gavinTableViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5EB2BEF0206CDCEE0075F8D9 /* gavinTableView */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5EB2BF03206CDCEE0075F8D9 /* Build configuration list for PBXNativeTarget "gavinTableView" */;
@@ -97,6 +177,11 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = JeremyXue;
 				TargetAttributes = {
+					5E7304A720720A6E00F7168F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5EB2BEF0206CDCEE0075F8D9;
+					};
 					5EB2BEF0206CDCEE0075F8D9 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -117,11 +202,19 @@
 			projectRoot = "";
 			targets = (
 				5EB2BEF0206CDCEE0075F8D9 /* gavinTableView */,
+				5E7304A720720A6E00F7168F /* gavinTableViewTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5E7304A620720A6E00F7168F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5EB2BEEF206CDCEE0075F8D9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -135,17 +228,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5E7304A420720A6E00F7168F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E7304AB20720A6E00F7168F /* gavinTableViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5EB2BEED206CDCEE0075F8D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E29B1ED20730BE600D9E8C9 /* WeatherTableViewCell.swift in Sources */,
 				5EB2BEF7206CDCEE0075F8D9 /* ViewController.swift in Sources */,
 				5EB2BF07206CDD570075F8D9 /* TableViewController.swift in Sources */,
+				5E8BFA002071FFB800E19CEA /* WeatherModel.swift in Sources */,
 				5EB2BEF5206CDCEE0075F8D9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5E7304AE20720A6F00F7168F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5EB2BEF0206CDCEE0075F8D9 /* gavinTableView */;
+			targetProxy = 5E7304AD20720A6F00F7168F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5EB2BEF8206CDCEE0075F8D9 /* Main.storyboard */ = {
@@ -167,6 +278,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5E7304B020720A6F00F7168F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4PAC9XA99N;
+				INFOPLIST_FILE = gavinTableViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JJX.gavinTableViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gavinTableView.app/gavinTableView";
+			};
+			name = Debug;
+		};
+		5E7304B120720A6F00F7168F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4PAC9XA99N;
+				INFOPLIST_FILE = gavinTableViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JJX.gavinTableViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gavinTableView.app/gavinTableView";
+			};
+			name = Release;
+		};
 		5EB2BF01206CDCEE0075F8D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -307,6 +450,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5E7304AF20720A6F00F7168F /* Build configuration list for PBXNativeTarget "gavinTableViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E7304B020720A6F00F7168F /* Debug */,
+				5E7304B120720A6F00F7168F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5EB2BEEC206CDCEE0075F8D9 /* Build configuration list for PBXProject "gavinTableView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
