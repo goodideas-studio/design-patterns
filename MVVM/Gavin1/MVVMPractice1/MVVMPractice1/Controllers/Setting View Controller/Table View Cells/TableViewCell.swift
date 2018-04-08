@@ -24,7 +24,7 @@ class TableViewCell: UITableViewCell {
   // MARK: - Configuration
   func configure(withViewModel viewModel: SettingsRepresentable) {
     textLabel?.text = viewModel.text
-    accessoryType = UITableViewCellAccessoryType(rawValue: viewModel.accessoryType)!
+    accessoryType = UITableViewCellAccessoryType(rawValue: viewModel.accessoryType.rawValue)!
   }
   
 }

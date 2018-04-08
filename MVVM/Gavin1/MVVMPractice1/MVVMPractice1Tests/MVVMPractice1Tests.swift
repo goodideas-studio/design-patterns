@@ -43,7 +43,7 @@ class MVVMPractice1Tests: XCTestCase {
     UserDefaults.standard.set(timeNotation.rawValue, forKey: UserDefaults.Keys.timeNotation)
     
     let viewModel = SettingsViewTimeViewModel(timeNotation: .twelveHour)
-    XCTAssertEqual(viewModel.accessoryType, UITableViewCellAccessoryType.checkmark.rawValue)
+    XCTAssertEqual(viewModel.accessoryType, Accessory(rawValue: UITableViewCellAccessoryType.checkmark.rawValue))
   }
   
   func testAccessoryType_TwelveHour_TwentyFourHour() {
@@ -51,7 +51,7 @@ class MVVMPractice1Tests: XCTestCase {
     UserDefaults.standard.set(timeNotation.rawValue, forKey: UserDefaults.Keys.timeNotation)
     
     let viewModel = SettingsViewTimeViewModel(timeNotation: .twentyFourHour)
-    XCTAssertEqual(viewModel.accessoryType, UITableViewCellAccessoryType.none.rawValue)
+    XCTAssertEqual(viewModel.accessoryType, Accessory(rawValue: UITableViewCellAccessoryType.none.rawValue))
   }
   
   func testAccessoryType_TwentyFourHour_TwentyFourHour() {
@@ -59,7 +59,7 @@ class MVVMPractice1Tests: XCTestCase {
     UserDefaults.standard.set(timeNotation.rawValue, forKey: UserDefaults.Keys.timeNotation)
     
     let viewModel = SettingsViewTimeViewModel(timeNotation: .twentyFourHour)
-    XCTAssertEqual(viewModel.accessoryType, UITableViewCellAccessoryType.checkmark.rawValue)
+    XCTAssertEqual(viewModel.accessoryType, Accessory(rawValue: UITableViewCellAccessoryType.checkmark.rawValue))
   }
   
   func testAccessoryType_TwentyFourHour_TwelveHour() {
@@ -67,7 +67,7 @@ class MVVMPractice1Tests: XCTestCase {
     UserDefaults.standard.set(timeNotation.rawValue, forKey: UserDefaults.Keys.timeNotation)
     
     let viewModel = SettingsViewTimeViewModel(timeNotation: .twelveHour)
-    XCTAssertEqual(viewModel.accessoryType, UITableViewCellAccessoryType.none.rawValue)
+    XCTAssertEqual(viewModel.accessoryType, Accessory(rawValue: UITableViewCellAccessoryType.none.rawValue))
   }
   
 }

@@ -12,11 +12,6 @@ struct SettingsViewTimeViewModel: SettingsRepresentable {
   
   let timeNotation: TimeNotation
   
-  private enum Accessory: Int {
-    case none = 0
-    case checkmark = 3
-  }
-  
   var text: String {
     switch timeNotation {
     case .twelveHour:
@@ -26,11 +21,11 @@ struct SettingsViewTimeViewModel: SettingsRepresentable {
     }
   }
   
-  var accessoryType: Int {
+  var accessoryType: Accessory {
     if UserDefaults.timeNotation() == timeNotation {
-      return Accessory.checkmark.rawValue
+      return .checkmark
     } else {
-      return Accessory.none.rawValue
+      return .none
     }
   }
   

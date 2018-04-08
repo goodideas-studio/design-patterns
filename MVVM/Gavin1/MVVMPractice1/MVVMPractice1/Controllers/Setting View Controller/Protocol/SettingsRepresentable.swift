@@ -8,7 +8,12 @@
 
 import Foundation
 
+enum Accessory: Int {
+  case none = 0
+  case checkmark = 3
+}
+
 protocol SettingsRepresentable {
   var text: String { get }
-  var accessoryType: Int { get }
+  var accessoryType: Accessory { get }
 }

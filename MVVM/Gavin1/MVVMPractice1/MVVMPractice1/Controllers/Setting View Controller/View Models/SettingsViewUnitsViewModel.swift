@@ -12,11 +12,6 @@ struct SettingsViewUnitsViewModel: SettingsRepresentable {
 
   // MARK: - Properties
   let unitsNotation: UnitsNotation
-  
-  private enum Accessory: Int {
-    case none = 0
-    case checkmark = 3
-  }
 
   // MARK: - Public Interface
   var text: String {
@@ -28,11 +23,11 @@ struct SettingsViewUnitsViewModel: SettingsRepresentable {
     }
   }
 
-  var accessoryType: Int {
+  var accessoryType: Accessory {
     if UserDefaults.unitsNotation() == unitsNotation {
-      return Accessory.checkmark.rawValue
+      return .checkmark
     } else {
-      return Accessory.none.rawValue
+      return .none
     }
   }
 

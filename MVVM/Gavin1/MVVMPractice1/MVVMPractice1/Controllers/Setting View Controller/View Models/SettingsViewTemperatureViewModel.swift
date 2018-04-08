@@ -13,11 +13,6 @@ struct SettingsViewTemperatureViewModel: SettingsRepresentable {
   // MARK: - Properties
   var temperatureNotation: TemperatureNotation
   
-  private enum Accessory: Int {
-    case none = 0
-    case checkmark = 3
-  }
-  
   // MARK: - Public Interface
   var text: String {
     switch temperatureNotation {
@@ -28,11 +23,11 @@ struct SettingsViewTemperatureViewModel: SettingsRepresentable {
     }
   }
   
-  var accessoryType: Int {
+  var accessoryType: Accessory {
     if UserDefaults.temperatureNotation() == temperatureNotation {
-      return Accessory.checkmark.rawValue
+      return .checkmark
     } else {
-      return Accessory.none.rawValue
+      return .none
     }
   }
   
