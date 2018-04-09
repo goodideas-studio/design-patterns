@@ -69,7 +69,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="8RI-0P-1Tq">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8RI-0P-1Tq">
                                                     <rect key="frame" x="305" y="11" width="50" height="50"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -91,6 +91,7 @@
                                                 <constraint firstItem="Rlu-1C-YSY" firstAttribute="top" secondItem="pzj-K4-b8G" secondAttribute="bottom" constant="5" id="zmk-Pr-Vam"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.91291243654822329" green="0.59214022111788334" blue="0.20018304262226475" alpha="0.25829409246575341" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="dateLabel" destination="Rlu-1C-YSY" id="QaO-bl-YuL"/>
                                             <outlet property="dayLabel" destination="pzj-K4-b8G" id="E2x-6A-wNa"/>
@@ -118,7 +119,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.91291243654822329" green="0.52132261668293445" blue="0.17230164319897481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="RXM-nv-7Eh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="5Nk-lU-WNn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Biu-Dh-kcA" secondAttribute="trailing" constant="8" id="Ky3-ro-gfA"/>
@@ -198,7 +199,4 @@
             <point key="canvasLocation" x="1254" y="113"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="cloud" width="64" height="64"/>
-    </resources>
 </document>
