@@ -24,7 +24,7 @@ extension UIColor {
         
         baseColor.getRed(&baseR, green: &baseG, blue: &baseB, alpha: &baseA)
         
-        return UIColor(red: (currentR + baseR) / 2, green: (currentG + baseG) / 2, blue: (currentB + baseB) / 2, alpha: (currentA + baseA) / 2)
+        return UIColor(red: currentR + baseR, green: currentG + baseG, blue: currentB + baseB, alpha: currentA + baseA)
     }
 }
 
@@ -34,8 +34,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.red.decorate(
-            UIColor.blue.withAlphaComponent(0.5)
-        ).decorate(.yellow)
+            UIColor.blue
+        ).decorate(.green)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
