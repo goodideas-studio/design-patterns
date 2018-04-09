@@ -12,12 +12,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var weekArray = [String]()
     
-    var windSpeed = [Double]()
-    var temperatureLow = [Double]()
-    var temperatureHigh = [Double]()
+    var windSpeed = [Int]()
+    var temperatureLow = [Int]()
+    var temperatureHigh = [Int]()
     
-    var temperatureFLow = [Double]()
-    var temperatureFHigh = [Double]()
+    var temperatureFLow = [Int]()
+    var temperatureFHigh = [Int]()
     
     var icon = [String]()
     var time = [String]()
@@ -38,9 +38,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.timeLabel.text = "\(time[indexPath.row])"
         
         if saveArray[2] == 0 {
-            cell.temperatureLabel.text = "\(temperatureLow[indexPath.row])°C ~ \(temperatureHigh[indexPath.row])°C"
+            cell.temperatureLabel.text = "\(temperatureLow[indexPath.row]) °C - \(temperatureHigh[indexPath.row]) °C"
         } else {
-            cell.temperatureLabel.text = "\(temperatureFLow[indexPath.row])°F ~ \(temperatureFHigh[indexPath.row])°F"
+            cell.temperatureLabel.text = "\(temperatureFLow[indexPath.row]) °F - \(temperatureFHigh[indexPath.row]) °F"
         }
         
         
@@ -79,7 +79,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 for data in weatherList.daily.data {
                     
                     
-                    dateFormatter.dateFormat = "MMMM-dd"
+                    dateFormatter.dateFormat = "MMMM dd"
                     let dateString = dateFormatter.string(from: data.time)
                     self.time.append(dateString)
                     
@@ -87,11 +87,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     let weekString = dateFormatter.string(from: data.time)
                     self.weekArray.append(weekString)
                     
-                    self.windSpeed.append(data.windSpeed)
-                    self.temperatureLow.append(data.temperatureLow)
-                    self.temperatureHigh.append(data.temperatureHigh)
-                    self.temperatureFLow.append((data.temperatureLow + 40) * 1.8 - 40)
-                    self.temperatureFHigh.append((data.temperatureLow + 40) * 1.8 - 40)
+                    self.windSpeed.append(Int(data.windSpeed))
+                    self.temperatureLow.append(Int(data.temperatureLow))
+                    self.temperatureHigh.append(Int(data.temperatureHigh))
+                    self.temperatureFLow.append(Int((data.temperatureLow + 40) * 1.8 - 40))
+                    self.temperatureFHigh.append(Int((data.temperatureHigh + 40) * 1.8 - 40))
                 }
                 DispatchQueue.main.async {
                     self.weatherTableView.reloadData()
