@@ -1,24 +1,20 @@
 今天我們想要用 EthanColor 來實做一個調色盤，大概的概念會是「任意顏色都可以互相混合」，舉例來說，如果我需要紫色，我可以透過下列方法得到：
 
+```
 let blue = EthanColor.blue
 let red = EthanColor.red
-
 let purple = blue.decorate(red)
-
-
-
-
+```
 
 如果需要半透明的紅色則可以透過下列方式：
 
-
-let red = EthanColor.red, 
-let alpha = EthanColor.alpha(0.5), 
+```
+let red = EthanColor.red,
+let alpha = EthanColor.alpha(0.5),
 let 半透明紅色 = alpha.decorate(red)
+```
 
-
-![colorPlate.jpeg](colorPlate.jpeg)
-
+![](ReadMe/photo-1511980725567-b9b7f0358905.jpeg)
 
 
 你不一定要用 Decorator，請在心中想像 iOS UIColor，然後想辦法實作出 EthanColor。
