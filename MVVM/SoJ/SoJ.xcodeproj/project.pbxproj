@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7A9947C207B0EF1009DC801 /* DailyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9947B207B0EF1009DC801 /* DailyCell.swift */; };
+		F7A9947E207B2BF6009DC801 /* wheatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9947D207B2BF6009DC801 /* wheatherData.swift */; };
 		F7F97BBD206E04350066DEE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F97BBC206E04350066DEE4 /* AppDelegate.swift */; };
 		F7F97BBF206E04350066DEE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F97BBE206E04350066DEE4 /* ViewController.swift */; };
 		F7F97BC2206E04350066DEE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7F97BC0206E04350066DEE4 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F7A9947B207B0EF1009DC801 /* DailyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCell.swift; sourceTree = "<group>"; };
+		F7A9947D207B2BF6009DC801 /* wheatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wheatherData.swift; sourceTree = "<group>"; };
 		F7F97BB9206E04350066DEE4 /* SoJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7F97BBC206E04350066DEE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7F97BBE206E04350066DEE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,8 +62,10 @@
 			children = (
 				F7F97BBC206E04350066DEE4 /* AppDelegate.swift */,
 				F7F97BBE206E04350066DEE4 /* ViewController.swift */,
+				F7A9947D207B2BF6009DC801 /* wheatherData.swift */,
 				F7F97BD0206E05780066DEE4 /* SettingVC.swift */,
 				F7F97BC0206E04350066DEE4 /* Main.storyboard */,
+				F7A9947B207B0EF1009DC801 /* DailyCell.swift */,
 				F7F97BC3206E04360066DEE4 /* Assets.xcassets */,
 				F7F97BC5206E04360066DEE4 /* LaunchScreen.storyboard */,
 				F7F97BC8206E04360066DEE4 /* Info.plist */,
@@ -139,8 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7F97BBF206E04350066DEE4 /* ViewController.swift in Sources */,
+				F7A9947C207B0EF1009DC801 /* DailyCell.swift in Sources */,
 				F7F97BD1206E05780066DEE4 /* SettingVC.swift in Sources */,
 				F7F97BBD206E04350066DEE4 /* AppDelegate.swift in Sources */,
+				F7A9947E207B2BF6009DC801 /* wheatherData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

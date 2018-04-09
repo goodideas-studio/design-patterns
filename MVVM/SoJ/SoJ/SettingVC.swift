@@ -3,14 +3,20 @@ import UIKit
 class SettingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let timeSettingTitle = [ "12 Hour", "24 Hour"]
-    var timeSettingDidMark = [true, false]
+    var timeSettingDidMark = UserDefaults.standard.object(forKey: "timeSetting") as? [Bool] ?? [true, false]
     
     let lengthSettingTitle = ["Imperial", "Metric"]
-    var lengthSettingDidMark =  [true, false]
+    var lengthSettingDidMark = UserDefaults.standard.object(forKey: "lengthSetting") as? [Bool] ?? [true, false]
     
     let tempSettingTitle = ["Fahrenheit", "Celcius"]
-    var tempSettingDidMark = [true, false]
+    var tempSettingDidMark = UserDefaults.standard.object(forKey: "tempSetting") as? [Bool] ?? [true, false]
 
+    @IBAction func saveSetting(_ sender: UIBarButtonItem) {
+        UserDefaults.standard.set(timeSettingDidMark, forKey: "timeSetting")
+        UserDefaults.standard.set(lengthSettingDidMark, forKey: "lengthSetting")
+        UserDefaults.standard.set(tempSettingDidMark, forKey: "tempSetting")
+        navigationController?.popViewController(animated: true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
