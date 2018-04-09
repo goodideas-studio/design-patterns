@@ -7,35 +7,53 @@
 //
 
 import UIKit
+import CoreLocation
 
-class WeatherDownViewController: UIViewController {
+class WeatherDownViewController: UIViewController, CLLocationManagerDelegate {
     
     var weatherData: WeatherData?
     
-    
- 
-    
     @IBOutlet weak var tableView: UITableView!
     
-    let urlString = "https://api.darksky.net/forecast/5244b19e0aee34b8bb5ae128befe78f8/37.8267,-122.4233"
-
+    let fixedURLString = "https://api.darksky.net/forecast/5244b19e0aee34b8bb5ae128befe78f8/37.8267,-122.4233"
+    
+    var urlString:String?
+    
+    var locationManager:CLLocationManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         tableView.delegate = self
         tableView.dataSource = self
+        
+        self.locationManager = CLLocationManager()
+        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.delegate = self
+
+        //得到座標
+        if let coordinate = locationManager?.location?.coordinate{
+            self.urlString = "https://api.darksky.net/forecast/5244b19e0aee34b8bb5ae128befe78f8/\(coordinate.latitude),\(coordinate.longitude)"
+            print(urlString)
+            print(coordinate.latitude)
+            print(coordinate.longitude)
+        }
 
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        APIManager.shared.fetchWeatherData(url: urlString) { (weatherData) in
-            self.weatherData = weatherData
-            print(weatherData?.daily.data)
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+        
+        
+            APIManager.shared.fetchWeatherData(url: fixedURLString) { (weatherData) in
+                self.weatherData = weatherData
+                print(weatherData?.daily.data)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
-        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

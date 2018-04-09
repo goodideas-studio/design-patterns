@@ -6,6 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -60,7 +63,6 @@
         <!--Weather View Controller-->
         <scene sceneID="LX5-8r-dMH">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gyJ-iO-NTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="x9k-jb-teE" customClass="WeatherViewController" customModule="MVVM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="egh-Eh-Z4w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -102,6 +104,7 @@
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gyJ-iO-NTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2359.1999999999998" y="474.51274362818594"/>
         </scene>
@@ -124,39 +127,66 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="星期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTK-Yi-HUf">
-                                                    <rect key="frame" x="15" y="0.0" width="198" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="星期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTK-Yi-HUf">
+                                                    <rect key="frame" x="15" y="5" width="225" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="KTK-Yi-HUf" secondAttribute="height" multiplier="33:5" id="Mk0-1K-9bd"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JyK-jM-tXw">
-                                                    <rect key="frame" x="15" y="34" width="130" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JyK-jM-tXw">
+                                                    <rect key="frame" x="15" y="39.5" width="112.5" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="JyK-jM-tXw" secondAttribute="height" multiplier="65:12" id="Y6T-4j-KPI"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="低溫 - 高溫" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGB-ZS-vbe">
-                                                    <rect key="frame" x="15" y="68" width="149" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="低溫 - 高溫" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGB-ZS-vbe">
+                                                    <rect key="frame" x="15" y="73.5" width="150" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="RGB-ZS-vbe" secondAttribute="height" multiplier="149:21" id="VwL-Ep-F8Z"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dtb-hr-syI">
-                                                    <rect key="frame" x="303" y="10" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="風速" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1s-6T-YJ4">
+                                                    <rect key="frame" x="262.5" y="67" width="112.5" height="27"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Q1s-6T-YJ4" secondAttribute="height" multiplier="29:7" id="4Ac-JT-VeN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dtb-hr-syI">
+                                                    <rect key="frame" x="262" y="15" width="56.5" height="56.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="dtb-hr-syI" secondAttribute="height" multiplier="1:1" id="t4m-Ik-NBl"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="風速" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1s-6T-YJ4">
-                                                    <rect key="frame" x="285" y="68" width="87" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KTK-Yi-HUf" firstAttribute="width" secondItem="i6d-Kk-2zI" secondAttribute="width" multiplier="0.6" id="3tl-pK-Xon"/>
+                                                <constraint firstItem="KTK-Yi-HUf" firstAttribute="top" secondItem="i6d-Kk-2zI" secondAttribute="top" constant="5" id="62H-el-fMD"/>
+                                                <constraint firstAttribute="bottom" secondItem="Q1s-6T-YJ4" secondAttribute="bottom" constant="5" id="Ie9-3p-Tul"/>
+                                                <constraint firstItem="Q1s-6T-YJ4" firstAttribute="width" secondItem="i6d-Kk-2zI" secondAttribute="width" multiplier="0.3" id="Iiy-xJ-Xml"/>
+                                                <constraint firstAttribute="bottom" secondItem="RGB-ZS-vbe" secondAttribute="bottom" constant="5" id="KzV-Zf-1VF"/>
+                                                <constraint firstItem="RGB-ZS-vbe" firstAttribute="width" secondItem="i6d-Kk-2zI" secondAttribute="width" multiplier="0.4" id="Mij-bN-beZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Q1s-6T-YJ4" secondAttribute="trailing" id="Ovn-yE-bvC"/>
+                                                <constraint firstItem="RGB-ZS-vbe" firstAttribute="leading" secondItem="JyK-jM-tXw" secondAttribute="leading" id="RwH-9x-Spk"/>
+                                                <constraint firstItem="dtb-hr-syI" firstAttribute="leading" secondItem="Q1s-6T-YJ4" secondAttribute="leading" id="bBX-xo-9oT"/>
+                                                <constraint firstItem="dtb-hr-syI" firstAttribute="top" secondItem="i6d-Kk-2zI" secondAttribute="top" constant="15" id="im9-7H-0Nj"/>
+                                                <constraint firstItem="JyK-jM-tXw" firstAttribute="width" secondItem="i6d-Kk-2zI" secondAttribute="width" multiplier="0.3" id="lwF-fe-xkb"/>
+                                                <constraint firstItem="JyK-jM-tXw" firstAttribute="leading" secondItem="i6d-Kk-2zI" secondAttribute="leadingMargin" id="rEw-xM-FKo"/>
+                                                <constraint firstItem="KTK-Yi-HUf" firstAttribute="leading" secondItem="JyK-jM-tXw" secondAttribute="leading" id="rGV-0p-6Fu"/>
+                                                <constraint firstItem="dtb-hr-syI" firstAttribute="width" secondItem="i6d-Kk-2zI" secondAttribute="width" multiplier="0.15" id="uil-5q-qoT"/>
+                                                <constraint firstItem="JyK-jM-tXw" firstAttribute="centerY" secondItem="i6d-Kk-2zI" secondAttribute="centerY" id="zym-qg-1sh"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dayLabel" destination="JyK-jM-tXw" id="kM9-SA-FY6"/>
