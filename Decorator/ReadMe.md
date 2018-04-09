@@ -5,11 +5,21 @@ let red = EthanColor.red
 
 let purple = blue.decorate(red)
 
-如果需要半透明的紅色則可以透過下列方式
 
-let red = EthanColor.red
-let alpha = EthanColor.alpha(0.5)
+
+
+
+如果需要半透明的紅色則可以透過下列方式：
+
+
+let red = EthanColor.red, 
+let alpha = EthanColor.alpha(0.5), 
 let 半透明紅色 = alpha.decorate(red)
+
+
+![colorPlate.jpeg](colorPlate.jpeg)
+
+
 
 你不一定要用 Decorator，請在心中想像 iOS UIColor，然後想辦法實作出 EthanColor。
 
