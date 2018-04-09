@@ -10,13 +10,13 @@ import UIKit
 
 
 class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
-    var hourDefault = UserDefaults.standard.array(forKey: "section1") as! [Int]
-    var unitDefault = UserDefaults.standard.array(forKey: "section2") as! [Int]
-    var tempDefault = UserDefaults.standard.array(forKey: "section3") as! [Int]
-    
+    //用到生命週期
     let defaults = UserDefaults.standard
+
+    var hourDefault = UserDefaults.standard.array(forKey: "section1") as? [Int] ?? [0,1]
+    var unitDefault = UserDefaults.standard.array(forKey: "section2") as? [Int] ?? [1,1]
+    var tempDefault = UserDefaults.standard.array(forKey: "section3") as? [Int] ?? [2,1]
     
-//    var checkersOpFalse = [IndexPath: Bool]()
     @IBAction func buttonPressed(_ sender: UIBarButtonItem) {
     }
     
@@ -52,7 +52,7 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
 
 //        tableView.deselectRow(at: indexPath, animated: false)
 //        checkersOpFalse[indexPath] = !checkersOpFalse[indexPath, default: false]
-  
+        
         if indexPath == [0,0]{
             tableView.cellForRow(at: [0,0])?.accessoryType = .checkmark
             tableView.cellForRow(at: [0,1])?.accessoryType = .none
@@ -81,7 +81,7 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
             tableView.cellForRow(at: [2,1])?.accessoryType = .checkmark
             tableView.cellForRow(at: [2,0])?.accessoryType = .none
         }
-    
+        
         if indexPath.section == 0{
             defaults.set([indexPath.section,indexPath.row], forKey: "section1")
             print(defaults.array(forKey: "section1") as! [Int])
@@ -94,16 +94,29 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
             defaults.set([indexPath.section,indexPath.row], forKey: "section3")
             print(defaults.array(forKey: "section3") as! [Int])
         }
-        tableView.reloadRows(at: [indexPath], with: .fade)
+        
+        tableView.reloadRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+//        tableView.reloadData()
+
+    }
+    
+    func reloadDefaults() {
+        hourDefault = UserDefaults.standard.array(forKey: "section1") as? [Int] ?? [0,1]
+        unitDefault = UserDefaults.standard.array(forKey: "section2") as? [Int] ?? [1,1]
+        tempDefault = UserDefaults.standard.array(forKey: "section3") as? [Int] ?? [2,1]
     }
 
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        reloadDefaults()
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.selectionStyle = .default
-        
-        
+        if indexPath.section == 0{
+            cell.textLabel?.text = hourSection[indexPath.row]
+        }else if indexPath.section == 1{
+            cell.textLabel?.text = unitSection[indexPath.row]
+        }else if indexPath.section == 2{
+            cell.textLabel?.text = tempSection[indexPath.row]
+        }
         if indexPath == [hourDefault[0],hourDefault[1]]{
             cell.accessoryType = .checkmark
         }
@@ -113,28 +126,17 @@ class SecondViewController: UIViewController,UITableViewDataSource,UITableViewDe
         if indexPath == [tempDefault[0],tempDefault[1]]{
             cell.accessoryType = .checkmark
         }
-//        cell.accessoryType = checkersOpFalse[indexPath, default: false] ? .checkmark : .none
-        if indexPath.section == 0{
-            cell.textLabel?.text = hourSection[indexPath.row]
-        }else if indexPath.section == 1{
-            cell.textLabel?.text = unitSection[indexPath.row]
-        }else if indexPath.section == 2{
-            cell.textLabel?.text = tempSection[indexPath.row]
-        }
-        return cell
         
+//        cell.accessoryType = checkersOpFalse[indexPath, default: false] ? .checkmark : .none
+        return cell
     }
-    
-
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        }
-    
-        
-    //to fix: tableview cell react very slow when I click it!
+    }
     //to fix: checkmark disappear when first click
+    //solved: cause my tableView not include data, so no need to reloadData
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
