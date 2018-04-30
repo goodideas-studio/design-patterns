@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E092F022096738800A8310E /* TouchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E092F012096738800A8310E /* TouchViewController.swift */; };
+		5E59A7BF2097083200D95308 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5E59A7BE2097083200D95308 /* README.md */; };
 		5E8C9EFA20962F67001E9D8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8C9EF920962F67001E9D8A /* AppDelegate.swift */; };
 		5E8C9EFC20962F67001E9D8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8C9EFB20962F67001E9D8A /* ViewController.swift */; };
 		5E8C9EFF20962F67001E9D8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E8C9EFD20962F67001E9D8A /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		5E092F012096738800A8310E /* TouchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchViewController.swift; sourceTree = "<group>"; };
+		5E59A7BE2097083200D95308 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5E8C9EF620962F67001E9D8A /* ResponderChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResponderChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E8C9EF920962F67001E9D8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E8C9EFB20962F67001E9D8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 		5E8C9EED20962F67001E9D8A = {
 			isa = PBXGroup;
 			children = (
+				5E59A7BE2097083200D95308 /* README.md */,
 				5E8C9EF820962F67001E9D8A /* ResponderChain */,
 				5E8C9EF720962F67001E9D8A /* Products */,
 			);
@@ -131,6 +134,7 @@
 			files = (
 				5E8C9F0420962F67001E9D8A /* LaunchScreen.storyboard in Resources */,
 				5E8C9F0120962F67001E9D8A /* Assets.xcassets in Resources */,
+				5E59A7BF2097083200D95308 /* README.md in Resources */,
 				5E8C9EFF20962F67001E9D8A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
