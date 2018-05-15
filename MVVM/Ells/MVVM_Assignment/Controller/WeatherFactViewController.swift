@@ -32,7 +32,6 @@ class WeatherFactViewController: UITableViewController, CLLocationManagerDelegat
   }
 
   override func numberOfSections(in tableView: UITableView) -> Int {
-      
     return 1
   }
 
@@ -60,10 +59,10 @@ class WeatherFactViewController: UITableViewController, CLLocationManagerDelegat
     if location.horizontalAccuracy > 0 {
       locationManager.stopUpdatingLocation()
       print("latitude is: \(location.coordinate.latitude), longitude is: \(location.coordinate.longitude)")
-      var lat = location.coordinate.latitude
-      var long = location.coordinate.longitude
-      var latitude = String(format: "%.4f", lat)
-      var longtitude = String(format: "%.4f", long)
+      let lat = location.coordinate.latitude
+      let long = location.coordinate.longitude
+      let latitude = String(format: "%.4f", lat)
+      let longtitude = String(format: "%.4f", long)
       
       location_API_Suffix = "\(latitude)," + "\(longtitude)"
       darkSkyAPIKey = "\(darkSkyAPI_Prefix)" + "\(location_API_Suffix)"

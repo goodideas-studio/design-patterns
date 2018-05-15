@@ -22,11 +22,16 @@ class MyTableViewController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    if userdefaults.value(forKey: "picked") != nil {
+      
+    }
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(true)
-    myTableView.reloadData()
+    if userdefaults.value(forKey: "picked") != nil {
+      myTableView.reloadData()
+    }
   }
   
   override func didReceiveMemoryWarning() {
@@ -46,10 +51,16 @@ class MyTableViewController: UITableViewController {
     let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MyCell
     cell.textLabel?.text = sections[indexPath.section]?[indexPath.row]
     
-    let selectionStored = userdefaults.array(forKey: "picked")
-    print(selectionStored)
-    cell.accessoryType = storeArray[indexPath.section][indexPath.row] ? .checkmark: .none
-    //    cell.isSelected = selectedRowsInsections[indexPath.section][indexPath.row]
+    
+    userdefaults.set(selectedRowsInsections[0], forKey: "picked1")
+    userdefaults.set(selectedRowsInsections[1], forKey: "picked2")
+    userdefaults.set(selectedRowsInsections[2], forKey: "picked3")
+//    let storeArray1 = userdefaults.array(forKey: "picked1")
+//    let storeArray2 = userdefaults.array(forKey: "picked1")
+
+    print(storeArray)
+    cell.accessoryType = selectedRowsInsections[indexPath.section][indexPath.row] ? .checkmark: .none
+    
     return cell
   }
   
@@ -66,14 +77,7 @@ class MyTableViewController: UITableViewController {
     // make the selected cell in selectedRowsInsections to be true again
     selectedRowsInsections[indexPath.section][indexPath.row] = true
     myTableView.cellForRow(at: indexPath)?.accessoryType = selectedRowsInsections[indexPath.section][indexPath.row] ? .checkmark: .none
-    
     userdefaults.set(selectedRowsInsections, forKey: "picked")
-    storeArray = (userdefaults.array(forKey: "picked") as? [[Bool]])!
-    
-    print(indexPath)
-    print(storeArray)
-    //}
-
   }
   
   
